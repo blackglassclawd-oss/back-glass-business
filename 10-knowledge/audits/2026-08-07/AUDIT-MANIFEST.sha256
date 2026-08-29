@@ -1,0 +1,17 @@
+11fc473f27f95eb803f4a6308db7f23edb7f570878380b6fa548be43d3a7220d  10-knowledge/audits/2026-08-07/BASELINE-STATUS.md
+d1d51030ea14023fae34e539b2f09e61b77839d2d1c22b1e3cb77f119ef1d7a0  10-knowledge/audits/2026-08-07/SEO-GEO-EVIDENCE-AUDIT.md
+b4c560e316d9144315f26aaceb048fa23b4d5539e6353849e7b5b474f80416c4  10-knowledge/audits/2026-08-07/SKILL-AUDIT.md
+143c611dda505f2c06c74905e406a5bbbaf72b50275435ff114ff4e0f79fed46  10-knowledge/audits/2026-08-07/WORKERS-WRANGLER-ORIGIN.md
+6bd09a48b17839aebdcc385efa351bd0dbc868a84ab28972c793bb3ab5651eb2  10-knowledge/audits/2026-08-07/catalog-reconciliation.json
+fa92470bb68c0f97774a09c84d4823b53f18c1acdf438aa6c0102767ce7f8b40  10-knowledge/audits/2026-08-07/deliverable-classification.tsv
+6c0457e760f2c31d5a9677b3732a576131f7303054efd14283a84afdc624ce69  10-knowledge/audits/2026-08-07/keyword-hypotheses-audit.csv
+ff23ff2ed8e625612c6bd41dfc51f6ffd2626f436ad14aa0abcf1fa3f4c9cb4d  10-knowledge/audits/2026-08-07/prior-seo-file-changes.jsonl
+8d141b9aa0d560664aa7a3cbc363cb11016a0045f02b32cd34f920474c0ba4ce  10-knowledge/audits/2026-08-07/prior-seo-tool-calls.jsonl
+15ce7231012597a4a40761343384f542e343741773f16738c44cf0068c3c1189  10-knowledge/audits/2026-08-07/raw/public-product-http-retry-2.json
+501aa44520e88fc2d48952e955b612cc6374ee89027e6b1e15e0dadd73cab919  10-knowledge/audits/2026-08-07/raw/public-product-http-retry.json
+7c5d9846d24684dcea340eb358a969a630603ef4de0c3e2ca6e3384a287cea7a  10-knowledge/audits/2026-08-07/raw/public-product-http-verification.json
+cbde87289fb728af5a6ce931fc6beb6dc0d77e87ca6700ec5dfd6d76fa0b6c6b  10-knowledge/audits/2026-08-07/raw/public-product-sitemap.json
+221385438f2d5db60f229aac0c60425ae18f437baf2f4d99d968807becade145  10-knowledge/audits/2026-08-07/raw/shopify-catalog-status.json
+b4533a34985d0fee38175b2c8a53da9e4558a7cc7948f0475892900a65bc930e  10-knowledge/audits/2026-08-07/skill-integrity-manifest.tsv
+23f07c34a24054ddea2d64a76dda4e5008206e4ae2f029861d5982aa864338fa  10-knowledge/audits/2026-08-07/skill-risk-register.tsv
+6fa520bfb7f1aef56d7076c61fd689f9b71772dbb8204eeea423eddeb7309623  10-knowledge/audits/2026-08-07/skill-security-scan.tsv

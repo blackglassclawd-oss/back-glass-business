@@ -1,0 +1,55 @@
+{
+  "name": "backglass-ecommerce",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "audit:public": "node scripts/public-status.mjs",
+    "audit:shopify": "tsx --env-file=.dev.vars scripts/shopify-audit.ts",
+    "plan:catalog-transition": "tsx --env-file=.dev.vars scripts/shopify-catalog-transition-plan.ts",
+    "build": "react-router build",
+    "postbuild": "node scripts/sanitize-build.mjs",
+    "capture:storefront": "node scripts/storefront-snapshot.mjs --publish-catalog",
+    "dev": "react-router dev",
+    "export:shopify": "tsx --env-file=.dev.vars scripts/shopify-bulk-export.ts",
+    "test:e2e": "playwright test",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "wrangler types && react-router typegen && tsc -b && tsc -p tsconfig.scripts.json",
+    "typecheck:passthrough": "wrangler types worker-passthrough-configuration.d.ts --config wrangler.shopify-passthrough.jsonc --env production --env-file .passthrough.env --env-interface PassthroughEnv && tsc -p tsconfig.passthrough.json",
+    "verify:storefront": "node scripts/verify-storefront-snapshot.mjs",
+    "verify:passthrough": "npm run typecheck:passthrough && vitest run workers/shopify-passthrough.test.ts && wrangler deploy --dry-run --config wrangler.shopify-passthrough.jsonc --env production --env-file .passthrough.env",
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:passthrough:production": "wrangler deploy --config wrangler.shopify-passthrough.jsonc --env production --env-file .passthrough.env --strict",
+    "preview": "npm run build && vite preview",
+    "repair:storefront": "node scripts/repair-storefront-snapshot.mjs",
+    "cf-typegen": "wrangler types",
+    "postinstall": "wrangler types"
+  },
+  "dependencies": {
+    "isbot": "^5.1.36",
+    "lucide-react": "^1.27.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router": "^8"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.47.0",
+    "@playwright/test": "^1.61.1",
+    "@react-router/dev": "^8",
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/node": "^22.20.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "cheerio": "^1.2.0",
+    "fast-xml-parser": "^5.10.1",
+    "tailwindcss": "^4.2.2",
+    "tsx": "^4.23.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.3",
+    "vitest": "^4.1.10",
+    "wrangler": "^4.114.0"
+  }
+}

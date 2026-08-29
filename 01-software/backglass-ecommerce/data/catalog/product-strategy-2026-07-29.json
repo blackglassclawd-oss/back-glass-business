@@ -1,0 +1,41 @@
+{
+  "capturedAt": "2026-07-29",
+  "source": {
+    "type": "owner-instruction",
+    "files": [
+      "/Users/jason/Downloads/IMG_6036.jpg",
+      "/Users/jason/Downloads/IMG_6037.PNG",
+      "/Users/jason/Downloads/e1f957f0a468f9880ba4e5226b762055.PNG",
+      "/Users/jason/Downloads/ec7ea08b842a3eefe798a13e808fb652.JPG"
+    ]
+  },
+  "rules": {
+    "deleteProducts": false,
+    "fullAssembly": {
+      "action": "move-to-draft",
+      "liveProducts": 28,
+      "liveVariants": 126,
+      "publishedProducts": 12,
+      "activeUnpublishedProducts": 16,
+      "replacement": "Purchase a Premium or A Grade half assembly and add an Aftermarket or OEM Pull charging flex."
+    },
+    "halfAssembly": {
+      "action": "keep-active",
+      "liveProducts": 20,
+      "liveVariants": 96,
+      "assignedVariantImages": 96,
+      "imagePolicy": "Treat the product hero and each variant featured image as separate assignments. Preserve verified exterior color references, but replace every coil-bearing variant thumbnail with an accurate no-coil image for the same model, grade, and color. Do not detach a variant image until its replacement is ready because quick-order surfaces may fall back to another product image."
+    },
+    "chargingFlex": {
+      "action": "create-as-draft",
+      "draftProducts": 15,
+      "draftVariants": 30,
+      "optionName": "Part source",
+      "options": [
+        "Aftermarket",
+        "OEM Pull"
+      ],
+      "title": "Wireless NFC Charging Flex With Flashlight Flex Cable"
+    }
+  }
+}

@@ -1,0 +1,1475 @@
+{
+  "createdAt": "2026-08-14T12:26:48.137Z",
+  "status": "awaiting-owner-approval",
+  "purpose": "Local model-name overlay review using exact-model real product photography and a measured shared label system",
+  "referencePage": "https://backglasspros.com/products/iphone-17-back-glass-full-assembly-with-coil-a-grade",
+  "placementReference": {
+    "page": "https://backglasspros.com/products/iphone-16-pro-max-half-assembly-no-coil-premium",
+    "image": "design-qa/reference-90-iphone-16-pro-max-black.png",
+    "ownerScore": 90,
+    "role": "minimum acceptable model-label placement baseline"
+  },
+  "style": {
+    "modelNaming": [
+      "16",
+      "16 PLUS",
+      "16 PRO",
+      "16 PRO MAX",
+      "17",
+      "17 PRO",
+      "17 PRO MAX"
+    ],
+    "fontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+    "fontWeight": 700,
+    "fill": "translucent diagonal cyan-to-lavender gradient",
+    "placementRevision": "measured-safe-box-v4",
+    "typography": {
+      "centerX": 530,
+      "mainTop": 900,
+      "mainWidth": 850,
+      "mainMaxHeight": 700,
+      "qualifierTop": 1590,
+      "qualifierWidth": 850,
+      "qualifierMaxHeight": 240
+    },
+    "placement": "Every visible glyph layer is trimmed, proportionally fit to the same exterior-panel safe boxes, and centered at the same x coordinate. Main lines share one top and size cap; qualifiers share one top, width, and height cap. Source compositions are proportionally normalized to the same 2000 x 2500 canvas.",
+    "inwardFaceObscured": false
+  },
+  "rules": {
+    "originalBaselinePreserved": true,
+    "overlayLimitedToModelName": true,
+    "aiGenerated": false,
+    "recolored": false,
+    "productPhotographyRetouched": false,
+    "iphone17UsesVerifiedRealSupplierPhotos": true,
+    "iphone17CanonicalInwardFaceReusedOnlyWithinExactModel": true,
+    "shopifyUploadApproved": false
+  },
+  "counts": {
+    "models": 7,
+    "colors": 29,
+    "gradeTargets": 58,
+    "uniqueOutputs": 29
+  },
+  "qa": {
+    "ownerRejectedPriorScore": 50,
+    "targetBaselineScore": 90,
+    "focusedComparison": "design-qa/reference-before-after-focused-comparison.jpg",
+    "fullSetComparison": "design-qa/reference-versus-full-set-comparison.jpg"
+  },
+  "records": [
+    {
+      "model": "iPhone 16",
+      "color": "Black",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16/iphone-16-black-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "8b9ae45db30ca48ab656295b721c9a69d5941f95659b3cac9b8dbed9e9ed2ff9",
+      "sourceComposite": "source-composites/iphone-16/iphone-16-black-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "af288d22aae28009c6f1f717bbed94d6e4d8f68e423f9f9d68e896e5c7ee8e04",
+      "supplierEvidence": null,
+      "output": "images/iphone-16/iphone-16-black-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "232998cea8ab49bd9f4ce663d012cea1cd79ea2b61767f3aa9a9f9f36bee7d9a",
+      "overlayText": "16",
+      "overlayPlacementRule": "shared measured exterior safe box; main line only",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16",
+      "color": "Pink",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16/iphone-16-pink-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "2f428872c05b768fa2ba250aa9aef80d90f9483fbaf3a05ca7872a4aedb4c6ff",
+      "sourceComposite": "source-composites/iphone-16/iphone-16-pink-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "1938215f9312f93bd7069eef22b6fbe6ea46883c29b27a672de31aed07291348",
+      "supplierEvidence": null,
+      "output": "images/iphone-16/iphone-16-pink-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "cfddc504b3ae76209cf99d5b65ef6fbb15d5c724f8f73820a4a7a8ada757dc55",
+      "overlayText": "16",
+      "overlayPlacementRule": "shared measured exterior safe box; main line only",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16",
+      "color": "Teal",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16/iphone-16-teal-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "5300fd63800834d685037dd2d2534947c86b8976c19ecdf069cf158c87fc2dfe",
+      "sourceComposite": "source-composites/iphone-16/iphone-16-teal-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "a8359f7f90b92eab574ac80013aff6c7a4eb3cf118707c2a6ac56f6815c8b1f6",
+      "supplierEvidence": null,
+      "output": "images/iphone-16/iphone-16-teal-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "676bf8f698ce4f34ba4f8dc157e1a9853507026ab79a3541a363c985e56cf880",
+      "overlayText": "16",
+      "overlayPlacementRule": "shared measured exterior safe box; main line only",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16",
+      "color": "Ultramarine",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16/iphone-16-ultramarine-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "48ca8ccbbec90c019b3a613f387212ae2e59bc2789bbaf66677329fab388756b",
+      "sourceComposite": "source-composites/iphone-16/iphone-16-ultramarine-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "3da4e79e9220a030b57b598f075a6d1ad0b0be8e68434f98a2a8829433b76455",
+      "supplierEvidence": null,
+      "output": "images/iphone-16/iphone-16-ultramarine-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "466f1aeb1e699d02429181d4d1076793e313de358f1893e785565a331ba8f44f",
+      "overlayText": "16",
+      "overlayPlacementRule": "shared measured exterior safe box; main line only",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16",
+      "color": "White",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16/iphone-16-white-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "12f6685567d7a6ac5b8585dc104fa4f8b33a68671c7a484276a0520d31da6198",
+      "sourceComposite": "source-composites/iphone-16/iphone-16-white-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "6af09fd17d73ea1ed6b90feabe6ed5acd48a5cff43ded780f49d4ef5ed8e3761",
+      "supplierEvidence": null,
+      "output": "images/iphone-16/iphone-16-white-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "f861bfd3a0563ff2dfbac768dec15d50b240f9680097d4dd0482882468e5f042",
+      "overlayText": "16",
+      "overlayPlacementRule": "shared measured exterior safe box; main line only",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Plus",
+      "color": "Black",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16-plus/iphone-16-plus-black-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "6b17dc7fe001feef853f0c63fa256e72a5d1b7ca285a1d5a2cb08e378d12121c",
+      "sourceComposite": "source-composites/iphone-16-plus/iphone-16-plus-black-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "59ced5012d1571d2a8303b73174290f97d9a995a8c45692870d72f9869268626",
+      "supplierEvidence": null,
+      "output": "images/iphone-16-plus/iphone-16-plus-black-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "908f5de53374e87a37f3f7f2bb13f626af787256807f687c38c095b27405dfae",
+      "overlayText": "16 PLUS",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        },
+        {
+          "text": "PLUS",
+          "role": "qualifier",
+          "left": 129,
+          "top": 1590,
+          "width": 802,
+          "height": 240
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Plus",
+      "color": "Pink",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16-plus/iphone-16-plus-pink-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "a8fe996a56e0ac7f191493d7d8e72e63809f712a5ef69988ac180d9be026e1e2",
+      "sourceComposite": "source-composites/iphone-16-plus/iphone-16-plus-pink-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "49e4de137c700c15f95131ca063b1b859a2b8efe0774b01b4e89f486dbeb1f8b",
+      "supplierEvidence": null,
+      "output": "images/iphone-16-plus/iphone-16-plus-pink-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "4032bb9e3cb8585512f1d6067d722ad08a29b4d21ebaf653578658ac4fd4d19a",
+      "overlayText": "16 PLUS",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        },
+        {
+          "text": "PLUS",
+          "role": "qualifier",
+          "left": 129,
+          "top": 1590,
+          "width": 802,
+          "height": 240
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Plus",
+      "color": "Teal",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16-plus/iphone-16-plus-teal-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "1ac2ac7a24f3f9701fe876dd56af0fedbe1830276004a332cf2c6aba139a6626",
+      "sourceComposite": "source-composites/iphone-16-plus/iphone-16-plus-teal-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "1f10f2dc13e1a630c8ed62dffebf8e483d3b5943756607c3dcafb69611ccb0b0",
+      "supplierEvidence": null,
+      "output": "images/iphone-16-plus/iphone-16-plus-teal-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "4054ac847b9df74cdea31f84e326585e5e4fba94053044ad72dff3772f5a87bf",
+      "overlayText": "16 PLUS",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        },
+        {
+          "text": "PLUS",
+          "role": "qualifier",
+          "left": 129,
+          "top": 1590,
+          "width": 802,
+          "height": 240
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Plus",
+      "color": "Ultramarine",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16-plus/iphone-16-plus-ultramarine-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "d6788fe343bdd6e64898f0c1be9b5e00060547f191e2b9238a3a348f8f09a764",
+      "sourceComposite": "source-composites/iphone-16-plus/iphone-16-plus-ultramarine-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "89b34f2c95e97bb13184f4947cf4e6fd181cc68b5116ef5654752126172b091f",
+      "supplierEvidence": null,
+      "output": "images/iphone-16-plus/iphone-16-plus-ultramarine-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "7a53642c57164baa7c0ab4e27174f3fe1392cdda59ec840f022927fc47282077",
+      "overlayText": "16 PLUS",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        },
+        {
+          "text": "PLUS",
+          "role": "qualifier",
+          "left": 129,
+          "top": 1590,
+          "width": 802,
+          "height": 240
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Plus",
+      "color": "White",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16-plus/iphone-16-plus-white-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "f2905c2c6ab934e7a323bc17890701e16c2cc7d3fff0571a5e016350e68309dc",
+      "sourceComposite": "source-composites/iphone-16-plus/iphone-16-plus-white-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "880f08c3ea546c7b9fe84fdc336b51da2f6df06f6d0c6e2887aaa3874548674d",
+      "supplierEvidence": null,
+      "output": "images/iphone-16-plus/iphone-16-plus-white-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "e023eefce69e56ccdde3b1896383756ca5907dab07df4f37ee5626307842ae0f",
+      "overlayText": "16 PLUS",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        },
+        {
+          "text": "PLUS",
+          "role": "qualifier",
+          "left": 129,
+          "top": 1590,
+          "width": 802,
+          "height": 240
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro",
+      "color": "Black Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16-pro/iphone-16-pro-black-titanium-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "684f75fecec4885c019c90b3497abd1bac0ca8fd6f988a96163857c563c72f43",
+      "sourceComposite": "source-composites/iphone-16-pro/iphone-16-pro-black-titanium-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "2bf07b0d20d23d5c2210333b5ba55d22a9f80d861eda3e1ee3addfaab460a1f5",
+      "supplierEvidence": null,
+      "output": "images/iphone-16-pro/iphone-16-pro-black-titanium-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "65915ff328533695b2f36861985f19b0e911804d4043d9147aaef8989aeca91b",
+      "overlayText": "16 PRO",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        },
+        {
+          "text": "PRO",
+          "role": "qualifier",
+          "left": 206,
+          "top": 1590,
+          "width": 649,
+          "height": 240
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro",
+      "color": "Desert Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16-pro/iphone-16-pro-desert-titanium-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "c5cf1d183dcccb15d6717b9b96f72092ab1515d141f5937e1d1e03676f22bd44",
+      "sourceComposite": "source-composites/iphone-16-pro/iphone-16-pro-desert-titanium-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "c28e1899a0cf4c87bfa61b9f6d2a7711a1fc4df254b0161705c5c5f85bc632a1",
+      "supplierEvidence": null,
+      "output": "images/iphone-16-pro/iphone-16-pro-desert-titanium-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "fb2cea28ca9211a721644c40683bbfdcb0d61e24b7a8a998bb421840fde2051f",
+      "overlayText": "16 PRO",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        },
+        {
+          "text": "PRO",
+          "role": "qualifier",
+          "left": 206,
+          "top": 1590,
+          "width": 649,
+          "height": 240
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro",
+      "color": "Natural Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16-pro/iphone-16-pro-natural-titanium-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "a1675dfdbbb2179e8c5059b9fd0b5adaff3637e901f86e13b1e94f3d8237ed2b",
+      "sourceComposite": "source-composites/iphone-16-pro/iphone-16-pro-natural-titanium-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "cd30f21b42999f12dc71de550f0e5e52fdcf637f59096fd46a0d901fcc84cea1",
+      "supplierEvidence": null,
+      "output": "images/iphone-16-pro/iphone-16-pro-natural-titanium-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "6cc709dce32e5374e9f00f87e11bd71788fea450b5fe30cddbeb5e7bc38549fa",
+      "overlayText": "16 PRO",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        },
+        {
+          "text": "PRO",
+          "role": "qualifier",
+          "left": 206,
+          "top": 1590,
+          "width": 649,
+          "height": 240
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro",
+      "color": "White Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16-pro/iphone-16-pro-white-titanium-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "2cf248468bdef1bc1df6be70132fcd8721c9fbede53e1aab1ac96537ce98ef59",
+      "sourceComposite": "source-composites/iphone-16-pro/iphone-16-pro-white-titanium-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "c712bff33b78896ff69655b2b4aebce4159d91e43568dc570da40bff65dc2f70",
+      "supplierEvidence": null,
+      "output": "images/iphone-16-pro/iphone-16-pro-white-titanium-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "c226e3f817696648e93cdb2033a24eb28069d867e3de4bbc65a509856d8835a7",
+      "overlayText": "16 PRO",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        },
+        {
+          "text": "PRO",
+          "role": "qualifier",
+          "left": 206,
+          "top": 1590,
+          "width": 649,
+          "height": 240
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro Max",
+      "color": "Black Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16-pro-max/iphone-16-pro-max-black-titanium-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "8aa114ba9247185252733d44db28ac01feb9c463c418017c2ee7580046122f24",
+      "sourceComposite": "source-composites/iphone-16-pro-max/iphone-16-pro-max-black-titanium-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "4cd8ed74454950a550f0c93d4f18161e6bf10b80062d7c59c2296ec4386844ca",
+      "supplierEvidence": null,
+      "output": "images/iphone-16-pro-max/iphone-16-pro-max-black-titanium-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "97359a053f7e54fd7b497375a26dfa9c633e9fdd494fa2d346bb029ec38c0a27",
+      "overlayText": "16 PRO MAX",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        },
+        {
+          "text": "PRO MAX",
+          "role": "qualifier",
+          "left": 105,
+          "top": 1590,
+          "width": 850,
+          "height": 140
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro Max",
+      "color": "Desert Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16-pro-max/iphone-16-pro-max-desert-titanium-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "aaf8ef347545236569ad2364766e3051edcb3e81895ca6b9aa79ea0051fc4dd0",
+      "sourceComposite": "source-composites/iphone-16-pro-max/iphone-16-pro-max-desert-titanium-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "0e7199f1a9a462ddd3e5f736c9b8ea44f30a7bc7cfa42e0a2ccabce8239862a1",
+      "supplierEvidence": null,
+      "output": "images/iphone-16-pro-max/iphone-16-pro-max-desert-titanium-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "22e1c7bb88a5624693e7f7a5b5b43b6b6ed06d124ae1eab78e7177bcb6e07876",
+      "overlayText": "16 PRO MAX",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        },
+        {
+          "text": "PRO MAX",
+          "role": "qualifier",
+          "left": 105,
+          "top": 1590,
+          "width": 850,
+          "height": 140
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro Max",
+      "color": "Natural Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16-pro-max/iphone-16-pro-max-natural-titanium-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "e4736906479fa086d79ea4b5ca12f6a7217f3eecf75acd431c77aaa4da5e1a60",
+      "sourceComposite": "source-composites/iphone-16-pro-max/iphone-16-pro-max-natural-titanium-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "0acfdfadf17ef6f819eb72e1f7140eaf364d1c315be574f68cf858f8502192ca",
+      "supplierEvidence": null,
+      "output": "images/iphone-16-pro-max/iphone-16-pro-max-natural-titanium-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "76e417be0210c758a745035b443261cc67eba4069085785785bc7b1feac09244",
+      "overlayText": "16 PRO MAX",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        },
+        {
+          "text": "PRO MAX",
+          "role": "qualifier",
+          "left": 105,
+          "top": 1590,
+          "width": 850,
+          "height": 140
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro Max",
+      "color": "White Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-16-pro-max/iphone-16-pro-max-white-titanium-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "ad12d8b8ea7a934c3521333c21e3734c7b1de542a38c4f4eecaa5a1825bc5c24",
+      "sourceComposite": "source-composites/iphone-16-pro-max/iphone-16-pro-max-white-titanium-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "a97de7f009b37396ee38993d713e93d2821b1aa7bdb8d41e847151502c2c454e",
+      "supplierEvidence": null,
+      "output": "images/iphone-16-pro-max/iphone-16-pro-max-white-titanium-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "aafc78a6288c89de223c7ad0e03ed21597a501680786e527c3b292f9658987e0",
+      "overlayText": "16 PRO MAX",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "16",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 620
+        },
+        {
+          "text": "PRO MAX",
+          "role": "qualifier",
+          "left": 105,
+          "top": 1590,
+          "width": 850,
+          "height": 140
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17",
+      "color": "Black",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-17/iphone-17-black-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "dc653a60fde77d20ac2b7ea79a1cfde7228143dbb6940289f70c660941bec4a5",
+      "sourceComposite": "source-composites/iphone-17/iphone-17-black-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "06501a524cf0d494fc6fce8a33d3511572457ccad47d75969905dab7ab5bf2be",
+      "supplierEvidence": {
+        "page": "https://zeespares.in/products/back-panel-with-camera-glass-for-apple-iphone-17-black",
+        "image": "https://zeespares.in/cdn/shop/files/back-panel-with-camera-glass-for-apple-iphone-17-black.jpg?v=1777384907",
+        "sourceColor": "Black",
+        "rawExteriorAsset": "source-originals/iphone-17-zeespares/iphone-17-black.jpg",
+        "rawExteriorSha256": "a87307dce6868b9617178c07f5ccd04e1c5770ae16072b3582a431877db37343",
+        "canonicalExactModelInteriorAsset": "source-originals/iphone-17-zeespares/iphone-17-black.jpg",
+        "canonicalExactModelInteriorSha256": "a87307dce6868b9617178c07f5ccd04e1c5770ae16072b3582a431877db37343",
+        "evidence": "Seller page identifies Apple iPhone 17 and the real photo visibly shows the exact-model exterior plus exposed magnets and metallic heat film with no wireless coil/flex."
+      },
+      "output": "images/iphone-17/iphone-17-black-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "22ddcee4c6595ed2acf474ff05c8c65bf6eb6cc1904491455a72387240c2ab86",
+      "overlayText": "17",
+      "overlayPlacementRule": "shared measured exterior safe box on a non-overlapping exact-model source composition",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "17",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 608
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "real-photo crop",
+        "exact-model inward-face reuse across same-model colors",
+        "deterministic scale and white-canvas composition",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": true,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17",
+      "color": "Lavender",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-17/iphone-17-lavender-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "9d668fd44e20270468cfaf8e6a59267a3ccd5acaff65a0e367986da2a0dd48e2",
+      "sourceComposite": "source-composites/iphone-17/iphone-17-lavender-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "1225e3c62334a9202eacfc1dd166be7dce587ea1fd46f945be7e8719c8a82c2c",
+      "supplierEvidence": {
+        "page": "https://zeespares.in/products/back-panel-with-camera-glass-for-apple-iphone-17-lavender",
+        "image": "https://zeespares.in/cdn/shop/files/back-panel-with-camera-glass-for-apple-iphone-17-lavender.jpg?v=1777384924",
+        "sourceColor": "Lavender",
+        "rawExteriorAsset": "source-originals/iphone-17-zeespares/iphone-17-lavender.jpg",
+        "rawExteriorSha256": "06227253568a6ed777348c2f8942d81650b300ed6483571b46d6b2efbf041343",
+        "canonicalExactModelInteriorAsset": "source-originals/iphone-17-zeespares/iphone-17-black.jpg",
+        "canonicalExactModelInteriorSha256": "a87307dce6868b9617178c07f5ccd04e1c5770ae16072b3582a431877db37343",
+        "evidence": "Seller page identifies Apple iPhone 17 and the real photo visibly shows the exact-model exterior plus exposed magnets and metallic heat film with no wireless coil/flex."
+      },
+      "output": "images/iphone-17/iphone-17-lavender-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "e8046af2ae7fad0835236f0028b4dbf4f0742b51bee884410a21a1b17b9c7a73",
+      "overlayText": "17",
+      "overlayPlacementRule": "shared measured exterior safe box on a non-overlapping exact-model source composition",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "17",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 608
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "real-photo crop",
+        "exact-model inward-face reuse across same-model colors",
+        "deterministic scale and white-canvas composition",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": true,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17",
+      "color": "Mist Blue",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-17/iphone-17-mist-blue-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "2a754a2871d4074267bdea33e379faf2627bc592103ad6e92bf2420b757d51a6",
+      "sourceComposite": "source-composites/iphone-17/iphone-17-mist-blue-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "0e5e57d7473ce7c60944edec6bac460536b446a4657e6f301e4807c52a7a14f9",
+      "supplierEvidence": {
+        "page": "https://zeespares.in/products/back-panel-with-camera-glass-for-apple-iphone-17-blue",
+        "image": "https://zeespares.in/cdn/shop/files/back-panel-with-camera-glass-for-apple-iphone-17-blue.jpg?v=1777384915",
+        "sourceColor": "Blue (Apple Mist Blue match)",
+        "rawExteriorAsset": "source-originals/iphone-17-zeespares/iphone-17-blue.jpg",
+        "rawExteriorSha256": "0f27e1b384b6c0d66e3b572daa7458a61ce2ad4054b838aecc1a4400834fccd1",
+        "canonicalExactModelInteriorAsset": "source-originals/iphone-17-zeespares/iphone-17-black.jpg",
+        "canonicalExactModelInteriorSha256": "a87307dce6868b9617178c07f5ccd04e1c5770ae16072b3582a431877db37343",
+        "evidence": "Seller page identifies Apple iPhone 17 and the real photo visibly shows the exact-model exterior plus exposed magnets and metallic heat film with no wireless coil/flex."
+      },
+      "output": "images/iphone-17/iphone-17-mist-blue-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "4d3953f081012996c7d1748e69e5a51e565e936a7bddce16098c2fa89298c5c7",
+      "overlayText": "17",
+      "overlayPlacementRule": "shared measured exterior safe box on a non-overlapping exact-model source composition",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "17",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 608
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "real-photo crop",
+        "exact-model inward-face reuse across same-model colors",
+        "deterministic scale and white-canvas composition",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": true,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17",
+      "color": "Sage",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-17/iphone-17-sage-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "fb2dd4624df5ed5425784855bc33f12595cedc76a58fcd7c2ef95898196e2f8d",
+      "sourceComposite": "source-composites/iphone-17/iphone-17-sage-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "b2f7b3f9da8461c27e0530686f6510448bfa53a837691620c9da421539f2c934",
+      "supplierEvidence": {
+        "page": "https://zeespares.in/products/back-panel-with-camera-glass-for-apple-iphone-17-green",
+        "image": "https://zeespares.in/cdn/shop/files/back-panel-with-camera-glass-for-apple-iphone-17-green.jpg?v=1777384920",
+        "sourceColor": "Green (Apple Sage match)",
+        "rawExteriorAsset": "source-originals/iphone-17-zeespares/iphone-17-green.jpg",
+        "rawExteriorSha256": "0624f7bbd177c794b24365f7992e4c220ad2984d36411f0f12685661060b9096",
+        "canonicalExactModelInteriorAsset": "source-originals/iphone-17-zeespares/iphone-17-black.jpg",
+        "canonicalExactModelInteriorSha256": "a87307dce6868b9617178c07f5ccd04e1c5770ae16072b3582a431877db37343",
+        "evidence": "Seller page identifies Apple iPhone 17 and the real photo visibly shows the exact-model exterior plus exposed magnets and metallic heat film with no wireless coil/flex."
+      },
+      "output": "images/iphone-17/iphone-17-sage-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "2ac29cb6c98942a202f198b0bb488b811d090db896ae0713830091015cb3eab8",
+      "overlayText": "17",
+      "overlayPlacementRule": "shared measured exterior safe box on a non-overlapping exact-model source composition",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "17",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 608
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "real-photo crop",
+        "exact-model inward-face reuse across same-model colors",
+        "deterministic scale and white-canvas composition",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": true,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17",
+      "color": "White",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-17/iphone-17-white-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "d6e109218c4ababc0f67dc80ec5457591cea7550dc0d4c4628e6a667fba5b65f",
+      "sourceComposite": "source-composites/iphone-17/iphone-17-white-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "0d71a294b56938e166b46b4ec5fa40a6ce41217b1ad152cfae938c0e51489f51",
+      "supplierEvidence": {
+        "page": "https://zeespares.in/products/back-panel-with-camera-glass-for-apple-iphone-17-white",
+        "image": "https://zeespares.in/cdn/shop/files/back-panel-with-camera-glass-for-apple-iphone-17-white.jpg?v=1777384910",
+        "sourceColor": "White",
+        "rawExteriorAsset": "source-originals/iphone-17-zeespares/iphone-17-white.jpg",
+        "rawExteriorSha256": "0a4a94e4a471e5b54777ffd472e693cdb8fa6ea0709e4d5cb3febdaa001da1bd",
+        "canonicalExactModelInteriorAsset": "source-originals/iphone-17-zeespares/iphone-17-black.jpg",
+        "canonicalExactModelInteriorSha256": "a87307dce6868b9617178c07f5ccd04e1c5770ae16072b3582a431877db37343",
+        "evidence": "Seller page identifies Apple iPhone 17 and the real photo visibly shows the exact-model exterior plus exposed magnets and metallic heat film with no wireless coil/flex."
+      },
+      "output": "images/iphone-17/iphone-17-white-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "d3ffe3abda02509a014c015394ac687130946809ffdd46a9c781b5bc2027de67",
+      "overlayText": "17",
+      "overlayPlacementRule": "shared measured exterior safe box on a non-overlapping exact-model source composition",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "17",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 608
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "real-photo crop",
+        "exact-model inward-face reuse across same-model colors",
+        "deterministic scale and white-canvas composition",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": true,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17 Pro",
+      "color": "Cosmic Orange",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-17-pro/iphone-17-pro-cosmic-orange-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "fc6c1b2bcb44ff1cedb4f0afe32079c1c7408691a792ac1c4b07ccc44b559bce",
+      "sourceComposite": "source-composites/iphone-17-pro/iphone-17-pro-cosmic-orange-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "0dddabb3d9b02ce669b2a62ca622e31f02d16199ad6b81999ff8ab82758e3232",
+      "supplierEvidence": null,
+      "output": "images/iphone-17-pro/iphone-17-pro-cosmic-orange-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "fa2cb1f3492e62438dae403bf4aae47956798ab2009f51d6e717436801866b9e",
+      "overlayText": "17 PRO",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "17",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 608
+        },
+        {
+          "text": "PRO",
+          "role": "qualifier",
+          "left": 206,
+          "top": 1590,
+          "width": 649,
+          "height": 240
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17 Pro",
+      "color": "Deep Blue",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-17-pro/iphone-17-pro-deep-blue-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "5ba4422acc735e1c2e6f3f659dd13c9424505a68b20d8316944a6d1645b78395",
+      "sourceComposite": "source-composites/iphone-17-pro/iphone-17-pro-deep-blue-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "3aa0d1169dedab3981d3b1bed6423f3dbabb96aaf96f7f564ac97666efa5496e",
+      "supplierEvidence": null,
+      "output": "images/iphone-17-pro/iphone-17-pro-deep-blue-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "05079651198a1e5af0c602d8c18d16f631b39d4564d2b0e025746c8aac0f46d8",
+      "overlayText": "17 PRO",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "17",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 608
+        },
+        {
+          "text": "PRO",
+          "role": "qualifier",
+          "left": 206,
+          "top": 1590,
+          "width": 649,
+          "height": 240
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17 Pro",
+      "color": "Silver",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-17-pro/iphone-17-pro-silver-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "e9f1a816fdcf8a7b6f76d9baa0efb1f6a017966fbc6d195cd4b94b4c47435b12",
+      "sourceComposite": "source-composites/iphone-17-pro/iphone-17-pro-silver-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "a8f52edf902c142294c979a40b106bd029e77717fc7790509b80b1502a7d3060",
+      "supplierEvidence": null,
+      "output": "images/iphone-17-pro/iphone-17-pro-silver-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "c4698ed3e140ec773ba3e7dd143631a1a013aebac82b94f39314e15966ef7e17",
+      "overlayText": "17 PRO",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "17",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 608
+        },
+        {
+          "text": "PRO",
+          "role": "qualifier",
+          "left": 206,
+          "top": 1590,
+          "width": 649,
+          "height": 240
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17 Pro Max",
+      "color": "Cosmic Orange",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-17-pro-max/iphone-17-pro-max-cosmic-orange-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "dec9b908a280890f5cee0409a07ec82840637764fd59dc98275ea421f9279a62",
+      "sourceComposite": "source-composites/iphone-17-pro-max/iphone-17-pro-max-cosmic-orange-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "15ad9176c6f840b1e0c4d21a1bbad4971cf675fce08c84186e50290f684522cb",
+      "supplierEvidence": null,
+      "output": "images/iphone-17-pro-max/iphone-17-pro-max-cosmic-orange-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "01cee855a464ef9addbb403bb410855261c604e420ada84a53aa15cb70026d6f",
+      "overlayText": "17 PRO MAX",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "17",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 608
+        },
+        {
+          "text": "PRO MAX",
+          "role": "qualifier",
+          "left": 105,
+          "top": 1590,
+          "width": 850,
+          "height": 140
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17 Pro Max",
+      "color": "Deep Blue",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-17-pro-max/iphone-17-pro-max-deep-blue-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "27cc70744ebeb0867422c9f61932113acd57f0a7e11f43090685793c5fd93fa2",
+      "sourceComposite": "source-composites/iphone-17-pro-max/iphone-17-pro-max-deep-blue-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "95476f451f2b617c85d291b6df122fb31daaa3e0657409b4a6b22a6e4139883f",
+      "supplierEvidence": null,
+      "output": "images/iphone-17-pro-max/iphone-17-pro-max-deep-blue-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "cb8546c92a9ed1d2b4480e173c799152888b19e35702498ad167c770c57c1f14",
+      "overlayText": "17 PRO MAX",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "17",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 608
+        },
+        {
+          "text": "PRO MAX",
+          "role": "qualifier",
+          "left": 105,
+          "top": 1590,
+          "width": 850,
+          "height": 140
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17 Pro Max",
+      "color": "Silver",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "originalBaselineReviewImage": "../../../../../01-software/backglass-ecommerce/output/model-media-review-2026-08-14/color-grade-replacements-awaiting-approval/replacement-images/iphone-17-pro-max/iphone-17-pro-max-silver-half-assembly-no-coil-review.jpg",
+      "originalBaselineReviewImageSha256": "7ca88339210f103da452bdc10a7c5024076e98c7fdc82ae172ed777c37820f44",
+      "sourceComposite": "source-composites/iphone-17-pro-max/iphone-17-pro-max-silver-half-assembly-no-coil-normalized-source-composite.jpg",
+      "sourceCompositeSha256": "3715c17970343ccc9fa8e22e90b417171aa729c1eec4117b261dbc88683d77df",
+      "supplierEvidence": null,
+      "output": "images/iphone-17-pro-max/iphone-17-pro-max-silver-half-assembly-no-coil-model-name-overlay-review.jpg",
+      "outputSha256": "d3e6daae4d667643cd83514b9cff0cb5249c31d877550764b4cbf389260ba242",
+      "overlayText": "17 PRO MAX",
+      "overlayPlacementRule": "shared measured exterior safe boxes; main plus qualifier",
+      "overlayVisibleGlyphBoxes": [
+        {
+          "text": "17",
+          "role": "main",
+          "left": 105,
+          "top": 900,
+          "width": 850,
+          "height": 608
+        },
+        {
+          "text": "PRO MAX",
+          "role": "qualifier",
+          "left": 105,
+          "top": 1590,
+          "width": 850,
+          "height": 140
+        }
+      ],
+      "overlayFontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+      "overlayFontWeight": 700,
+      "overlayFill": "cyan-to-lavender diagonal gradient",
+      "overlayOpacity": 0.82,
+      "transformations": [
+        "white-canvas trim and proportional scale normalization",
+        "measured vector text overlay",
+        "JPEG export"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "productPhotographyRetouched": false,
+      "productPhotographyRecomposed": false,
+      "shopifyUploaded": false
+    }
+  ],
+  "withheld": [
+    {
+      "model": "iPhone Air",
+      "colors": [
+        "Cloud White",
+        "Light Gold",
+        "Sky Blue",
+        "Space Black"
+      ],
+      "grades": [
+        "A Grade",
+        "Premium"
+      ],
+      "reason": "No accessible exact-model supplier photograph yet shows the required magnet-only inward face with metallic heat film and no wireless/NFC/flashlight flex assembly."
+    }
+  ],
+  "shopifyMutated": false
+}

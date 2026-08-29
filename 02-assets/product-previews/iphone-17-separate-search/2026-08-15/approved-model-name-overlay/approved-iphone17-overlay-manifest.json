@@ -1,0 +1,199 @@
+{
+  "createdAt": "2026-08-14T18:26:00.561Z",
+  "status": "owner-approved-published-and-verified",
+  "ownerApprovalDate": "2026-08-15",
+  "model": "iPhone 17",
+  "purpose": "Owner-approved iPhone 17 exact-model images with the established model-name typography",
+  "sourceManifest": "/Users/jason/Desktop/Michael's back glass business/02-assets/product-previews/iphone-17-separate-search/2026-08-14/awaiting-approval/iphone-17-source-evidence-manifest.json",
+  "placementReference": {
+    "page": "https://backglasspros.com/products/iphone-16-pro-max-half-assembly-no-coil-premium",
+    "ownerScore": 90,
+    "localImage": "/Users/jason/Desktop/Michael's back glass business/02-assets/product-previews/iphone-16-and-17-model-specific-half-assembly-no-coil/2026-08-14/model-name-overlay-awaiting-approval/design-qa/reference-90-iphone-16-pro-max-black.png"
+  },
+  "style": {
+    "text": "17",
+    "fontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+    "fontWeight": 700,
+    "fill": "translucent diagonal cyan-to-lavender gradient",
+    "opacity": 0.82,
+    "typography": {
+      "centerX": 530,
+      "mainTop": 900,
+      "mainWidth": 850,
+      "mainMaxHeight": 700
+    },
+    "visibleGlyphBox": {
+      "left": 105,
+      "top": 900,
+      "width": 850,
+      "height": 608
+    }
+  },
+  "rules": {
+    "ownerApprovedBaseline": true,
+    "exactModelOnly": true,
+    "sameInwardFaceMayBeReusedOnlyAcrossIphone17Colors": true,
+    "crossModelReuse": false,
+    "aiGenerated": false,
+    "recolored": false,
+    "productPhotographyRetouched": false,
+    "modelTextApplied": true,
+    "shopifyUploaded": true
+  },
+  "counts": {
+    "colors": 5,
+    "uniqueSourceHashes": 5,
+    "uniqueOutputHashes": 5
+  },
+  "records": [
+    {
+      "model": "iPhone 17",
+      "color": "Black",
+      "sourcePageUrl": "https://www.phonelcdparts.com/apple/iphone-parts/iphone-17/back-glass-with-frame-and-magsafe-magnet-for-iphone-17-no-logo-black-17-bhbc-blk",
+      "sourceImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-blk-1.jpg",
+      "sourceAsset": "../../2026-08-14/awaiting-approval/source-originals/phonelcdparts-magnet-only/17-bhbc-blk-1.jpg",
+      "sourceSha256": "f851ea8631e1bf77c4cc1ae1a6213fa473e3a728e5aec9a29f040859f4ad0b15",
+      "output": "images/iphone-17-black-model-name-overlay-approved.jpg",
+      "outputSha256": "af3d0deef84eb519120d0b560eb3506e6f28950a539c4d239bc8aa8329f0da7d",
+      "width": 2000,
+      "height": 2500,
+      "overlayText": "17",
+      "overlayVisibleGlyphBox": {
+        "left": 105,
+        "top": 900,
+        "width": 850,
+        "height": 608
+      },
+      "transformations": [
+        "proportional fit to a 2000 x 2500 white canvas",
+        "measured vector model-name text overlay",
+        "JPEG export"
+      ],
+      "exactModelRealPhoto": true,
+      "aiGenerated": false,
+      "recolored": false,
+      "inwardFaceReusedAcrossModels": false,
+      "shopifyUploaded": true
+    },
+    {
+      "model": "iPhone 17",
+      "color": "White",
+      "sourcePageUrl": "https://www.phonelcdparts.com/back-glass-with-frame-and-magsafe-magnet-for-iphone-17-no-logo-white-17-bhbc-wht",
+      "sourceImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-wht-1.jpg",
+      "sourceAsset": "../../2026-08-14/awaiting-approval/source-originals/phonelcdparts-magnet-only/17-bhbc-wht-1.jpg",
+      "sourceSha256": "7de404eed4e8eeade1a1c93d62d0faa98a2ace020e3650befdb5566dd25f6936",
+      "output": "images/iphone-17-white-model-name-overlay-approved.jpg",
+      "outputSha256": "ebe40ae7c5d8329ac2b70d4b4e8034e03e1e2d80e89e4e730f78de199890e170",
+      "width": 2000,
+      "height": 2500,
+      "overlayText": "17",
+      "overlayVisibleGlyphBox": {
+        "left": 105,
+        "top": 900,
+        "width": 850,
+        "height": 608
+      },
+      "transformations": [
+        "proportional fit to a 2000 x 2500 white canvas",
+        "measured vector model-name text overlay",
+        "JPEG export"
+      ],
+      "exactModelRealPhoto": true,
+      "aiGenerated": false,
+      "recolored": false,
+      "inwardFaceReusedAcrossModels": false,
+      "shopifyUploaded": true
+    },
+    {
+      "model": "iPhone 17",
+      "color": "Mist Blue",
+      "sourcePageUrl": "https://www.phonelcdparts.com/back-glass-with-frame-and-magsafe-magnet-for-iphone-17-no-logo-mist-blue-17-bhbc-mblu",
+      "sourceImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-mblu-1.jpg",
+      "sourceAsset": "../../2026-08-14/awaiting-approval/source-originals/phonelcdparts-magnet-only/17-bhbc-mblu-1.jpg",
+      "sourceSha256": "54d2fb9ebc6f5cbe7cbde335bb8264814705be8f988561494c536f09107e7b90",
+      "output": "images/iphone-17-mist-blue-model-name-overlay-approved.jpg",
+      "outputSha256": "0c32e1443d1ab11385dae79d8b2a1735f89193779859b74bfa9b29aa27a4c1a5",
+      "width": 2000,
+      "height": 2500,
+      "overlayText": "17",
+      "overlayVisibleGlyphBox": {
+        "left": 105,
+        "top": 900,
+        "width": 850,
+        "height": 608
+      },
+      "transformations": [
+        "proportional fit to a 2000 x 2500 white canvas",
+        "measured vector model-name text overlay",
+        "JPEG export"
+      ],
+      "exactModelRealPhoto": true,
+      "aiGenerated": false,
+      "recolored": false,
+      "inwardFaceReusedAcrossModels": false,
+      "shopifyUploaded": true
+    },
+    {
+      "model": "iPhone 17",
+      "color": "Sage",
+      "sourcePageUrl": "https://www.phonelcdparts.com/back-glass-with-frame-and-magsafe-magnet-for-iphone-17-no-logo-sage-17-bhbc-grn",
+      "sourceImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-grn-1.jpg",
+      "sourceAsset": "../../2026-08-14/awaiting-approval/source-originals/phonelcdparts-magnet-only/17-bhbc-grn-1.jpg",
+      "sourceSha256": "2898e43eddba7ec5225daa74348c014283986c230b40007ed4d9846996ca0277",
+      "output": "images/iphone-17-sage-model-name-overlay-approved.jpg",
+      "outputSha256": "f7a5f329ba63d3a82c0b39205eb9ed7c6720f0bcd84e6b4864eb5320f8fc1e21",
+      "width": 2000,
+      "height": 2500,
+      "overlayText": "17",
+      "overlayVisibleGlyphBox": {
+        "left": 105,
+        "top": 900,
+        "width": 850,
+        "height": 608
+      },
+      "transformations": [
+        "proportional fit to a 2000 x 2500 white canvas",
+        "measured vector model-name text overlay",
+        "JPEG export"
+      ],
+      "exactModelRealPhoto": true,
+      "aiGenerated": false,
+      "recolored": false,
+      "inwardFaceReusedAcrossModels": false,
+      "shopifyUploaded": true
+    },
+    {
+      "model": "iPhone 17",
+      "color": "Lavender",
+      "sourcePageUrl": "https://www.phonelcdparts.com/back-glass-with-frame-and-magsafe-magnet-for-iphone-17-no-logo-lavender-17-bhbc-lvd",
+      "sourceImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-lvd-1.jpg",
+      "sourceAsset": "../../2026-08-14/awaiting-approval/source-originals/phonelcdparts-magnet-only/17-bhbc-lvd-1.jpg",
+      "sourceSha256": "433f55482d894bf09af5980a189029feae9eb5152bbdf5f97775d650c4cabaf7",
+      "output": "images/iphone-17-lavender-model-name-overlay-approved.jpg",
+      "outputSha256": "38a6418de17ae3f857c9ebdf743ade43e747a984624c651d777b7ae5fd2dc685",
+      "width": 2000,
+      "height": 2500,
+      "overlayText": "17",
+      "overlayVisibleGlyphBox": {
+        "left": 105,
+        "top": 900,
+        "width": 850,
+        "height": 608
+      },
+      "transformations": [
+        "proportional fit to a 2000 x 2500 white canvas",
+        "measured vector model-name text overlay",
+        "JPEG export"
+      ],
+      "exactModelRealPhoto": true,
+      "aiGenerated": false,
+      "recolored": false,
+      "inwardFaceReusedAcrossModels": false,
+      "shopifyUploaded": true
+    }
+  ],
+  "reviewArtifacts": {
+    "contactSheet": "iphone-17-approved-model-name-overlay-contact-sheet.jpg",
+    "referenceComparison": "design-qa/reference-90-versus-approved-iphone-17-overlay.jpg"
+  }
+}

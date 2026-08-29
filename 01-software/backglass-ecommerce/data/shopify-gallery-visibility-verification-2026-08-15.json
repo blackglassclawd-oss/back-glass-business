@@ -1,0 +1,173 @@
+{
+  "appliedAt": "2026-08-14T18:48:48.788Z",
+  "backupDirectory": "/Users/jason/Desktop/Michael's back glass business/01-software/backglass-ecommerce/data/backups/shopify-before-reveal-all-color-gallery-media-2026-08-14T18-48-47.433Z",
+  "publishedTheme": {
+    "id": 138799317164,
+    "name": "Trade",
+    "created_at": "2024-11-22T01:27:55-06:00",
+    "updated_at": "2026-08-14T13:43:40-05:00",
+    "role": "main",
+    "theme_store_id": 2699,
+    "previewable": true,
+    "processing": false,
+    "admin_graphql_api_id": "gid://shopify/Theme/138799317164"
+  },
+  "beforeSetting": {
+    "hideVariants": false,
+    "sectionId": "main"
+  },
+  "verifiedSetting": {
+    "hideVariants": false,
+    "sectionId": "main"
+  },
+  "beforeSha256": "cfb6a1e1b49ae0fa37fe2ae79e8edf2ec208fceff310906aa637b7553597b97d",
+  "afterSha256": "cfb6a1e1b49ae0fa37fe2ae79e8edf2ec208fceff310906aa637b7553597b97d",
+  "changed": false,
+  "productsVerified": 16,
+  "storefrontVerification": [
+    {
+      "expectedMedia": 5,
+      "handle": "iphone-16-half-assembly-no-coil-a-grade",
+      "mainGalleryItems": 5,
+      "mainGalleryUniqueMediaIds": 5,
+      "modalItems": 5,
+      "passed": true,
+      "sliderTotal": "5"
+    },
+    {
+      "expectedMedia": 5,
+      "handle": "iphone-16-half-assembly-no-coil-premium",
+      "mainGalleryItems": 5,
+      "mainGalleryUniqueMediaIds": 5,
+      "modalItems": 5,
+      "passed": true,
+      "sliderTotal": "5"
+    },
+    {
+      "expectedMedia": 5,
+      "handle": "iphone-16-plus-half-assembly-no-coil-a-grade",
+      "mainGalleryItems": 5,
+      "mainGalleryUniqueMediaIds": 5,
+      "modalItems": 5,
+      "passed": true,
+      "sliderTotal": "5"
+    },
+    {
+      "expectedMedia": 5,
+      "handle": "iphone-16-plus-half-assembly-no-coil-premium",
+      "mainGalleryItems": 5,
+      "mainGalleryUniqueMediaIds": 5,
+      "modalItems": 5,
+      "passed": true,
+      "sliderTotal": "5"
+    },
+    {
+      "expectedMedia": 4,
+      "handle": "iphone-16-pro-half-assembly-no-coil-a-grade",
+      "mainGalleryItems": 4,
+      "mainGalleryUniqueMediaIds": 4,
+      "modalItems": 4,
+      "passed": true,
+      "sliderTotal": "4"
+    },
+    {
+      "expectedMedia": 4,
+      "handle": "iphone-16-pro-half-assembly-no-coil-premium",
+      "mainGalleryItems": 4,
+      "mainGalleryUniqueMediaIds": 4,
+      "modalItems": 4,
+      "passed": true,
+      "sliderTotal": "4"
+    },
+    {
+      "expectedMedia": 4,
+      "handle": "iphone-16-pro-max-half-assembly-no-coil-a-grade",
+      "mainGalleryItems": 4,
+      "mainGalleryUniqueMediaIds": 4,
+      "modalItems": 4,
+      "passed": true,
+      "sliderTotal": "4"
+    },
+    {
+      "expectedMedia": 4,
+      "handle": "iphone-16-pro-max-half-assembly-no-coil-premium",
+      "mainGalleryItems": 4,
+      "mainGalleryUniqueMediaIds": 4,
+      "modalItems": 4,
+      "passed": true,
+      "sliderTotal": "4"
+    },
+    {
+      "expectedMedia": 5,
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-a-grade",
+      "mainGalleryItems": 5,
+      "mainGalleryUniqueMediaIds": 5,
+      "modalItems": 5,
+      "passed": true,
+      "sliderTotal": "5"
+    },
+    {
+      "expectedMedia": 5,
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-premium",
+      "mainGalleryItems": 5,
+      "mainGalleryUniqueMediaIds": 5,
+      "modalItems": 5,
+      "passed": true,
+      "sliderTotal": "5"
+    },
+    {
+      "expectedMedia": 3,
+      "handle": "iphone-17-pro-back-glass-full-assembly-with-coil-a-grade",
+      "mainGalleryItems": 3,
+      "mainGalleryUniqueMediaIds": 3,
+      "modalItems": 3,
+      "passed": true,
+      "sliderTotal": "3"
+    },
+    {
+      "expectedMedia": 3,
+      "handle": "iphone-17-pro-back-glass-full-assembly-with-coil-premium",
+      "mainGalleryItems": 3,
+      "mainGalleryUniqueMediaIds": 3,
+      "modalItems": 3,
+      "passed": true,
+      "sliderTotal": "3"
+    },
+    {
+      "expectedMedia": 3,
+      "handle": "iphone-17-pro-max-back-glass-full-assembly-with-coil-a-grade",
+      "mainGalleryItems": 3,
+      "mainGalleryUniqueMediaIds": 3,
+      "modalItems": 3,
+      "passed": true,
+      "sliderTotal": "3"
+    },
+    {
+      "expectedMedia": 3,
+      "handle": "iphone-17-pro-max-back-glass-full-assembly-with-coil-premium",
+      "mainGalleryItems": 3,
+      "mainGalleryUniqueMediaIds": 3,
+      "modalItems": 3,
+      "passed": true,
+      "sliderTotal": "3"
+    },
+    {
+      "expectedMedia": 4,
+      "handle": "iphone-air-back-glass-full-assembly-with-coil-a-grade",
+      "mainGalleryItems": 4,
+      "mainGalleryUniqueMediaIds": 4,
+      "modalItems": 4,
+      "passed": true,
+      "sliderTotal": "4"
+    },
+    {
+      "expectedMedia": 4,
+      "handle": "iphone-air-back-glass-full-assembly-with-coil-premium",
+      "mainGalleryItems": 4,
+      "mainGalleryUniqueMediaIds": 4,
+      "modalItems": 4,
+      "passed": true,
+      "sliderTotal": "4"
+    }
+  ]
+}

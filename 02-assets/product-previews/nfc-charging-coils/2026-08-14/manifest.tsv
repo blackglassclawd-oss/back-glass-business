@@ -1,0 +1,17 @@
+model	asset	status	source_mapping
+iPhone 14	images/iphone-14-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone 14 Plus	images/iphone-14-plus-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone 15	images/iphone-15-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone 15 Plus	images/iphone-15-plus-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone 15 Pro	images/iphone-15-pro-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone 15 Pro Max	images/iphone-15-pro-max-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone 16	images/iphone-16-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone 16 Plus	images/iphone-16-plus-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone 16 Pro	images/iphone-16-pro-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone 16 Pro Max	images/iphone-16-pro-max-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone 17	images/iphone-17-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone Air	images/iphone-air-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone 17 Pro	images/iphone-17-pro-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone 17 Pro Max	images/iphone-17-pro-max-wireless-nfc-charging-flex.png	READY_REVIEW	Michael sheet / MobileSentrix
+iPhone 16e		BLOCKED_NO_APPROVED_SOURCE	Michael sheet has no supplier link
+iPhone 17e		BLOCKED_NO_PRODUCT_IMAGE	Linked supplier page lacks model-specific image

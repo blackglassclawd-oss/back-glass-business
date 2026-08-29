@@ -1,0 +1,81 @@
+{
+  "screenedAt": "2026-08-15",
+  "status": "BLOCKED_NO_COMPLIANT_EXACT_MODEL_SOURCE",
+  "approvedVisualRule": {
+    "exactModelOnly": true,
+    "requiredExterior": "Real iPhone 17e product photo in Black, White, or Soft Pink.",
+    "requiredInwardFace": "Real iPhone 17e inward-facing product photo with the magnet array exposed and metallic heat-dissipating film visible inside the circle.",
+    "mustNotContain": [
+      "wireless charging coil",
+      "NFC flex",
+      "flashlight flex",
+      "cross-model inward-side substitute",
+      "AI generation",
+      "recoloring",
+      "synthetic object removal or reconstruction"
+    ],
+    "sameInwardFaceReuse": "Allowed only among iPhone 17e color variants after the inward face is verified as exact iPhone 17e."
+  },
+  "approvedReferences": [
+    {
+      "role": "owner 90/100 baseline",
+      "path": "/Users/jason/Desktop/Michael's back glass business/02-assets/product-previews/iphone-16-and-17-model-specific-half-assembly-no-coil/2026-08-14/model-name-overlay-awaiting-approval/design-qa/reference-90-iphone-16-pro-max-black.png"
+    },
+    {
+      "role": "approved standard-model implementation",
+      "path": "/Users/jason/Desktop/Michael's back glass business/02-assets/product-previews/iphone-16-and-17-model-specific-half-assembly-no-coil/2026-08-14/model-name-overlay-awaiting-approval/images/iphone-17/iphone-17-black-half-assembly-no-coil-model-name-overlay-review.jpg"
+    }
+  ],
+  "screenedSources": [
+    {
+      "source": "MobileSentrix exact iPhone 17e Genuine OEM back glass - Black, White, Pink",
+      "url": "https://www.mobilesentrix.com/replacement-parts/apple/iphone-parts/iphone-17e",
+      "result": "REJECTED",
+      "reason": "The product photography shows the wireless charging/NFC coil and flex installed, covering the required exposed magnet and metallic-film area."
+    },
+    {
+      "source": "MobileSentrix exact iPhone 17e used OEM pull listing",
+      "url": "https://www.mobilesentrix.com/replacement-parts/apple/iphone-parts/iphone-17e",
+      "result": "REJECTED",
+      "reason": "The listing is explicitly MagSafe magnet plus NFC, so it does not establish a no-coil inward face."
+    },
+    {
+      "source": "Georgia Phone Case D81526 dual-compatible iPhone 16e/17e back glass",
+      "url": "https://www.georgiaphonecase.com/iphone-17e-back-glass/d81526-black-back-glass-with-steel-plate-with-magnet-pre-installed-compatible-for-iphone-16e-6-1-georgia-phone-case/",
+      "result": "REJECTED",
+      "reason": "Shared 16e/17e listing, only 500 x 500, Black only, and the inward photo does not visibly expose the approved magnet-ring and metallic-film treatment."
+    },
+    {
+      "source": "iFixit iPhone 17e teardown",
+      "url": "https://www.ifixit.com/News/116245/iphone-17e-teardown-reveals-an-upgrade-16e-owners-can-actually-use",
+      "result": "EVIDENCE_ONLY_REJECTED_FOR_PRODUCT_MEDIA",
+      "reason": "Exact-model teardown evidence confirms the 17e back-panel geometry but available photos show the coil/flex assembly or teardown context, not a clean no-coil product photograph."
+    },
+    {
+      "source": "PhoneLCDParts and MobileSentrix iPhone 16e magnet-only back glass",
+      "url": "https://www.mobilesentrix.com/replacement-parts/apple/iphone-parts/iphone-16-e",
+      "result": "REJECTED",
+      "reason": "Wrong model label. Cross-model reuse is prohibited even where physical interchangeability is reported."
+    },
+    {
+      "source": "MacFactory iPhone 17e collection",
+      "url": "https://www.macfactory.in/collections/iphone-17e",
+      "result": "NO_MATCH",
+      "reason": "No exact iPhone 17e magnet-only/no-coil back-glass product was present in the collection feed."
+    },
+    {
+      "source": "REWA iPhone 17e replacement-parts catalog",
+      "url": "https://shop.rewa.tech/list/apple-replacement-parts/?tagIds=7&type=2",
+      "result": "NO_MATCH",
+      "reason": "No exact iPhone 17e no-coil back-glass product was returned by the catalog search."
+    },
+    {
+      "source": "Injured Gadgets and GadgetFix iPhone 17e catalogs",
+      "url": "https://www.injuredgadgets.com/apple/",
+      "result": "NO_MATCH",
+      "reason": "The current 17e catalog results expose displays and small parts, not a compliant no-coil back-glass photograph."
+    }
+  ],
+  "activeCandidateCount": 0,
+  "shopifyUploaded": false
+}

@@ -1,0 +1,116 @@
+{
+  "capturedAt": "2026-08-03",
+  "executionOrder": "shopify-first",
+  "cloudflareBlockedUntilShopifyApproval": true,
+  "sources": [
+    "/Users/jason/Downloads/web site/13ProMax.png",
+    "/Users/jason/Downloads/web site/14Plus.png",
+    "/Users/jason/Downloads/web site/15ProMax.png",
+    "/Users/jason/Downloads/web site/16Pro.png",
+    "/Users/jason/Downloads/web site/16ProMax.png",
+    "/Users/jason/Downloads/web site/iphone15.png",
+    "/Users/jason/Downloads/web site/Premium.png",
+    "/Users/jason/Downloads/web site/XsMax.png"
+  ],
+  "metadataUpdates": [
+    {
+      "action": "variantTitleUpdate",
+      "productHandle": "iphone-13-pro-max-large-hole-back-glass-premium",
+      "sku": "SKU-I13PROMAX-PREMIUM-GREEN",
+      "from": "Alpine Greeen",
+      "to": "Alpine Green"
+    },
+    {
+      "action": "productHandleUpdate",
+      "productId": 8112326246572,
+      "from": "iphone-16-pro-max-back-glass-half-assembly-no-coil-a-grade-copy",
+      "to": "iphone-16-pro-max-half-assembly-no-coil-premium",
+      "createRedirect": true,
+      "reason": "Premium product currently inherits an A Grade badge from its copied handle."
+    }
+  ],
+  "statusUpdates": [
+    {
+      "action": "moveMatchingProductsToDraft",
+      "match": "title contains Full Assembly",
+      "products": 28,
+      "delete": false
+    },
+    {
+      "action": "productStatusUpdate",
+      "productId": 8100269785260,
+      "productHandle": "iphone-xs-max-large-hole-back-glass-a-grade",
+      "targetStatus": "DRAFT",
+      "delete": false,
+      "reason": "XS Max is offered as one glass type and has no A Grade line."
+    }
+  ],
+  "mediaCorrections": [
+    {
+      "productHandle": "iphone-14-plus-half-assembly-no-coil-premium",
+      "scope": "hero plus Blue, Purple, and Starlight variant thumbnails",
+      "skus": [
+        "SKU-I14-PLUS-PREMIUM-BLUE-HA",
+        "SKU-I14-PLUS-PREMIUM-PURPLE-HA",
+        "SKU-I14-PLUS-PREMIUM-STARLIGHT-HA"
+      ],
+      "instruction": "Add or show the annotated heat-dissipation film in verified color-matched half-assembly photography. It is not an NFC charging coil. Leave the unmarked Midnight variant unchanged."
+    },
+    {
+      "productHandle": "iphone-15-pro-max-half-assembly-no-coil-premium",
+      "scope": "hero plus Titanium Natural, Titanium Black, and Titanium Blue variant thumbnails",
+      "skus": [
+        "SKU-I15-PRO-MAX-PREMIUM-NATURAL-HA",
+        "SKU-I15-PRO-MAX-PREMIUM-BLACK-HA",
+        "SKU-I15-PRO-MAX-PREMIUM-BLUE-HA"
+      ],
+      "instruction": "Use iPhone 15 Pro Max imagery rather than an image labeled 15 PRO, and change the highlighted heat-dissipation film from gold or beige to silver. Leave the unmarked Titanium White variant unchanged."
+    },
+    {
+      "productHandle": "iphone-15-half-assembly-no-coil-premium",
+      "scope": "hero plus Blue, Green, and Pink variant thumbnails",
+      "skus": [
+        "SKU-I15-PREMIUM-BLUE-HA",
+        "SKU-I15-PREMIUM-GREEN-HA",
+        "SKU-I15-PREMIUM-PINK-HA"
+      ],
+      "instruction": "Show the annotated silver graphene heat-dissipation film while preserving each exterior color. Leave unmarked variants unchanged."
+    },
+    {
+      "productHandle": "iphone-16-pro-half-assembly-no-coil-premium",
+      "scope": "hero plus Desert Titanium, Natural Titanium, and White Titanium variant thumbnails",
+      "skus": [
+        "SKU-I16-PRO-PREMIUM-DESERT-HA",
+        "SKU-I16-PRO-PREMIUM-NATURAL-HA",
+        "SKU-I16-PRO-PREMIUM-WHITE-HA"
+      ],
+      "instruction": "Replace the highlighted interior imagery with verified color-matched half-assembly photography. Leave the unmarked Black Titanium variant unchanged."
+    },
+    {
+      "productHandle": "iphone-16-pro-max-half-assembly-no-coil-premium",
+      "currentHandle": "iphone-16-pro-max-back-glass-half-assembly-no-coil-a-grade-copy",
+      "scope": "hero plus Desert Titanium, Natural Titanium, and White Titanium variant thumbnails",
+      "skus": [
+        "SKU-I16-PRO-MAX-PREMIUM-DESERT-HA",
+        "SKU-I16-PRO-MAX-PREMIUM-NATURAL-HA",
+        "SKU-I16-PRO-MAX-PREMIUM-WHITE-HA"
+      ],
+      "instruction": "Replace the highlighted interior imagery with verified color-matched half-assembly photography and display a Premium badge. Leave the unmarked Black Titanium variant unchanged."
+    }
+  ],
+  "mediaGuardrails": {
+    "generatedProductImagery": false,
+    "exteriorOnlyCropsApproved": false,
+    "preserveColorSpecificAssignments": true,
+    "requireVerifiedHalfAssemblySources": true
+  },
+  "catalogCreates": {
+    "chargingFlexDraftProducts": 15,
+    "chargingFlexDraftVariants": 30,
+    "publish": false
+  },
+  "writeState": {
+    "shopifyWritesPerformed": false,
+    "cloudflareChangesPerformedAfterThisInstruction": false
+  }
+}

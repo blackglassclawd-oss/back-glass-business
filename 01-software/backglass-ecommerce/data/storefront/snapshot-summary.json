@@ -1,0 +1,13 @@
+{
+  "capturedAt": "2026-07-26T06:27:05.596Z",
+  "counts": {
+    "assetsDiscovered": 682,
+    "assetsDownloaded": 682,
+    "assetFailures": 0,
+    "products": 66,
+    "routes": 83,
+    "routeFailures": 0,
+    "variants": 312
+  },
+  "source": "https://kfczyu-kc.myshopify.com"
+}

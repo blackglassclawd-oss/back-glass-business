@@ -1,0 +1,253 @@
+{
+  "appliedAt": "2026-08-14T18:31:32.633Z",
+  "backupDirectory": "/Users/jason/Desktop/Michael's back glass business/01-software/backglass-ecommerce/data/backups/shopify-before-approved-iphone17-overlays-2026-08-14T18-31-10.074Z",
+  "productsUpdated": 2,
+  "uniqueSharedMediaUpdated": 5,
+  "variantAssignmentsVerified": 10,
+  "applied": [
+    {
+      "color": "Black",
+      "graphqlMediaId": "gid://shopify/MediaImage/34112678985900",
+      "requestImageId": 43463100530860,
+      "responseImageId": 43463100530860
+    },
+    {
+      "color": "White",
+      "graphqlMediaId": "gid://shopify/MediaImage/34112722075820",
+      "requestImageId": 43463157809324,
+      "responseImageId": 43463157809324
+    },
+    {
+      "color": "Mist Blue",
+      "graphqlMediaId": "gid://shopify/MediaImage/34112722174124",
+      "requestImageId": 43463158366380,
+      "responseImageId": 43463158366380
+    },
+    {
+      "color": "Lavender",
+      "graphqlMediaId": "gid://shopify/MediaImage/34112722010284",
+      "requestImageId": 43463157776556,
+      "responseImageId": 43463157776556
+    },
+    {
+      "color": "Sage",
+      "graphqlMediaId": "gid://shopify/MediaImage/34112721879212",
+      "requestImageId": 43463157678252,
+      "responseImageId": 43463157678252
+    }
+  ],
+  "adminVerification": [
+    {
+      "assignedMediaIds": [
+        "gid://shopify/MediaImage/34112678985900"
+      ],
+      "color": "Black",
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-a-grade",
+      "height": 2500,
+      "passed": true,
+      "status": "READY",
+      "width": 2000
+    },
+    {
+      "assignedMediaIds": [
+        "gid://shopify/MediaImage/34112722075820"
+      ],
+      "color": "White",
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-a-grade",
+      "height": 2500,
+      "passed": true,
+      "status": "READY",
+      "width": 2000
+    },
+    {
+      "assignedMediaIds": [
+        "gid://shopify/MediaImage/34112722174124"
+      ],
+      "color": "Mist Blue",
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-a-grade",
+      "height": 2500,
+      "passed": true,
+      "status": "READY",
+      "width": 2000
+    },
+    {
+      "assignedMediaIds": [
+        "gid://shopify/MediaImage/34112722010284"
+      ],
+      "color": "Lavender",
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-a-grade",
+      "height": 2500,
+      "passed": true,
+      "status": "READY",
+      "width": 2000
+    },
+    {
+      "assignedMediaIds": [
+        "gid://shopify/MediaImage/34112721879212"
+      ],
+      "color": "Sage",
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-a-grade",
+      "height": 2500,
+      "passed": true,
+      "status": "READY",
+      "width": 2000
+    },
+    {
+      "assignedMediaIds": [
+        "gid://shopify/MediaImage/34112678985900"
+      ],
+      "color": "Black",
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-premium",
+      "height": 2500,
+      "passed": true,
+      "status": "READY",
+      "width": 2000
+    },
+    {
+      "assignedMediaIds": [
+        "gid://shopify/MediaImage/34112722075820"
+      ],
+      "color": "White",
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-premium",
+      "height": 2500,
+      "passed": true,
+      "status": "READY",
+      "width": 2000
+    },
+    {
+      "assignedMediaIds": [
+        "gid://shopify/MediaImage/34112722174124"
+      ],
+      "color": "Mist Blue",
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-premium",
+      "height": 2500,
+      "passed": true,
+      "status": "READY",
+      "width": 2000
+    },
+    {
+      "assignedMediaIds": [
+        "gid://shopify/MediaImage/34112722010284"
+      ],
+      "color": "Lavender",
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-premium",
+      "height": 2500,
+      "passed": true,
+      "status": "READY",
+      "width": 2000
+    },
+    {
+      "assignedMediaIds": [
+        "gid://shopify/MediaImage/34112721879212"
+      ],
+      "color": "Sage",
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-premium",
+      "height": 2500,
+      "passed": true,
+      "status": "READY",
+      "width": 2000
+    }
+  ],
+  "storefrontVerification": [
+    {
+      "alt": "BGP owner-approved iPhone 17 model-label v5 2026-08-15 | Black",
+      "color": "Black",
+      "dHashDistance": 6,
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-a-grade",
+      "height": 2500,
+      "passed": true,
+      "src": "https://cdn.shopify.com/s/files/1/0666/3644/7916/files/iphone-17-black-fa.jpg?v=1786732116",
+      "width": 2000
+    },
+    {
+      "alt": "BGP owner-approved iPhone 17 model-label v5 2026-08-15 | White",
+      "color": "White",
+      "dHashDistance": 3,
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-a-grade",
+      "height": 2500,
+      "passed": true,
+      "src": "https://cdn.shopify.com/s/files/1/0666/3644/7916/files/iphone-17-white-fa.jpg?v=1786732119",
+      "width": 2000
+    },
+    {
+      "alt": "BGP owner-approved iPhone 17 model-label v5 2026-08-15 | Mist Blue",
+      "color": "Mist Blue",
+      "dHashDistance": 0,
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-a-grade",
+      "height": 2500,
+      "passed": true,
+      "src": "https://cdn.shopify.com/s/files/1/0666/3644/7916/files/iphone-17-mist-blue-fa.jpg?v=1786732122",
+      "width": 2000
+    },
+    {
+      "alt": "BGP owner-approved iPhone 17 model-label v5 2026-08-15 | Lavender",
+      "color": "Lavender",
+      "dHashDistance": 1,
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-a-grade",
+      "height": 2500,
+      "passed": true,
+      "src": "https://cdn.shopify.com/s/files/1/0666/3644/7916/files/iphone-17-lavender-fa.jpg?v=1786732125",
+      "width": 2000
+    },
+    {
+      "alt": "BGP owner-approved iPhone 17 model-label v5 2026-08-15 | Sage",
+      "color": "Sage",
+      "dHashDistance": 3,
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-a-grade",
+      "height": 2500,
+      "passed": true,
+      "src": "https://cdn.shopify.com/s/files/1/0666/3644/7916/files/iphone-17-sage-fa.jpg?v=1786732128",
+      "width": 2000
+    },
+    {
+      "alt": "BGP owner-approved iPhone 17 model-label v5 2026-08-15 | Black",
+      "color": "Black",
+      "dHashDistance": 6,
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-premium",
+      "height": 2500,
+      "passed": true,
+      "src": "https://cdn.shopify.com/s/files/1/0666/3644/7916/files/iphone-17-black-fa.jpg?v=1786732116",
+      "width": 2000
+    },
+    {
+      "alt": "BGP owner-approved iPhone 17 model-label v5 2026-08-15 | White",
+      "color": "White",
+      "dHashDistance": 3,
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-premium",
+      "height": 2500,
+      "passed": true,
+      "src": "https://cdn.shopify.com/s/files/1/0666/3644/7916/files/iphone-17-white-fa.jpg?v=1786732119",
+      "width": 2000
+    },
+    {
+      "alt": "BGP owner-approved iPhone 17 model-label v5 2026-08-15 | Mist Blue",
+      "color": "Mist Blue",
+      "dHashDistance": 0,
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-premium",
+      "height": 2500,
+      "passed": true,
+      "src": "https://cdn.shopify.com/s/files/1/0666/3644/7916/files/iphone-17-mist-blue-fa.jpg?v=1786732122",
+      "width": 2000
+    },
+    {
+      "alt": "BGP owner-approved iPhone 17 model-label v5 2026-08-15 | Lavender",
+      "color": "Lavender",
+      "dHashDistance": 1,
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-premium",
+      "height": 2500,
+      "passed": true,
+      "src": "https://cdn.shopify.com/s/files/1/0666/3644/7916/files/iphone-17-lavender-fa.jpg?v=1786732125",
+      "width": 2000
+    },
+    {
+      "alt": "BGP owner-approved iPhone 17 model-label v5 2026-08-15 | Sage",
+      "color": "Sage",
+      "dHashDistance": 3,
+      "handle": "iphone-17-back-glass-full-assembly-with-coil-premium",
+      "height": 2500,
+      "passed": true,
+      "src": "https://cdn.shopify.com/s/files/1/0666/3644/7916/files/iphone-17-sage-fa.jpg?v=1786732128",
+      "width": 2000
+    }
+  ]
+}

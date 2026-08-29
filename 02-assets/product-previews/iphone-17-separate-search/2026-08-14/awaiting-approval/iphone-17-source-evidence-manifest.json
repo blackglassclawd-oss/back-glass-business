@@ -1,0 +1,186 @@
+{
+  "createdAt": "2026-08-14T14:35:33.124Z",
+  "status": "awaiting-owner-approval",
+  "finalResult": "passed-source-screening-only",
+  "model": "iPhone 17",
+  "purpose": "Separate exact-model real-photo search replacing the rejected iPhone 17 source set",
+  "source": {
+    "supplier": "PhoneLCDParts",
+    "catalogPage": "https://www.phonelcdparts.com/apple/iphone-parts/iphone-17?p=3",
+    "listingTitle": "Back Glass with Frame and MagSafe Magnet for iPhone 17 (NO LOGO)",
+    "listedColors": [
+      "Black",
+      "White",
+      "Mist Blue",
+      "Sage",
+      "Lavender"
+    ],
+    "configuration": "MagSafe magnet only; separate catalog products add wireless/NFC charging flex"
+  },
+  "sourceTruth": {
+    "appleModelPage": "https://www.apple.com/ie/iphone-17/",
+    "appleRecyclerGuide": "https://www.apple.com/vn/recycling/recycler-guides/pdf/products/iphone/iPhone_17_Recycler_Guide_English.pdf",
+    "ownerPlacementReference": "https://backglasspros.com/products/iphone-16-pro-max-half-assembly-no-coil-premium",
+    "ownerPlacementReferenceScore": 90
+  },
+  "rules": {
+    "exactModelOnly": true,
+    "sameInwardFaceMayBeReusedOnlyAcrossIphone17Colors": true,
+    "crossModelReuse": false,
+    "syntheticEditsApplied": false,
+    "aiGeneratedByCodex": false,
+    "recoloredByCodex": false,
+    "modelTextApplied": false,
+    "shopifyUploaded": false
+  },
+  "rejectedAlternatives": [
+    {
+      "source": "Bros Phone Parts broader assembly listing",
+      "page": "https://brosphoneparts.com/products/iphone-17-back-glass-with-steel-plate-with-wireless-nfc-charging-magsafe-magnet-flashlight-flex-no-logo-all-colors",
+      "reason": "Its five photographs visually match the selected geometry, but its broader product title mentions wireless/NFC/flashlight flex; the explicit PhoneLCDParts magnet-only listings provide stronger configuration evidence."
+    },
+    {
+      "source": "eBay 297814142631",
+      "page": "https://www.ebay.com/itm/297814142631",
+      "localEvidenceAsset": "source-originals/ebay-297814142631-main.png",
+      "reason": "Multi-model listing and blue shipping film obscure exact inward-face detail; unsuitable for the approved photo format."
+    },
+    {
+      "source": "MobileSentrix OEM pull",
+      "page": "https://www.mobilesentrix.com/back-glass-w-magsafe-magnet-nfc-flashlight-flex-for-iphone-17-used-oem-pull-grade-b-black",
+      "reason": "Product is explicitly sold with MagSafe, NFC, and flashlight flex installed, conflicting with the no-coil/flex photo requirement."
+    },
+    {
+      "source": "PhoneLCDParts OEM pull",
+      "page": "https://www.phonelcdparts.com/apple/iphone-parts/iphone-17/back-glass-with-frame-and-wireless-nfc-charging-flex-and-magsafe-magnet-for-iphone-17-black-oem-pull-b-grade-pb-17-bcwc-blk",
+      "reason": "Product is explicitly sold with wireless/NFC charging flex installed, so the inward face does not match the requested configuration."
+    },
+    {
+      "source": "DIYFixTool",
+      "page": "https://www.diyfixtool.com/products/for-iphone-17-air-17-pro-max-back-glass-with-magsafe-magnet-ring",
+      "reason": "Listing mixes multiple iPhone 17-series models and states that the exterior is printed with an Apple logo."
+    },
+    {
+      "source": "ZeeSpares prior iPhone 17 set",
+      "page": "https://zeespares.in/products/back-panel-with-camera-glass-for-apple-iphone-17-black",
+      "reason": "Previous source set was rejected by the owner because its iPhone 17 composition did not follow the established formatting closely enough."
+    }
+  ],
+  "evidenceRecords": [
+    {
+      "color": "Black",
+      "sourceAsset": "source-originals/phonelcdparts-magnet-only/17-bhbc-blk-1.jpg",
+      "inwardFaceDetailAsset": "source-originals/phonelcdparts-magnet-only/17-bhbc-blk-2.jpg",
+      "sourceImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-blk-1.jpg",
+      "inwardFaceDetailImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-blk-2.jpg",
+      "sourcePageUrl": "https://www.phonelcdparts.com/apple/iphone-parts/iphone-17/back-glass-with-frame-and-magsafe-magnet-for-iphone-17-no-logo-black-17-bhbc-blk",
+      "sourceSha256": "f851ea8631e1bf77c4cc1ae1a6213fa473e3a728e5aec9a29f040859f4ad0b15",
+      "inwardFaceDetailSha256": "00df36eab2969b589b11782d85d910eb9951a72039fb91087dd054ed9220574e",
+      "width": 2068,
+      "height": 2604,
+      "visualChecks": {
+        "exactModelListing": true,
+        "correctVerticalDualCameraExterior": true,
+        "exteriorFullyVisible": true,
+        "inwardFaceFullyVisible": true,
+        "exposedSegmentedMagnets": true,
+        "metallicHeatDissipatingFilmInsideMagnetCircle": true,
+        "wirelessChargingCoilOrFlexVisiblyInstalled": false,
+        "consistentSupplierFramingAcrossColors": true
+      }
+    },
+    {
+      "color": "White",
+      "sourceAsset": "source-originals/phonelcdparts-magnet-only/17-bhbc-wht-1.jpg",
+      "inwardFaceDetailAsset": "source-originals/phonelcdparts-magnet-only/17-bhbc-wht-2.jpg",
+      "sourceImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-wht-1.jpg",
+      "inwardFaceDetailImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-wht-2.jpg",
+      "sourcePageUrl": "https://www.phonelcdparts.com/back-glass-with-frame-and-magsafe-magnet-for-iphone-17-no-logo-white-17-bhbc-wht",
+      "sourceSha256": "7de404eed4e8eeade1a1c93d62d0faa98a2ace020e3650befdb5566dd25f6936",
+      "inwardFaceDetailSha256": "8e2808311e8dd2b0f53168ad531bfcc06fce7e4f5569183e59414517fbf853cb",
+      "width": 2068,
+      "height": 2604,
+      "visualChecks": {
+        "exactModelListing": true,
+        "correctVerticalDualCameraExterior": true,
+        "exteriorFullyVisible": true,
+        "inwardFaceFullyVisible": true,
+        "exposedSegmentedMagnets": true,
+        "metallicHeatDissipatingFilmInsideMagnetCircle": true,
+        "wirelessChargingCoilOrFlexVisiblyInstalled": false,
+        "consistentSupplierFramingAcrossColors": true
+      }
+    },
+    {
+      "color": "Mist Blue",
+      "sourceAsset": "source-originals/phonelcdparts-magnet-only/17-bhbc-mblu-1.jpg",
+      "inwardFaceDetailAsset": "source-originals/phonelcdparts-magnet-only/17-bhbc-mblu-2.jpg",
+      "sourceImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-mblu-1.jpg",
+      "inwardFaceDetailImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-mblu-2.jpg",
+      "sourcePageUrl": "https://www.phonelcdparts.com/back-glass-with-frame-and-magsafe-magnet-for-iphone-17-no-logo-mist-blue-17-bhbc-mblu",
+      "sourceSha256": "54d2fb9ebc6f5cbe7cbde335bb8264814705be8f988561494c536f09107e7b90",
+      "inwardFaceDetailSha256": "17c0273b48c6f503c356173a24e98ecd4090553bf738a02328a1fd69bab62f52",
+      "width": 2068,
+      "height": 2604,
+      "visualChecks": {
+        "exactModelListing": true,
+        "correctVerticalDualCameraExterior": true,
+        "exteriorFullyVisible": true,
+        "inwardFaceFullyVisible": true,
+        "exposedSegmentedMagnets": true,
+        "metallicHeatDissipatingFilmInsideMagnetCircle": true,
+        "wirelessChargingCoilOrFlexVisiblyInstalled": false,
+        "consistentSupplierFramingAcrossColors": true
+      }
+    },
+    {
+      "color": "Sage",
+      "sourceAsset": "source-originals/phonelcdparts-magnet-only/17-bhbc-grn-1.jpg",
+      "inwardFaceDetailAsset": "source-originals/phonelcdparts-magnet-only/17-bhbc-grn-2.jpg",
+      "sourceImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-grn-1.jpg",
+      "inwardFaceDetailImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-grn-2.jpg",
+      "sourcePageUrl": "https://www.phonelcdparts.com/back-glass-with-frame-and-magsafe-magnet-for-iphone-17-no-logo-sage-17-bhbc-grn",
+      "sourceSha256": "2898e43eddba7ec5225daa74348c014283986c230b40007ed4d9846996ca0277",
+      "inwardFaceDetailSha256": "3d80b54db00b0de3ba527419390eea1fee252d5f56bbaac1fe61f093cc4eca40",
+      "width": 2068,
+      "height": 2604,
+      "visualChecks": {
+        "exactModelListing": true,
+        "correctVerticalDualCameraExterior": true,
+        "exteriorFullyVisible": true,
+        "inwardFaceFullyVisible": true,
+        "exposedSegmentedMagnets": true,
+        "metallicHeatDissipatingFilmInsideMagnetCircle": true,
+        "wirelessChargingCoilOrFlexVisiblyInstalled": false,
+        "consistentSupplierFramingAcrossColors": true
+      }
+    },
+    {
+      "color": "Lavender",
+      "sourceAsset": "source-originals/phonelcdparts-magnet-only/17-bhbc-lvd-1.jpg",
+      "inwardFaceDetailAsset": "source-originals/phonelcdparts-magnet-only/17-bhbc-lvd-2.jpg",
+      "sourceImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-lvd-1.jpg",
+      "inwardFaceDetailImageUrl": "https://www.phonelcdparts.com/media/catalog/product/cache/5014dac2a594f1a753169c828e8e63b8/1/7/17-bhbc-lvd-2.jpg",
+      "sourcePageUrl": "https://www.phonelcdparts.com/back-glass-with-frame-and-magsafe-magnet-for-iphone-17-no-logo-lavender-17-bhbc-lvd",
+      "sourceSha256": "433f55482d894bf09af5980a189029feae9eb5152bbdf5f97775d650c4cabaf7",
+      "inwardFaceDetailSha256": "61e19767695347b33cba6a5c7f06dbb09f51df772d7af961679a660aa0835af2",
+      "width": 2068,
+      "height": 2604,
+      "visualChecks": {
+        "exactModelListing": true,
+        "correctVerticalDualCameraExterior": true,
+        "exteriorFullyVisible": true,
+        "inwardFaceFullyVisible": true,
+        "exposedSegmentedMagnets": true,
+        "metallicHeatDissipatingFilmInsideMagnetCircle": true,
+        "wirelessChargingCoilOrFlexVisiblyInstalled": false,
+        "consistentSupplierFramingAcrossColors": true
+      }
+    }
+  ],
+  "reviewArtifacts": {
+    "contactSheet": "contact-sheets/iphone-17-phonelcdparts-magnet-only-five-color-source-contact-sheet.jpg",
+    "inwardFaceDetailContactSheet": "contact-sheets/iphone-17-phonelcdparts-magnet-only-inward-face-detail-contact-sheet.jpg",
+    "referenceComparison": "design-qa/reference-90-versus-iphone-17-source-comparison.jpg"
+  }
+}

@@ -1,0 +1,1021 @@
+{
+  "createdAt": "2026-08-14T11:03:56.621Z",
+  "status": "awaiting-owner-approval",
+  "purpose": "Exact-model, exact-color half-assembly media review mapped to the store's A Grade and Premium organization",
+  "rules": {
+    "oneInwardDesignPerExactModel": true,
+    "sameModelColorAndGradeReuseAllowed": true,
+    "crossModelReuseAllowed": false,
+    "magnetsExposed": true,
+    "metallicHeatFilmVisibleInsideMagnetCircle": true,
+    "wirelessChargingCoilIncluded": false,
+    "nfcOrFlashlightFlexIncluded": false,
+    "exactModelAndColorExteriorSourceRequired": true,
+    "aiGenerated": false,
+    "shopifyUploadApproved": false
+  },
+  "counts": {
+    "models": 7,
+    "colors": 29,
+    "gradeTargets": 58,
+    "uniqueInteriorEvidenceFiles": 7,
+    "uniqueOutputFiles": 29
+  },
+  "verification": {
+    "exactModelPagesReturningHttp200": 29,
+    "modelsWithExactlyOneInteriorEvidenceHash": 7,
+    "interiorEvidenceHashesUsedAcrossMultipleModels": [],
+    "allOutputsUnique": true,
+    "allRecordsNonAi": true,
+    "allRecordsNotUploaded": true
+  },
+  "records": [
+    {
+      "model": "iPhone 16",
+      "color": "Black",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black",
+      "sourcePageTitle": "iPhone 16 Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Black)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16-back-cover-mag-safe-Black1.jpg?v=1758456850",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16/black.jpg",
+      "exteriorSourceSha256": "cf8e068a86e9a8228c5bbe5f9f1ebebbab8dc0d0025ede503d4f5ba9e51fb80d",
+      "exteriorSourcePixelSha256": "22b7bc4713126c66479d491638fae754350c15d2cf04bb8050d2a79d06b03017",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-interior.jpg",
+      "interiorEvidenceSha256": "83c32509ce94a07431210199e8b6bf81795e6527f86570633fecbfbba4b11760",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black",
+      "output": "replacement-images/iphone-16/iphone-16-black-half-assembly-no-coil-review.jpg",
+      "outputSha256": "8b9ae45db30ca48ab656295b721c9a69d5941f95659b3cac9b8dbed9e9ed2ff9",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16",
+      "color": "Pink",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-pink",
+      "sourcePageTitle": "iPhone 16 Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Pink)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16-back-cover-mag-safe-Pink1.jpg?v=1758456974",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16/pink.jpg",
+      "exteriorSourceSha256": "eca441d8a4c30318c441f0f4c02307c5bb3e57175f4d094aadd38392dea3796c",
+      "exteriorSourcePixelSha256": "b24f2361c24940ce43d3e455d3d23c8501565ca4d0a80ca14ae048ff7f9b0432",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-interior.jpg",
+      "interiorEvidenceSha256": "83c32509ce94a07431210199e8b6bf81795e6527f86570633fecbfbba4b11760",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black",
+      "output": "replacement-images/iphone-16/iphone-16-pink-half-assembly-no-coil-review.jpg",
+      "outputSha256": "2f428872c05b768fa2ba250aa9aef80d90f9483fbaf3a05ca7872a4aedb4c6ff",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16",
+      "color": "Teal",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-teal",
+      "sourcePageTitle": "iPhone 16 Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Teal)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16-back-cover-mag-safe-Teal1.jpg?v=1758457038",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16/teal.jpg",
+      "exteriorSourceSha256": "017760eaf06e7d8187afba629180cbc5f448ef3790bd80cbb596dbee5d8d6207",
+      "exteriorSourcePixelSha256": "c0b0920f0814feb6e3b5384dfd24034454382295a13d63885bf22c84330e8845",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-interior.jpg",
+      "interiorEvidenceSha256": "83c32509ce94a07431210199e8b6bf81795e6527f86570633fecbfbba4b11760",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black",
+      "output": "replacement-images/iphone-16/iphone-16-teal-half-assembly-no-coil-review.jpg",
+      "outputSha256": "5300fd63800834d685037dd2d2534947c86b8976c19ecdf069cf158c87fc2dfe",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16",
+      "color": "Ultramarine",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-ultramarine",
+      "sourcePageTitle": "iPhone 16 Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Ultramarine)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16-back-cover-mag-safe-Ultramarine1.jpg?v=1758457102",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16/ultramarine.jpg",
+      "exteriorSourceSha256": "0871e74f78e23b8f0cbc4d9784a396c86d66ddad12b80c2fe8bf430acb9c1743",
+      "exteriorSourcePixelSha256": "39e953a837d2a2a99023bf30d7bfe5fc9603a29b7076777de1f1bbac05e7cd8f",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-interior.jpg",
+      "interiorEvidenceSha256": "83c32509ce94a07431210199e8b6bf81795e6527f86570633fecbfbba4b11760",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black",
+      "output": "replacement-images/iphone-16/iphone-16-ultramarine-half-assembly-no-coil-review.jpg",
+      "outputSha256": "48ca8ccbbec90c019b3a613f387212ae2e59bc2789bbaf66677329fab388756b",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16",
+      "color": "White",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-white",
+      "sourcePageTitle": "iPhone 16 Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (White)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16-back-cover-mag-safe-White.jpg?v=1758457171",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16/white.jpg",
+      "exteriorSourceSha256": "44360201a664b6e24c0db14cf46b80a42765444e264b0d4bfb7f6beba3a2c1e4",
+      "exteriorSourcePixelSha256": "0b78f9fae9588a365554c11d34b864d161ff1e5d1f5d234341a1e8814b220f00",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-interior.jpg",
+      "interiorEvidenceSha256": "83c32509ce94a07431210199e8b6bf81795e6527f86570633fecbfbba4b11760",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black",
+      "output": "replacement-images/iphone-16/iphone-16-white-half-assembly-no-coil-review.jpg",
+      "outputSha256": "12f6685567d7a6ac5b8585dc104fa4f8b33a68671c7a484276a0520d31da6198",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Plus",
+      "color": "Black",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Plus Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Plus Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-plus-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black",
+      "sourcePageTitle": "iPhone 16 Plus Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Black)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16PLUS-back-cover-mag-safe-Black1.jpg?v=1758457636",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16-plus/black.jpg",
+      "exteriorSourceSha256": "926ccd97952cff6f222ee13505cc69f9f5b007ff8b0b4d5d95d4f0a5af1f5b80",
+      "exteriorSourcePixelSha256": "eb5d7168ad1d2ad95625923541831f835ae187bd01e5cc461c7b08ad46cdbf39",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-plus-interior.jpg",
+      "interiorEvidenceSha256": "a4cf840f3a54cd1385842bd973e5ef2eaf0059a33ffc869b5b4ff54f08ada11a",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-plus-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black",
+      "output": "replacement-images/iphone-16-plus/iphone-16-plus-black-half-assembly-no-coil-review.jpg",
+      "outputSha256": "6b17dc7fe001feef853f0c63fa256e72a5d1b7ca285a1d5a2cb08e378d12121c",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Plus",
+      "color": "Pink",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Plus Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Plus Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-plus-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-pink",
+      "sourcePageTitle": "iPhone 16 Plus Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Pink)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16PLUS-back-cover-mag-safe-Pink.jpg?v=1758457598",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16-plus/pink.jpg",
+      "exteriorSourceSha256": "a97b6a746a284a4c5814e5aa28ca0006ebf15f9425b495df62dd34c987d70c28",
+      "exteriorSourcePixelSha256": "5d58790bd48d42ad405e2d0f9755b2c4a8dd57ef4f205d5866ffb05e49cf4c94",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-plus-interior.jpg",
+      "interiorEvidenceSha256": "a4cf840f3a54cd1385842bd973e5ef2eaf0059a33ffc869b5b4ff54f08ada11a",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-plus-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black",
+      "output": "replacement-images/iphone-16-plus/iphone-16-plus-pink-half-assembly-no-coil-review.jpg",
+      "outputSha256": "a8fe996a56e0ac7f191493d7d8e72e63809f712a5ef69988ac180d9be026e1e2",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Plus",
+      "color": "Teal",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Plus Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Plus Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-plus-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-teal",
+      "sourcePageTitle": "iPhone 16 Plus Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Teal)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16PLUS-back-cover-mag-safe-Teal.jpg?v=1758457552",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16-plus/teal.jpg",
+      "exteriorSourceSha256": "93d3947b7f0578320fa6db99e1022a706e5b1d33aad6e784da097fc25828778d",
+      "exteriorSourcePixelSha256": "62bc5b401f965f97e831004c8f736e1eb414ff3d8bc6dd77f296cef98940e6cb",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-plus-interior.jpg",
+      "interiorEvidenceSha256": "a4cf840f3a54cd1385842bd973e5ef2eaf0059a33ffc869b5b4ff54f08ada11a",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-plus-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black",
+      "output": "replacement-images/iphone-16-plus/iphone-16-plus-teal-half-assembly-no-coil-review.jpg",
+      "outputSha256": "1ac2ac7a24f3f9701fe876dd56af0fedbe1830276004a332cf2c6aba139a6626",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Plus",
+      "color": "Ultramarine",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Plus Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Plus Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-plus-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-ultramarine",
+      "sourcePageTitle": "iPhone 16 Plus Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Ultramarine)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16PLUS-back-cover-mag-safe-Ultramarine1.jpg?v=1758457448",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16-plus/ultramarine.jpg",
+      "exteriorSourceSha256": "39b2a0646ac37ec6f54693607bf40b900c1987a62474e80c1ba36e421990a99e",
+      "exteriorSourcePixelSha256": "448dd652a2596500480b97ebf1611816002cb3e61101e85e5ae9b42e82b8554f",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-plus-interior.jpg",
+      "interiorEvidenceSha256": "a4cf840f3a54cd1385842bd973e5ef2eaf0059a33ffc869b5b4ff54f08ada11a",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-plus-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black",
+      "output": "replacement-images/iphone-16-plus/iphone-16-plus-ultramarine-half-assembly-no-coil-review.jpg",
+      "outputSha256": "d6788fe343bdd6e64898f0c1be9b5e00060547f191e2b9238a3a348f8f09a764",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Plus",
+      "color": "White",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Plus Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Plus Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-plus-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-white",
+      "sourcePageTitle": "iPhone 16 Plus Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (White)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16PLUS-back-cover-mag-safe-White.jpg?v=1758457360",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16-plus/white.jpg",
+      "exteriorSourceSha256": "057681a78b82eb84139efc31f7d775a57ac54490d990a37dd5d3be5402c900e5",
+      "exteriorSourcePixelSha256": "6319f1595d487757d30405b9f85b87f545d6d33995f2ee1e629fb6b2087d3bb3",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-plus-interior.jpg",
+      "interiorEvidenceSha256": "a4cf840f3a54cd1385842bd973e5ef2eaf0059a33ffc869b5b4ff54f08ada11a",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-plus-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black",
+      "output": "replacement-images/iphone-16-plus/iphone-16-plus-white-half-assembly-no-coil-review.jpg",
+      "outputSha256": "f2905c2c6ab934e7a323bc17890701e16c2cc7d3fff0571a5e016350e68309dc",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro",
+      "color": "Black Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Pro Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Pro Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-pro-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black-titanium",
+      "sourcePageTitle": "iPhone 16 Pro Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Black Titanium)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16-pro-back-cover-black-titanium1.jpg?v=1758458013",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16-pro/black-titanium.jpg",
+      "exteriorSourceSha256": "37423f40505dad3ba7add2ecad7e5f55d492bdeb69f9396ab15d1968eeed1940",
+      "exteriorSourcePixelSha256": "225b178576f5155fa54b0fc554ce0ee2bfb1e50f73b508a784530499dc1f27d3",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-pro-interior.jpg",
+      "interiorEvidenceSha256": "39c9f5bd2b3c0f3de40ef041441fa8651015ead75549ca2985b69385dd24cbee",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-pro-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-natural-titanium",
+      "output": "replacement-images/iphone-16-pro/iphone-16-pro-black-titanium-half-assembly-no-coil-review.jpg",
+      "outputSha256": "684f75fecec4885c019c90b3497abd1bac0ca8fd6f988a96163857c563c72f43",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro",
+      "color": "Desert Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Pro Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Pro Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-pro-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-desert-titanium",
+      "sourcePageTitle": "iPhone 16 Pro Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Desert Titanium)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16-pro-back-cover-desert-titanium1.jpg?v=1758458139",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16-pro/desert-titanium.jpg",
+      "exteriorSourceSha256": "2e4cdffbe880602f54f179fe8797adf7c4b089cea1b08925a88d1beab036603b",
+      "exteriorSourcePixelSha256": "dffecd9765d4bfbf169d691563d1175af09a37ce493486ad1a78c072efc3c72d",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-pro-interior.jpg",
+      "interiorEvidenceSha256": "39c9f5bd2b3c0f3de40ef041441fa8651015ead75549ca2985b69385dd24cbee",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-pro-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-natural-titanium",
+      "output": "replacement-images/iphone-16-pro/iphone-16-pro-desert-titanium-half-assembly-no-coil-review.jpg",
+      "outputSha256": "c5cf1d183dcccb15d6717b9b96f72092ab1515d141f5937e1d1e03676f22bd44",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro",
+      "color": "Natural Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Pro Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Pro Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-pro-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-natural-titanium",
+      "sourcePageTitle": "iPhone 16 Pro Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Natural Titanium)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16-pro-back-cover-naturalt-titanium1.jpg?v=1758458190",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16-pro/natural-titanium.jpg",
+      "exteriorSourceSha256": "7d1c2477d85a960fbaec3e91221c0bfc4f54ce58db7e74d58c9d327390c83e8e",
+      "exteriorSourcePixelSha256": "1d2e3fe8ba9a857146838a9fb3091161ddfbb0844d3668582ed768eada52a0ba",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-pro-interior.jpg",
+      "interiorEvidenceSha256": "39c9f5bd2b3c0f3de40ef041441fa8651015ead75549ca2985b69385dd24cbee",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-pro-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-natural-titanium",
+      "output": "replacement-images/iphone-16-pro/iphone-16-pro-natural-titanium-half-assembly-no-coil-review.jpg",
+      "outputSha256": "a1675dfdbbb2179e8c5059b9fd0b5adaff3637e901f86e13b1e94f3d8237ed2b",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro",
+      "color": "White Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Pro Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Pro Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-pro-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-white-titanium",
+      "sourcePageTitle": "iPhone 16 Pro Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (White Titanium)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16-pro-back-cover-white-titanium1.jpg?v=1758458236",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16-pro/white-titanium.jpg",
+      "exteriorSourceSha256": "0abf41c5e74c36268494370a7c3c2a038f5a9a45b874a7ab57a53e5bfbd1f1ec",
+      "exteriorSourcePixelSha256": "11809306ed0b977828d79c91781101b6c458136961414075c34eda20f7588b47",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-pro-interior.jpg",
+      "interiorEvidenceSha256": "39c9f5bd2b3c0f3de40ef041441fa8651015ead75549ca2985b69385dd24cbee",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-pro-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-natural-titanium",
+      "output": "replacement-images/iphone-16-pro/iphone-16-pro-white-titanium-half-assembly-no-coil-review.jpg",
+      "outputSha256": "2cf248468bdef1bc1df6be70132fcd8721c9fbede53e1aab1ac96537ce98ef59",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro Max",
+      "color": "Black Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Pro Max Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Pro Max Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-pro-max-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-black-titanium",
+      "sourcePageTitle": "iPhone 16 Pro Max Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Black Titanium)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16-promax-back-cover-black-titanium1_cf1a5066-bf5b-44e5-8061-9159206a3db1.jpg?v=1758458500",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16-pro-max/black-titanium.jpg",
+      "exteriorSourceSha256": "5d8daf69c1e62c325fde39c2ada9fde68dbbc5225a7dfb734f89505e3ab4a06c",
+      "exteriorSourcePixelSha256": "1ca48d9ff5297f987ac865156cf80d51448d1c273ac67f4fb1d609651f4fb1e7",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-pro-max-interior.jpg",
+      "interiorEvidenceSha256": "9d9ff0dda9ab8708cc1791a51050f5570ae445885cb772fb4c3f5327386c97dc",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-pro-max-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-natural-titanium",
+      "output": "replacement-images/iphone-16-pro-max/iphone-16-pro-max-black-titanium-half-assembly-no-coil-review.jpg",
+      "outputSha256": "8aa114ba9247185252733d44db28ac01feb9c463c418017c2ee7580046122f24",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro Max",
+      "color": "Desert Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Pro Max Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Pro Max Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-pro-max-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-desert-titanium",
+      "sourcePageTitle": "iPhone 16 Pro Max Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Desert Titanium)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16-promax-back-cover-desert-titanium1.jpg?v=1758458684",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16-pro-max/desert-titanium.jpg",
+      "exteriorSourceSha256": "c66cc1f9d906fbb5fda99b167a39ae0cdd0ba237f320419deae10a870dd94ef3",
+      "exteriorSourcePixelSha256": "be49854c4d763e79be5e311b3070d7368a73c1401529763a857041145c62d326",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-pro-max-interior.jpg",
+      "interiorEvidenceSha256": "9d9ff0dda9ab8708cc1791a51050f5570ae445885cb772fb4c3f5327386c97dc",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-pro-max-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-natural-titanium",
+      "output": "replacement-images/iphone-16-pro-max/iphone-16-pro-max-desert-titanium-half-assembly-no-coil-review.jpg",
+      "outputSha256": "aaf8ef347545236569ad2364766e3051edcb3e81895ca6b9aa79ea0051fc4dd0",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro Max",
+      "color": "Natural Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Pro Max Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Pro Max Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-pro-max-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-natural-titanium",
+      "sourcePageTitle": "iPhone 16 Pro Max Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (Natural Titanium)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16-promax-back-cover-natural-titanium1.jpg?v=1758458733",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16-pro-max/natural-titanium.jpg",
+      "exteriorSourceSha256": "5699c32442404c65956a5e4737ba3ba98dee8f0e09ff61ac9ea1be9f6ebd4fe5",
+      "exteriorSourcePixelSha256": "438d93cc21de13dddaa5976f1de802d0193cc2ece62a83802885cbc244a2edd4",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-pro-max-interior.jpg",
+      "interiorEvidenceSha256": "9d9ff0dda9ab8708cc1791a51050f5570ae445885cb772fb4c3f5327386c97dc",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-pro-max-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-natural-titanium",
+      "output": "replacement-images/iphone-16-pro-max/iphone-16-pro-max-natural-titanium-half-assembly-no-coil-review.jpg",
+      "outputSha256": "e4736906479fa086d79ea4b5ca12f6a7217f3eecf75acd431c77aaa4da5e1a60",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 16 Pro Max",
+      "color": "White Titanium",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 16 Pro Max Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 16 Pro Max Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://repairpartsusa.com/products/iphone-16-pro-max-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-white-titanium",
+      "sourcePageTitle": "iPhone 16 Pro Max Back Glass Battery Cover with Frame / Magsafe Magnet / Camera Lens / Camera Bezel / Metal Plate (White Titanium)",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://cdn.shopify.com/s/files/1/0628/3218/1433/files/iphone-16-promax-back-cover-white-titanium1.jpg?v=1758458777",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-16-pro-max/white-titanium.jpg",
+      "exteriorSourceSha256": "ed32785d1eaf9d2eca1c88d952bdd5aa97a5f8463dc080b068d15471961585ed",
+      "exteriorSourcePixelSha256": "49cdf2554d0697876de4df377948dcbed9285fe1ef141d1bc58999c2b9f93a8e",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-16-pro-max-interior.jpg",
+      "interiorEvidenceSha256": "9d9ff0dda9ab8708cc1791a51050f5570ae445885cb772fb4c3f5327386c97dc",
+      "interiorExactModelSourcePage": "https://repairpartsusa.com/products/iphone-16-pro-max-back-glass-battery-cover-with-frame-magsafe-magnet-camera-lens-camera-bezel-metal-plate-natural-titanium",
+      "output": "replacement-images/iphone-16-pro-max/iphone-16-pro-max-white-titanium-half-assembly-no-coil-review.jpg",
+      "outputSha256": "ad12d8b8ea7a934c3521333c21e3734c7b1de542a38c4f4eecaa5a1825bc5c24",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17",
+      "color": "Black",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 17 Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 17 Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17/apple-iphone-17-rear-housing-glass-plus-camera-lens-plus-metal-plate-plus-magsafe-magnets-black/",
+      "sourcePageTitle": "Apple iPhone 17 - Rear Housing Glass + Camera Lens + Metal Plate + Magsafe Magnets (Black) | FixShop",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://www.fixshop.eu/media/product_image/1100334378_rf9TAq1.jpg",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-17/black.jpg",
+      "exteriorSourceSha256": "60019c5e417d5f438b3c43a80456f055a2dfd4456bba4e44d7bee4fef7ad237e",
+      "exteriorSourcePixelSha256": "345279f289b79eb9711115a3296159dd79603f2110624f22af34c739757a08f2",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-17-interior.jpg",
+      "interiorEvidenceSha256": "62f3ecda978433e3c0dd9df2baa8b0e9911b158aa0e178cdbbf073e8b69acb38",
+      "interiorExactModelSourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17/apple-iphone-17-rear-housing-glass-plus-camera-lens-plus-metal-plate-plus-magsafe-magnets-black/",
+      "output": "replacement-images/iphone-17/iphone-17-black-half-assembly-no-coil-review.jpg",
+      "outputSha256": "dc653a60fde77d20ac2b7ea79a1cfde7228143dbb6940289f70c660941bec4a5",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17",
+      "color": "Lavender",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 17 Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 17 Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17/apple-iphone-17-rear-housing-glass-plus-camera-lens-plus-metal-plate-plus-magsafe-magnets-lavender/",
+      "sourcePageTitle": "Apple iPhone 17 - Rear Housing Glass + Camera Lens + Metal Plate + Magsafe Magnets (Lavender) | FixShop",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://www.fixshop.eu/media/product_image/1100334380_vtsYil2.jpg",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-17/lavender.jpg",
+      "exteriorSourceSha256": "c030a14eeec4c32538af36c88e4768e5ea482f9186044604fc0dffcc7ba96989",
+      "exteriorSourcePixelSha256": "19d9c06a06fdd74a76492744c2ae9f4115d469065dd921eb918161506ef26311",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-17-interior.jpg",
+      "interiorEvidenceSha256": "62f3ecda978433e3c0dd9df2baa8b0e9911b158aa0e178cdbbf073e8b69acb38",
+      "interiorExactModelSourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17/apple-iphone-17-rear-housing-glass-plus-camera-lens-plus-metal-plate-plus-magsafe-magnets-black/",
+      "output": "replacement-images/iphone-17/iphone-17-lavender-half-assembly-no-coil-review.jpg",
+      "outputSha256": "9d668fd44e20270468cfaf8e6a59267a3ccd5acaff65a0e367986da2a0dd48e2",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17",
+      "color": "Mist Blue",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 17 Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 17 Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17/apple-iphone-17-rear-housing-glass-plus-camera-lens-plus-metal-plate-plus-magsafe-magnets-mist-blue/",
+      "sourcePageTitle": "Apple iPhone 17 - Rear Housing Glass + Camera Lens + Metal Plate + Magsafe Magnets (Mist Blue) | FixShop",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://www.fixshop.eu/media/product_image/1100334379_ZWFAD3G.jpg",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-17/mist-blue.jpg",
+      "exteriorSourceSha256": "a13c2516c03390826b6b1a3a0c10f62eb3b46f09b2d13b481759841ef4f30d9d",
+      "exteriorSourcePixelSha256": "0b419476b698af0d22940f1cafb9e324cbff3875d240abf385b879b77ed16dd1",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-17-interior.jpg",
+      "interiorEvidenceSha256": "62f3ecda978433e3c0dd9df2baa8b0e9911b158aa0e178cdbbf073e8b69acb38",
+      "interiorExactModelSourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17/apple-iphone-17-rear-housing-glass-plus-camera-lens-plus-metal-plate-plus-magsafe-magnets-black/",
+      "output": "replacement-images/iphone-17/iphone-17-mist-blue-half-assembly-no-coil-review.jpg",
+      "outputSha256": "2a754a2871d4074267bdea33e379faf2627bc592103ad6e92bf2420b757d51a6",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17",
+      "color": "Sage",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 17 Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 17 Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17/apple-iphone-17-rear-housing-glass-plus-camera-lens-plus-metal-plate-plus-magsafe-magnets-sage/",
+      "sourcePageTitle": "Apple iPhone 17 - Rear Housing Glass + Camera Lens + Metal Plate + Magsafe Magnets (Sage) | FixShop",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://www.fixshop.eu/media/product_image/1100334382_g5xRCHZ.jpg",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-17/sage.jpg",
+      "exteriorSourceSha256": "1ef494e464c7a23740778b1d647f07411386ab21dffe5664ee516eed984718b8",
+      "exteriorSourcePixelSha256": "2f5625979220459afb6baa1368523f3002b9dd5dabb430995cfe463b3b47d148",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-17-interior.jpg",
+      "interiorEvidenceSha256": "62f3ecda978433e3c0dd9df2baa8b0e9911b158aa0e178cdbbf073e8b69acb38",
+      "interiorExactModelSourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17/apple-iphone-17-rear-housing-glass-plus-camera-lens-plus-metal-plate-plus-magsafe-magnets-black/",
+      "output": "replacement-images/iphone-17/iphone-17-sage-half-assembly-no-coil-review.jpg",
+      "outputSha256": "fb2dd4624df5ed5425784855bc33f12595cedc76a58fcd7c2ef95898196e2f8d",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17",
+      "color": "White",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 17 Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 17 Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17/apple-iphone-17-rear-housing-glass-plus-camera-lens-plus-metal-plate-plus-magsafe-magnets-white/",
+      "sourcePageTitle": "Apple iPhone 17 - Rear Housing Glass + Camera Lens + Metal Plate + Magsafe Magnets (White) | FixShop",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://www.fixshop.eu/media/product_image/1100334381_XeEFflE.jpg",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-17/white.jpg",
+      "exteriorSourceSha256": "c0a282f608f00cbef3e1e6fa06398eef12848496f9a710a79b34de5705fbd157",
+      "exteriorSourcePixelSha256": "b1b896fa009bf8a841a53c1084f11ecfdb7051e14edf18be42d370e6ffe509c9",
+      "exteriorCrop": null,
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-17-interior.jpg",
+      "interiorEvidenceSha256": "62f3ecda978433e3c0dd9df2baa8b0e9911b158aa0e178cdbbf073e8b69acb38",
+      "interiorExactModelSourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17/apple-iphone-17-rear-housing-glass-plus-camera-lens-plus-metal-plate-plus-magsafe-magnets-black/",
+      "output": "replacement-images/iphone-17/iphone-17-white-half-assembly-no-coil-review.jpg",
+      "outputSha256": "d6e109218c4ababc0f67dc80ec5457591cea7550dc0d4c4628e6a667fba5b65f",
+      "transformations": [
+        "resize and white padding of exact-model exact-color supplier composite"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17 Pro",
+      "color": "Cosmic Orange",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 17 Pro Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 17 Pro Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17-pro/rear-housing-glass-with-magsafe-for-iphone-17-pro-orange/",
+      "sourcePageTitle": "Rear Housing Glass with MagSafe for iPhone 17 Pro, Orange | FixShop",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://www.fixshop.eu/media/product_image/1100339022.jpg",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-17-pro/cosmic-orange.jpg",
+      "exteriorSourceSha256": "d57f8b02e0064a4270695ea87c933523c96955ede45058486e633568e983bb4a",
+      "exteriorSourcePixelSha256": "8fa813bfb934051c383c3d568c4f4d75323e54ff085b0ebb5fd7b820d90a0432",
+      "exteriorCrop": {
+        "left": 50,
+        "top": 120,
+        "width": 350,
+        "height": 560
+      },
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-17-pro-interior.jpg",
+      "interiorEvidenceSha256": "c81946f8e924b90ac0d878cb622245a07967fc9fb61acdfca232ee2d586a92ea",
+      "interiorExactModelSourcePage": "https://www.gadgetparts.co.nz/iphone-17-pro-back-glass-cover-with-magsafe-magnet.html",
+      "output": "replacement-images/iphone-17-pro/iphone-17-pro-cosmic-orange-half-assembly-no-coil-review.jpg",
+      "outputSha256": "fc6c1b2bcb44ff1cedb4f0afe32079c1c7408691a792ac1c4b07ccc44b559bce",
+      "transformations": [
+        "exact pixel crop to isolate the exact-color exterior",
+        "side-by-side composition with the approved exact-model inward candidate",
+        "resize and white padding"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17 Pro",
+      "color": "Deep Blue",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 17 Pro Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 17 Pro Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17-pro/rear-housing-glass-with-magsafe-for-iphone-17-pro-dark-blue/",
+      "sourcePageTitle": "Rear Housing Glass with MagSafe for iPhone 17 Pro, Dark Blue | FixShop",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://www.fixshop.eu/media/product_image/1100339025.jpg",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-17-pro/deep-blue.jpg",
+      "exteriorSourceSha256": "9d0389aa23fdfed9f07bfd8ca5109074e99b40a499bc51d5061d1a3e0fcd2639",
+      "exteriorSourcePixelSha256": "c27499ed70ca85c9065f4a100a83f0b24e7f6ee338d1497bced8bd2c7078073b",
+      "exteriorCrop": {
+        "left": 50,
+        "top": 120,
+        "width": 350,
+        "height": 560
+      },
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-17-pro-interior.jpg",
+      "interiorEvidenceSha256": "c81946f8e924b90ac0d878cb622245a07967fc9fb61acdfca232ee2d586a92ea",
+      "interiorExactModelSourcePage": "https://www.gadgetparts.co.nz/iphone-17-pro-back-glass-cover-with-magsafe-magnet.html",
+      "output": "replacement-images/iphone-17-pro/iphone-17-pro-deep-blue-half-assembly-no-coil-review.jpg",
+      "outputSha256": "5ba4422acc735e1c2e6f3f659dd13c9424505a68b20d8316944a6d1645b78395",
+      "transformations": [
+        "exact pixel crop to isolate the exact-color exterior",
+        "side-by-side composition with the approved exact-model inward candidate",
+        "resize and white padding"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17 Pro",
+      "color": "Silver",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 17 Pro Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 17 Pro Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17-pro/rear-housing-glass-with-magsafe-for-iphone-17-pro-silver/",
+      "sourcePageTitle": "Rear Housing Glass with MagSafe for iPhone 17 Pro, Silver | FixShop",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://www.fixshop.eu/media/product_image/1100339028.jpg",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-17-pro/silver.jpg",
+      "exteriorSourceSha256": "e651696eb2d490853410ce9197dd73b4e57d1b562cfc77b0e4fa1033a594bceb",
+      "exteriorSourcePixelSha256": "bc6414d1777ebf01f2741d961c0f57012f81d68893a289f5825b3ddfab6e92e3",
+      "exteriorCrop": {
+        "left": 50,
+        "top": 120,
+        "width": 350,
+        "height": 560
+      },
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-17-pro-interior.jpg",
+      "interiorEvidenceSha256": "c81946f8e924b90ac0d878cb622245a07967fc9fb61acdfca232ee2d586a92ea",
+      "interiorExactModelSourcePage": "https://www.gadgetparts.co.nz/iphone-17-pro-back-glass-cover-with-magsafe-magnet.html",
+      "output": "replacement-images/iphone-17-pro/iphone-17-pro-silver-half-assembly-no-coil-review.jpg",
+      "outputSha256": "e9f1a816fdcf8a7b6f76d9baa0efb1f6a017966fbc6d195cd4b94b4c47435b12",
+      "transformations": [
+        "exact pixel crop to isolate the exact-color exterior",
+        "side-by-side composition with the approved exact-model inward candidate",
+        "resize and white padding"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17 Pro Max",
+      "color": "Cosmic Orange",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 17 Pro Max Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 17 Pro Max Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17-pro-max/rear-housing-glass-with-magsafe-for-iphone-17-pro-max-orange/",
+      "sourcePageTitle": "Rear Housing Glass with MagSafe for iPhone 17 Pro Max, Orange | FixShop",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://www.fixshop.eu/media/product_image/1100339032.jpg",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-17-pro-max/cosmic-orange.jpg",
+      "exteriorSourceSha256": "3cefe2baf5b284746576f3bd422af24acca71384f9f330f3a0c08c3e83640fb1",
+      "exteriorSourcePixelSha256": "355b6565588819acf2413b34c66de1068e16ebd95eca1e12ee12b9779c9d2fc9",
+      "exteriorCrop": {
+        "left": 50,
+        "top": 120,
+        "width": 350,
+        "height": 560
+      },
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-17-pro-max-interior.jpg",
+      "interiorEvidenceSha256": "a9e3236bec8fd85d8aad159f7051f8523ee2b9c517a7e93905474a8f914e8df3",
+      "interiorExactModelSourcePage": "https://nexusrepair.com/en/products/back-glass-with-frame-and-magsafe-magnet-for-iphone-17-pro-max-cosmic-orange",
+      "output": "replacement-images/iphone-17-pro-max/iphone-17-pro-max-cosmic-orange-half-assembly-no-coil-review.jpg",
+      "outputSha256": "dec9b908a280890f5cee0409a07ec82840637764fd59dc98275ea421f9279a62",
+      "transformations": [
+        "exact pixel crop to isolate the exact-color exterior",
+        "side-by-side composition with the approved exact-model inward candidate",
+        "resize and white padding"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17 Pro Max",
+      "color": "Deep Blue",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 17 Pro Max Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 17 Pro Max Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17-pro-max/rear-housing-glass-with-magsafe-for-iphone-17-pro-max-dark-blue/",
+      "sourcePageTitle": "Rear Housing Glass with MagSafe for iPhone 17 Pro Max, Dark Blue | FixShop",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://www.fixshop.eu/media/product_image/1100339035.jpg",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-17-pro-max/deep-blue.jpg",
+      "exteriorSourceSha256": "2d581c398e95f7aad826fb88b5373783fd325ab30392730a98188e42fdbff95d",
+      "exteriorSourcePixelSha256": "a483473897fb49aada2c1290eff2255e7281206f6ae365417f2fee91e448ad25",
+      "exteriorCrop": {
+        "left": 50,
+        "top": 120,
+        "width": 350,
+        "height": 560
+      },
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-17-pro-max-interior.jpg",
+      "interiorEvidenceSha256": "a9e3236bec8fd85d8aad159f7051f8523ee2b9c517a7e93905474a8f914e8df3",
+      "interiorExactModelSourcePage": "https://nexusrepair.com/en/products/back-glass-with-frame-and-magsafe-magnet-for-iphone-17-pro-max-cosmic-orange",
+      "output": "replacement-images/iphone-17-pro-max/iphone-17-pro-max-deep-blue-half-assembly-no-coil-review.jpg",
+      "outputSha256": "27cc70744ebeb0867422c9f61932113acd57f0a7e11f43090685793c5fd93fa2",
+      "transformations": [
+        "exact pixel crop to isolate the exact-color exterior",
+        "side-by-side composition with the approved exact-model inward candidate",
+        "resize and white padding"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    },
+    {
+      "model": "iPhone 17 Pro Max",
+      "color": "Silver",
+      "gradesUsingSameExactModelAndColorPhoto": [
+        "A Grade",
+        "Premium"
+      ],
+      "proposedProductTitles": [
+        "iPhone 17 Pro Max Back Glass Half Assembly (No Coil) - A Grade",
+        "iPhone 17 Pro Max Back Glass Half Assembly (No Coil) - Premium"
+      ],
+      "sourcePage": "https://www.fixshop.eu/spare-parts-apple-iphone-apple-iphone-17-pro-max/rear-housing-glass-with-magsafe-for-iphone-17-pro-max-silver/",
+      "sourcePageTitle": "Rear Housing Glass with MagSafe for iPhone 17 Pro Max, Silver | FixShop",
+      "sourcePageHttpStatus": 200,
+      "exteriorSourceImage": "https://www.fixshop.eu/media/product_image/1100339038.jpg",
+      "exteriorSourceOriginal": "exterior-source-originals/iphone-17-pro-max/silver.jpg",
+      "exteriorSourceSha256": "de4efbc17cad5a417542df215609a9ef07b402f2971b7a0c3993ec13187f14dc",
+      "exteriorSourcePixelSha256": "257c1654960c6e4478f44715c3aa889681f865757d7556cabf6d19cabf95d5a6",
+      "exteriorCrop": {
+        "left": 50,
+        "top": 120,
+        "width": 350,
+        "height": 560
+      },
+      "interiorEvidence": "../model-specific-interiors-awaiting-approval/interior-evidence/iphone-17-pro-max-interior.jpg",
+      "interiorEvidenceSha256": "a9e3236bec8fd85d8aad159f7051f8523ee2b9c517a7e93905474a8f914e8df3",
+      "interiorExactModelSourcePage": "https://nexusrepair.com/en/products/back-glass-with-frame-and-magsafe-magnet-for-iphone-17-pro-max-cosmic-orange",
+      "output": "replacement-images/iphone-17-pro-max/iphone-17-pro-max-silver-half-assembly-no-coil-review.jpg",
+      "outputSha256": "7ca88339210f103da452bdc10a7c5024076e98c7fdc82ae172ed777c37820f44",
+      "transformations": [
+        "exact pixel crop to isolate the exact-color exterior",
+        "side-by-side composition with the approved exact-model inward candidate",
+        "resize and white padding"
+      ],
+      "aiGenerated": false,
+      "recolored": false,
+      "retouched": false,
+      "shopifyUploaded": false
+    }
+  ],
+  "withheld": [
+    {
+      "model": "iPhone Air",
+      "colors": [
+        "Cloud White",
+        "Light Gold",
+        "Sky Blue",
+        "Space Black"
+      ],
+      "grades": [
+        "A Grade",
+        "Premium"
+      ],
+      "reason": "No accessible exact-model supplier photograph yet shows the required magnet-only inward face with metallic heat film and no wireless/NFC/flashlight flex assembly."
+    }
+  ],
+  "shopifyMutated": false
+}

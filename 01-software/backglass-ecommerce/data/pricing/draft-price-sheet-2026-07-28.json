@@ -1,0 +1,251 @@
+{
+  "source": {
+    "capturedAt": "2026-07-28",
+    "file": "/Users/jason/Downloads/3b48a6d1d0e7706c52759f33a46f3db7.JPG",
+    "label": "Back Glass Assembly prices"
+  },
+  "currency": "USD",
+  "pricingBasis": "needs-owner-confirmation",
+  "publicationStatus": {
+    "existingHalfAssemblies": "proposed-price-only",
+    "newModels": "draft",
+    "chargingFlexProducts": "draft",
+    "blankCells": "draft"
+  },
+  "rules": {
+    "blankCell": "Preserve as draft with a null price.",
+    "missingFromSheet": "Do not delete an existing catalog product or variant.",
+    "publication": "Do not publish or synchronize prices until the owner confirms whether these are selling prices or internal costs."
+  },
+  "partTypes": {
+    "a_grade_half_assembly_no_coil": "A Grade Back Glass Half Assembly (without wireless charging coil)",
+    "premium_half_assembly_no_coil": "Premium Back Glass Half Assembly (without wireless charging coil)",
+    "aftermarket_nfc_charging_flex": "Aftermarket Wireless NFC Charging Flex with Flashlight Flex Cable",
+    "original_nfc_charging_flex": "OEM Pull Wireless NFC Charging Flex with Flashlight Flex Cable"
+  },
+  "draftEntries": [
+    {
+      "model": "iPhone 17 Pro Max",
+      "partType": "a_grade_half_assembly_no_coil"
+    },
+    {
+      "model": "iPhone 17 Pro Max",
+      "partType": "aftermarket_nfc_charging_flex"
+    },
+    {
+      "model": "iPhone 17 Pro Max",
+      "partType": "original_nfc_charging_flex"
+    },
+    {
+      "model": "iPhone 17 Pro",
+      "partType": "a_grade_half_assembly_no_coil"
+    },
+    {
+      "model": "iPhone 17 Pro",
+      "partType": "aftermarket_nfc_charging_flex"
+    },
+    {
+      "model": "iPhone 17 Pro",
+      "partType": "original_nfc_charging_flex"
+    },
+    {
+      "model": "iPhone 17",
+      "partType": "aftermarket_nfc_charging_flex"
+    },
+    {
+      "model": "iPhone 17",
+      "partType": "original_nfc_charging_flex"
+    },
+    {
+      "model": "iPhone 17 Air",
+      "partType": "a_grade_half_assembly_no_coil"
+    },
+    {
+      "model": "iPhone 17 Air",
+      "partType": "aftermarket_nfc_charging_flex"
+    },
+    {
+      "model": "iPhone 17 Air",
+      "partType": "original_nfc_charging_flex"
+    },
+    {
+      "model": "iPhone 16e",
+      "partType": "a_grade_half_assembly_no_coil"
+    },
+    {
+      "model": "iPhone 16e",
+      "partType": "aftermarket_nfc_charging_flex"
+    },
+    {
+      "model": "iPhone 16e",
+      "partType": "original_nfc_charging_flex"
+    }
+  ],
+  "rows": [
+    {
+      "sourceLabel": "17 ProMax",
+      "model": "iPhone 17 Pro Max",
+      "catalogStatus": "draft-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": null,
+        "premium_half_assembly_no_coil": 10,
+        "aftermarket_nfc_charging_flex": null,
+        "original_nfc_charging_flex": null
+      }
+    },
+    {
+      "sourceLabel": "17 Pro",
+      "model": "iPhone 17 Pro",
+      "catalogStatus": "draft-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": null,
+        "premium_half_assembly_no_coil": 10,
+        "aftermarket_nfc_charging_flex": null,
+        "original_nfc_charging_flex": null
+      }
+    },
+    {
+      "sourceLabel": "17",
+      "model": "iPhone 17",
+      "catalogStatus": "draft-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": 12,
+        "premium_half_assembly_no_coil": 18,
+        "aftermarket_nfc_charging_flex": null,
+        "original_nfc_charging_flex": null
+      }
+    },
+    {
+      "sourceLabel": "17 Air",
+      "model": "iPhone 17 Air",
+      "catalogStatus": "draft-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": null,
+        "premium_half_assembly_no_coil": 60,
+        "aftermarket_nfc_charging_flex": null,
+        "original_nfc_charging_flex": null
+      }
+    },
+    {
+      "sourceLabel": "16 ProMax",
+      "model": "iPhone 16 Pro Max",
+      "catalogStatus": "existing-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": 10,
+        "premium_half_assembly_no_coil": 15,
+        "aftermarket_nfc_charging_flex": 8,
+        "original_nfc_charging_flex": 25
+      }
+    },
+    {
+      "sourceLabel": "16 Pro",
+      "model": "iPhone 16 Pro",
+      "catalogStatus": "existing-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": 10,
+        "premium_half_assembly_no_coil": 15,
+        "aftermarket_nfc_charging_flex": 8,
+        "original_nfc_charging_flex": 25
+      }
+    },
+    {
+      "sourceLabel": "16 Plus",
+      "model": "iPhone 16 Plus",
+      "catalogStatus": "existing-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": 10,
+        "premium_half_assembly_no_coil": 15,
+        "aftermarket_nfc_charging_flex": 8,
+        "original_nfc_charging_flex": 25
+      }
+    },
+    {
+      "sourceLabel": "16",
+      "model": "iPhone 16",
+      "catalogStatus": "existing-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": 10,
+        "premium_half_assembly_no_coil": 15,
+        "aftermarket_nfc_charging_flex": 8,
+        "original_nfc_charging_flex": 25
+      }
+    },
+    {
+      "sourceLabel": "16e",
+      "model": "iPhone 16e",
+      "catalogStatus": "draft-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": null,
+        "premium_half_assembly_no_coil": 10,
+        "aftermarket_nfc_charging_flex": null,
+        "original_nfc_charging_flex": null
+      }
+    },
+    {
+      "sourceLabel": "15 ProMax",
+      "model": "iPhone 15 Pro Max",
+      "catalogStatus": "existing-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": 10,
+        "premium_half_assembly_no_coil": 15,
+        "aftermarket_nfc_charging_flex": 7,
+        "original_nfc_charging_flex": 23
+      }
+    },
+    {
+      "sourceLabel": "15 Pro",
+      "model": "iPhone 15 Pro",
+      "catalogStatus": "existing-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": 10,
+        "premium_half_assembly_no_coil": 15,
+        "aftermarket_nfc_charging_flex": 7,
+        "original_nfc_charging_flex": 20
+      }
+    },
+    {
+      "sourceLabel": "15 Plus",
+      "model": "iPhone 15 Plus",
+      "catalogStatus": "existing-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": 10,
+        "premium_half_assembly_no_coil": 15,
+        "aftermarket_nfc_charging_flex": 7,
+        "original_nfc_charging_flex": 12
+      }
+    },
+    {
+      "sourceLabel": "i15",
+      "model": "iPhone 15",
+      "catalogStatus": "existing-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": 10,
+        "premium_half_assembly_no_coil": 15,
+        "aftermarket_nfc_charging_flex": 7,
+        "original_nfc_charging_flex": 12
+      }
+    },
+    {
+      "sourceLabel": "i14 Plus",
+      "model": "iPhone 14 Plus",
+      "catalogStatus": "existing-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": 8,
+        "premium_half_assembly_no_coil": 10,
+        "aftermarket_nfc_charging_flex": 7,
+        "original_nfc_charging_flex": 9
+      }
+    },
+    {
+      "sourceLabel": "i14",
+      "model": "iPhone 14",
+      "catalogStatus": "existing-model",
+      "prices": {
+        "a_grade_half_assembly_no_coil": 8,
+        "premium_half_assembly_no_coil": 10,
+        "aftermarket_nfc_charging_flex": 7,
+        "original_nfc_charging_flex": 9
+      }
+    }
+  ]
+}

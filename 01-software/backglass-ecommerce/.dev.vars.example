@@ -1,0 +1,6 @@
+# Copy to .dev.vars for local development. Never commit real values.
+SHOPIFY_STORE_DOMAIN=kfczyu-kc.myshopify.com
+SHOPIFY_API_VERSION=2026-07
+SHOPIFY_CLIENT_ID=
+SHOPIFY_CLIENT_SECRET=
+MIGRATION_ADMIN_TOKEN=
