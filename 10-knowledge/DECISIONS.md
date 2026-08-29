@@ -15,6 +15,10 @@
 | 2026-08-06 | Evaluate Buzz as the human/agent workspace | Discovery in progress |
 | 2026-08-06 | Michael owns product/catalog judgment; Jason owns architecture and may approve evidence-backed commercial recommendations | Active; conflict rule and metrics pending |
 | 2026-08-06 | Use research agents to improve efficiency and commercial results, with human approval retained | Active |
+| 2026-08-29 | Create the first parent commit for the core repository (824 files; private data, archive, secrets, and supplier media excluded) | Completed |
+| 2026-08-29 | Run a lean operator + on-demand-advisor structure instead of standing up the five-agent runtime now; keep the spec's approval gates, decision format, and GitHub-as-ledger | Proposed; awaiting Jason |
+| 2026-08-29 | Path to first profit: make the live Shopify store safe to send traffic to, then drive repair-shop demand to it; Cloudflare rebuild runs at low priority | Proposed; awaiting Jason |
+| 2026-08-29 | Propose repeat gross profit per active account as the primary commercial metric, with margin %, stock-accuracy, and order-accuracy guardrails | Proposed; resolves Open decision #11 |
 
 ## Open decision register
 
@@ -28,6 +32,9 @@
 6. Verify shipping, warranty, defect, and RMA policies.
 7. Choose Buzz scope, members, hosting, URL, data boundary, and backup owner.
 8. Decide whether GitHub remains code authority and create the private remote.
+   Baseline commit exists locally as of 2026-08-29; the remote is not yet
+   created. Confirm the GitHub account to use (`gh` is currently authenticated
+   as `blackglassclawd-oss`).
 9. Decide which one of the five installed Quick Order apps remains during the
    pilot.
 10. Decide when the Cloudflare storefront is allowed to reach production.
