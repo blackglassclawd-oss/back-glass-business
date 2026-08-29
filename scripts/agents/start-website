@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Launch the website agent (OPUS family). On-demand only — see .agents/roles/website.md.
+set -euo pipefail
+source "$(dirname "${BASH_SOURCE[0]}")/_common.sh"
+launch "${OPUS_MODEL:-}" ".agents/roles/website.md"

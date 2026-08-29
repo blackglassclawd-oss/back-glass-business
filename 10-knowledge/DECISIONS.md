@@ -16,9 +16,12 @@
 | 2026-08-06 | Michael owns product/catalog judgment; Jason owns architecture and may approve evidence-backed commercial recommendations | Active; conflict rule and metrics pending |
 | 2026-08-06 | Use research agents to improve efficiency and commercial results, with human approval retained | Active |
 | 2026-08-29 | Create the first parent commit for the core repository (824 files; private data, archive, secrets, and supplier media excluded) | Completed |
-| 2026-08-29 | Run a lean operator + on-demand-advisor structure instead of standing up the five-agent runtime now; keep the spec's approval gates, decision format, and GitHub-as-ledger | Proposed; awaiting Jason |
-| 2026-08-29 | Path to first profit: make the live Shopify store safe to send traffic to, then drive repair-shop demand to it; Cloudflare rebuild runs at low priority | Proposed; awaiting Jason |
-| 2026-08-29 | Propose repeat gross profit per active account as the primary commercial metric, with margin %, stock-accuracy, and order-accuracy guardrails | Proposed; resolves Open decision #11 |
+| 2026-08-29 | `blackglassclawd-oss` is the business GitHub owner; private repo `blackglassclawd-oss/back-glass-business`, existing parent history as `main`. GitHub is the development source of truth from the successful push forward. `03-data/`, `90-archive/`, secrets, supplier/reference scrapes, source snapshots, and unlicensed media stay local-only | Active after successful private remote push |
+| 2026-08-29 | Lean structure: one persistent CEO/operator (GPT-5.6 Sol); four prepared specialist profiles (Website Opus 5, Commercial Opus 5, Finance Sol, BizDev Sol) activated only for a real mission, 0-2 at a time; one temporary opposite-model reviewer only when warranted. Pi role files + lightweight Herdr launch commands prepared now. No orchestration extension, mission bus, voting council, standing scheduler, or Fusion replacement | Active |
+| 2026-08-29 | Shopify-first revenue path: unit economics -> fulfillment proof -> store trust / purchase-path blockers -> reactivation -> direct repair-shop acquisition -> measure -> scale what works. Do not wait on the Cloudflare rebuild to generate demand | Active |
+| 2026-08-29 | Cloudflare storefront rebuild moves to a low-priority maintenance lane: keep the codebase healthy, fix critical/security issues, preserve tests and deployment knowledge, build only what directly removes a commercial blocker, no speculative parity work while M1-M3 are open. Website development is an on-demand function, not the primary workstream | Active, low-priority maintenance lane |
+| 2026-08-29 | Primary commercial metric (amends Open decision #11): **30-day contribution profit from completed B2B orders** = net product revenue - landed product COGS - discounts - payment/transaction fees - outbound shipping subsidy - directly attributable RMA/refund credits. Companion metrics: active purchasing B2B accounts, contribution profit per active account, repeat-order rate, gross margin %, stock accuracy, order accuracy / fulfillment-error rate. Promote **repeat contribution profit per active account** to primary once customers have had a realistic chance to reorder | Active; #11 partially resolved, repeat-metric promotion pending |
+| 2026-08-29 | The Fable review is recorded as an adversarial model critique, not independent business evidence. Validation comes from real landed COGS, shipped orders, fulfillment errors, customer replies, repeat purchases, and contribution profit | Active |
 
 ## Open decision register
 
@@ -31,12 +34,15 @@
 5. Document inventory ownership and the two-location workflow.
 6. Verify shipping, warranty, defect, and RMA policies.
 7. Choose Buzz scope, members, hosting, URL, data boundary, and backup owner.
-8. Decide whether GitHub remains code authority and create the private remote.
-   Baseline commit exists locally as of 2026-08-29; the remote is not yet
-   created. Confirm the GitHub account to use (`gh` is currently authenticated
-   as `blackglassclawd-oss`).
+8. RESOLVED 2026-08-29 — GitHub remains code authority; private remote
+   `blackglassclawd-oss/back-glass-business` created and adopted as the
+   development source of truth.
 9. Decide which one of the five installed Quick Order apps remains during the
    pilot.
 10. Decide when the Cloudflare storefront is allowed to reach production.
-11. Approve the primary commercial metric, guardrails, and experiment standard
-    that agents must optimize against.
+    (Rebuild is now in a low-priority maintenance lane; production cutover is
+    still explicitly ungated.)
+11. PARTIALLY RESOLVED 2026-08-29 — primary metric is 30-day contribution
+    profit from completed B2B orders, with the companion metric set above.
+    Still open: the controlled-experiment standard, and the trigger for
+    promoting repeat contribution profit per active account to primary.

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Launch the ceo agent (SOL family). On-demand only — see .agents/roles/ceo.md.
+set -euo pipefail
+source "$(dirname "${BASH_SOURCE[0]}")/_common.sh"
+launch "${SOL_MODEL:-}" ".agents/roles/ceo.md"

@@ -39,8 +39,27 @@ priority.
   taxonomy, mission-contract YAML, and multi-pane runtime until there is a
   reason to parallelize (roughly >50 orders/month).
 
-The five named specialist roles from the spec stay on the shelf and are
-activated only when demand-driven work actually requires one.
+The five named specialist roles from the spec stay on the shelf as prepared
+profiles (Website — Opus 5, Commercial — Opus 5, Finance — Sol, BizDev — Sol)
+and are activated only when demand-driven work actually requires one, 0-2 at a
+time. Pi role files and lightweight Herdr launch commands live in
+[`../.agents/`](../.agents/) and [`../scripts/agents/`](../scripts/agents/) so
+specialization is deterministic later. No orchestration extension, mission bus,
+voting council, standing scheduler, or Fusion replacement is built.
+
+## Commercial priority chain (Active)
+
+```
+unit economics -> fulfillment proof -> store trust / purchase-path blockers
+-> reactivation -> direct repair-shop acquisition -> measure economics
+-> scale what works
+```
+
+The live Shopify store is the revenue surface. Demand generation does not wait
+on the Cloudflare rebuild, which sits in a low-priority maintenance lane:
+codebase healthy, critical/security fixes only, tests and deploy knowledge
+preserved, build only what directly removes a commercial blocker, no
+speculative parity work while M1-M3 are open.
 
 ## Phase 1 — Truth and fulfillment (target: 2 weeks)
 
@@ -69,9 +88,23 @@ Nothing that spends money on acquisition starts until these are answered.
    that contradicts recorded catalog direction. Owner: build hat. No price,
    publication, or deletion without approval.
 
-**Primary metric to approve (Open decision #11):** repeat gross profit per
-active account, after payment fees, shipping subsidy, discounts, and RMA
-credits. Guardrails: gross margin % floor, stock-accuracy %, order-accuracy %.
+**Primary commercial metric (Active — amends Open decision #11):**
+
+> **30-day contribution profit from completed B2B orders**
+> = net product revenue
+>   − landed product COGS
+>   − discounts
+>   − payment / transaction fees
+>   − outbound shipping subsidy
+>   − directly attributable RMA / refund credits
+
+Companion metrics tracked alongside it: active purchasing B2B accounts;
+contribution profit per active account; repeat-order rate; gross margin %;
+stock accuracy; order accuracy / fulfillment-error rate.
+
+The business first has to prove contribution profit exists and can be grown.
+Once customers have had a realistic chance to reorder, evaluate promoting
+**repeat contribution profit per active account** to the primary metric.
 
 ## Phase 2 — Reactivate and pilot (target: weeks 3-6)
 
