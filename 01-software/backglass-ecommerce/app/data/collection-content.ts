@@ -1,8 +1,10 @@
-import { getProductInformation, ownerReviewedDefaults, type CatalogInput } from "./product-information";
+import { getProductInformation, glassConstruction, isPremiumPlusProduct, ownerReviewedDefaults, premiumPlusGrade, type CatalogInput } from "./product-information";
+
+const premiumPlusModelList = premiumPlusGrade.eligibleModels.map(entry => entry.model).join(", ").replace(/, ([^,]*)$/, " and $1");
 
 export const collectionContentReview = {
   owner: "Michael", publicationOwner: "Jason", status: "APPROVAL_REQUIRED",
-  source: `Shopify catalog title/type taxonomy and explicit No Coil labels; existing coil draft matrix; ${ownerReviewedDefaults.evidenceId}`,
+  source: `Shopify catalog title/type taxonomy and explicit No Coil labels; existing coil draft matrix; ${ownerReviewedDefaults.evidenceId}; ${premiumPlusGrade.evidenceId}`,
   calculation: "Category definitions only; no technical grade or fitment inference",
   reviewInterval: "Before publication and whenever catalog taxonomy or coil status changes",
 } as const;
@@ -14,15 +16,19 @@ export const collectionDefinitions = {
   },
   premium: {
     title: "Premium iPhone Back Glass", description: `${ownerReviewedDefaults.construction.Premium} Browse by exact iPhone model and glass-only or half-assembly format. Check the listed variant and coil information; construction alone does not establish performance or Apple/OEM origin.`,
-    related: ["a-grade", "glass-only", "half-assembly-without-charging-coil"], guide: "premium-vs-a-grade",
+    related: ["a-grade", "premium-plus", "glass-only", "half-assembly-without-charging-coil"], guide: "premium-vs-a-grade",
   },
   "a-grade": {
     title: "A Grade iPhone Back Glass", description: `${ownerReviewedDefaults.construction["A Grade"]} Match the exact iPhone model, part type and listed variant. This construction distinction does not establish performance or Apple/OEM origin.`,
-    related: ["premium", "glass-only", "half-assembly-without-charging-coil"], guide: "premium-vs-a-grade",
+    related: ["premium", "premium-plus", "glass-only", "half-assembly-without-charging-coil"], guide: "premium-vs-a-grade",
+  },
+  "premium-plus": {
+    title: "Premium Plus iPhone Back Glass Half Assemblies", description: `${glassConstruction["Premium Plus"]} ${premiumPlusGrade.customerFacingWording.join(". ")}. Premium Plus is listed only for ${premiumPlusModelList}, as half assemblies without a wireless charging coil. OEM-quality describes the stated camera-lens standard; it does not establish Apple or OEM origin, durability, optical performance or scratch resistance.`,
+    related: ["premium", "a-grade", "half-assembly-without-charging-coil"], guide: "premium-plus-camera-lens",
   },
   "half-assembly-without-charging-coil": {
     title: "iPhone Back Glass Half Assemblies Without Charging Coil", description: "Replacement iPhone back glass listed as half assemblies without a wireless charging coil. Choose the exact model, grade and variant. A separately sold coil requires its own verified model compatibility; do not assume a coil is included with the half assembly.",
-    related: ["glass-only", "wireless-charging-coils", "premium", "a-grade"], guide: "glass-only-vs-half-assembly",
+    related: ["glass-only", "wireless-charging-coils", "a-grade", "premium", "premium-plus"], guide: "glass-only-vs-half-assembly",
   },
   "glass-only": {
     title: "iPhone Glass-Only Replacement Back Glass", description: "Glass Only means glass only. Browse large-hole back-glass listings by exact iPhone model, grade and variant. These are distinct from half assemblies without charging coils. Do not assume additional accessories from the product category.",
@@ -45,6 +51,7 @@ export function belongsToCollection(product: CatalogInput, slug: CollectionSlug)
     case "back-glass": return f.partType !== "wireless-charging-coil";
     case "premium": return f.grade === "Premium" && f.partType !== "wireless-charging-coil";
     case "a-grade": return f.grade === "A Grade" && f.partType !== "wireless-charging-coil";
+    case "premium-plus": return isPremiumPlusProduct(f);
     case "glass-only": return f.partType === "glass-only";
     case "half-assembly-without-charging-coil": return f.partType === "half-assembly" && f.coilIncluded === false;
   }

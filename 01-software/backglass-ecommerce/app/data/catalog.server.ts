@@ -135,7 +135,8 @@ export function filterCatalogEntries(query: string, category: string) {
     if (
       category === "back-glass" ||
       category === "premium" ||
-      category === "a-grade"
+      category === "a-grade" ||
+      category === "premium-plus"
     ) {
       return false;
     }

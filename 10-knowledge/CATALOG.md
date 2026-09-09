@@ -17,6 +17,16 @@
   nothing.
 - Continue Premium and A Grade half assemblies without the wireless charging
   coil.
+- Premium Plus is a third back-glass grade recorded on 2026-09-09 by Jason and
+  awaiting Michael's confirmation. It reuses the Premium half-assembly product
+  logic and exists only for iPhone 14 Pro Max, iPhone 15 Pro Max, iPhone 16 Pro
+  Max and iPhone 17 Pro Max. The only stated difference is the camera lens:
+  "Sapphire glass camera lens" and "OEM-quality camera lens". OEM-quality is a
+  stated standard, not evidence of Apple origin or OEM supply, and no durability,
+  optical, scratch-resistance, pricing or warranty difference is established.
+  Eligibility, wording and publication blockers live in
+  [`../01-software/backglass-ecommerce/data/catalog/premium-plus-grade-2026-09-09.json`](../01-software/backglass-ecommerce/data/catalog/premium-plus-grade-2026-09-09.json).
+  No Premium Plus product record, SKU, price or media exists yet.
 - Offer Wireless Charging Coils as standalone products, separate from Back
   Glass.
 - Create separate `OEM` and `Aftermarket` product drafts for each verified
@@ -62,7 +72,8 @@ license grant or publication approval.
 
 ## Hard decision gates
 
-- Define Premium and A Grade objectively.
+- Define Premium, A Grade and Premium Plus objectively, including what evidence
+  supports the sapphire glass and OEM-quality camera-lens description.
 - Decide whether the staged sheet contains costs or selling prices.
 - Decide whether sheet prices apply to all colors and replace current prices.
 - Confirm physical stock and inventory tracking before publication.

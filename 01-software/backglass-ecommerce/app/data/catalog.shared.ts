@@ -53,8 +53,9 @@ export const catalogCategories = [
     label: "Wireless Charging Coils",
     value: "wireless-charging-coils",
   },
-  { label: "Premium", value: "premium" },
   { label: "A Grade", value: "a-grade" },
+  { label: "Premium", value: "premium" },
+  { label: "Premium Plus", value: "premium-plus" },
   { label: "OEM", value: "oem" },
   { label: "Aftermarket", value: "aftermarket" },
 ] as const;

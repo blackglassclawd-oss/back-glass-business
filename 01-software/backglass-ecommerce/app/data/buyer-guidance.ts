@@ -1,5 +1,7 @@
 import { coilCatalogModels } from "./product-taxonomy";
-import { escapeHtml, ownerReviewedDefaults } from "./product-information";
+import { escapeHtml, glassConstruction, ownerReviewedDefaults, premiumPlusGrade } from "./product-information";
+
+const premiumPlusModelList = premiumPlusGrade.eligibleModels.map(entry => entry.model).join(", ").replace(/, ([^,]*)$/, " and $1");
 
 export interface GuidancePage {
   title: string;
@@ -20,7 +22,17 @@ export const buyerGuidance: Record<string, GuidancePage> = {
       { question: "What do Premium and A Grade mean in this catalog?", answer: "Premium and A Grade are separate back-glass catalog labels. Product listings identify the phone model, part type and available variants." },
       { question: "How does the glass construction differ?", answer: `${ownerReviewedDefaults.construction.Premium} ${ownerReviewedDefaults.construction["A Grade"]}` },
       { question: "Does this establish performance or Apple authenticity?", answer: "No. The construction distinction does not establish durability, fit performance, coatings, color accuracy, service life, or Apple/OEM origin." },
-    ], related: ["/collections/premium", "/collections/a-grade", "/pages/glass-only-vs-half-assembly"],
+    ], related: ["/collections/premium", "/collections/a-grade", "/collections/premium-plus", "/pages/premium-plus-camera-lens", "/pages/glass-only-vs-half-assembly"],
+  },
+  "premium-plus-camera-lens": {
+    ...review, source: premiumPlusGrade.evidenceId, title: "Premium Plus Camera Lens and Eligible Models",
+    description: `Premium Plus is the Premium half assembly for ${premiumPlusModelList}, distinguished by its camera lens. Lens facts and the model list await Michael's verification.`,
+    sections: [
+      { question: "Which models can be ordered as Premium Plus?", answer: `Premium Plus is listed only for ${premiumPlusModelList}. No other model, and no generation outside iPhone 14 to iPhone 17, is offered as Premium Plus.` },
+      { question: "How does Premium Plus differ from Premium?", answer: `${glassConstruction["Premium Plus"]} The stated difference is the camera lens — ${premiumPlusGrade.customerFacingWording.join("; ")}.` },
+      { question: "Does OEM-quality mean the lens is an Apple or OEM part?", answer: "No. OEM-quality describes the stated lens standard only. It does not establish Apple origin, OEM supply, durability, optical performance, scratch resistance, or a warranty that differs from Premium." },
+      { question: "Which Premium Plus facts still require verification?", answer: null, reviewQuestion: "Michael: confirm the sapphire glass and OEM-quality camera-lens description for each eligible model, and supply selling price, SKU, starting inventory and approved model-specific media before any Premium Plus listing is published." },
+    ], related: ["/collections/premium-plus", "/collections/premium", "/pages/premium-vs-a-grade"],
   },
   "glass-only-vs-half-assembly": {
     ...review, status: "OWNER_REVIEWED_PUBLICATION_PENDING", source: ownerReviewedDefaults.evidenceId, title: "Glass Only vs Half Assembly",
