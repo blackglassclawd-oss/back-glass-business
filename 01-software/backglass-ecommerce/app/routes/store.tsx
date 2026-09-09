@@ -1,26 +1,23 @@
 import { Search } from "lucide-react";
 import { Form, Link } from "react-router";
 import type { Route } from "./+types/store";
+import { CoilDraftCard } from "../components/coil-draft-card";
 import { ProductCard } from "../components/product-card";
 import { StoreShell } from "../components/store-shell";
 import {
-  catalog,
   customerVisibleProducts,
-  filterProducts,
+  filterCatalogEntries,
 } from "../data/catalog.server";
 import { catalogCategories } from "../data/catalog.shared";
+import { coilDraftProducts } from "../data/product-taxonomy";
+import { storefrontPositioning } from "../data/store-content";
+import { collectionDefinitions } from "../data/collection-content";
+import { seoMeta } from "../data/seo";
 
 const PAGE_SIZE = 16;
 
 export function meta() {
-  return [
-    { title: "Back Glass Pros | Mobile Repair Parts" },
-    {
-      name: "description",
-      content:
-        "Replacement back glass and assemblies for professional mobile repair.",
-    },
-  ];
+  return seoMeta(storefrontPositioning.title, storefrontPositioning.description, "/");
 }
 
 export function loader({ request }: Route.LoaderArgs) {
@@ -28,16 +25,16 @@ export function loader({ request }: Route.LoaderArgs) {
   const query = url.searchParams.get("q") ?? "";
   const category = url.searchParams.get("category") ?? "all";
   const requestedPage = Number.parseInt(url.searchParams.get("page") ?? "1", 10);
-  const filteredProducts = filterProducts(query, category);
-  const totalPages = Math.max(1, Math.ceil(filteredProducts.length / PAGE_SIZE));
+  const filteredEntries = filterCatalogEntries(query, category);
+  const totalPages = Math.max(1, Math.ceil(filteredEntries.length / PAGE_SIZE));
   const page = Math.min(
     Math.max(Number.isFinite(requestedPage) ? requestedPage : 1, 1),
     totalPages,
   );
   return {
-    capturedAt: catalog.capturedAt,
     category,
     counts: {
+      coilDrafts: coilDraftProducts.length,
       products: customerVisibleProducts.length,
       variants: customerVisibleProducts.reduce(
         (total, product) => total + product.variants.length,
@@ -45,12 +42,12 @@ export function loader({ request }: Route.LoaderArgs) {
       ),
     },
     page,
-    products: filteredProducts.slice(
+    entries: filteredEntries.slice(
       (page - 1) * PAGE_SIZE,
       page * PAGE_SIZE,
     ),
     query,
-    totalProducts: filteredProducts.length,
+    totalEntries: filteredEntries.length,
     totalPages,
   };
 }
@@ -76,11 +73,14 @@ export default function Store({ loaderData }: Route.ComponentProps) {
         <section className="catalog-intro">
           <div>
             <p className="store-kicker">Professional mobile repair supply</p>
-            <h1>Back Glass Pros parts catalog</h1>
+            <h1>{storefrontPositioning.heading}</h1>
+            <p>{storefrontPositioning.introduction}</p>
+            <nav aria-label="Browse parts"><ul>{storefrontPositioning.importantCollections.map(slug => <li key={slug}><Link to={`/collections/${slug}`}>{collectionDefinitions[slug].title}</Link></li>)}</ul></nav>
+            <p><Link to="/pages/buyer-guidance">Buyer guidance</Link></p>
             <p>
-              Search {loaderData.counts.products} products and{" "}
-              {loaderData.counts.variants} captured variants. Orders continue
-              through the restored Shopify store during migration.
+              Browse {loaderData.counts.products} active Back Glass products
+              and {loaderData.counts.coilDrafts} standalone Wireless Charging
+              Coil drafts. Draft items cannot be purchased.
             </p>
           </div>
           <dl className="catalog-stats">
@@ -95,8 +95,8 @@ export default function Store({ loaderData }: Route.ComponentProps) {
               </dd>
             </div>
             <div>
-              <dt>Snapshot</dt>
-              <dd>{new Date(loaderData.capturedAt).toLocaleDateString("en-US")}</dd>
+              <dt>Coil drafts</dt>
+              <dd>{loaderData.counts.coilDrafts}</dd>
             </div>
           </dl>
         </section>
@@ -150,13 +150,20 @@ export default function Store({ loaderData }: Route.ComponentProps) {
             <h2 id="catalog-heading">
               {loaderData.query ? `Results for "${loaderData.query}"` : "Catalog"}
             </h2>
-            <p>{loaderData.totalProducts} products</p>
+            <p>{loaderData.totalEntries} records</p>
           </div>
-          {loaderData.products.length ? (
+          {loaderData.entries.length ? (
             <div className="product-grid">
-              {loaderData.products.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
+              {loaderData.entries.map((entry) =>
+                entry.kind === "shopify" ? (
+                  <ProductCard key={entry.product.id} product={entry.product} />
+                ) : (
+                  <CoilDraftCard
+                    key={`${entry.modelSlug}-${entry.grade}`}
+                    product={entry}
+                  />
+                ),
+              )}
             </div>
           ) : (
             <div className="empty-state">

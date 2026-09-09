@@ -11,6 +11,8 @@ export default {
   async fetch(request) {
     const response = await requestHandler(request);
     const headers = applySecurityHeaders(new Headers(response.headers));
+    // This application is preview infrastructure. Shopify is the indexed storefront.
+    headers.set("X-Robots-Tag", "noindex, nofollow");
 
     if (new URL(request.url).pathname === "/api/shopify/status") {
       headers.set("Cache-Control", "no-store");

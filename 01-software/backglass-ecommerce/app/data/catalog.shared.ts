@@ -21,6 +21,8 @@ export interface StorefrontVariant {
 }
 
 export interface StorefrontProduct {
+  options?: Array<{ name: string; position: number; values: string[] }>;
+  product_information?: unknown;
   body_html: string;
   handle: string;
   id: number;
@@ -46,10 +48,15 @@ export const STORE_CURRENCY = "USD";
 
 export const catalogCategories = [
   { label: "All products", value: "all" },
+  { label: "Back Glass", value: "back-glass" },
+  {
+    label: "Wireless Charging Coils",
+    value: "wireless-charging-coils",
+  },
   { label: "Premium", value: "premium" },
   { label: "A Grade", value: "a-grade" },
-  { label: "Half assembly", value: "half-assembly" },
-  { label: "Glass only", value: "glass-only" },
+  { label: "OEM", value: "oem" },
+  { label: "Aftermarket", value: "aftermarket" },
 ] as const;
 
 export function isHalfAssemblyProduct(product: StorefrontProduct) {
@@ -64,6 +71,17 @@ export function isCustomerVisibleProduct(product: StorefrontProduct) {
   return !isFullAssemblyProduct(product);
 }
 
+export function isPurchasableVariant(variant: StorefrontVariant) {
+  return variant.available && Number(variant.price) > 0;
+}
+
+export function isSellableProduct(product: StorefrontProduct) {
+  return (
+    isCustomerVisibleProduct(product) &&
+    product.variants.some(isPurchasableVariant)
+  );
+}
+
 export function formatMoney(value: string) {
   return new Intl.NumberFormat("en-US", {
     currency: STORE_CURRENCY,
@@ -72,7 +90,10 @@ export function formatMoney(value: string) {
 }
 
 export function getProductPrice(product: StorefrontProduct) {
-  const prices = product.variants.map((variant) => Number(variant.price));
+  const prices = product.variants
+    .filter((variant) => Number(variant.price) > 0)
+    .map((variant) => Number(variant.price));
+  if (!prices.length) return "Unavailable";
   const minimum = Math.min(...prices);
   const maximum = Math.max(...prices);
   return minimum === maximum

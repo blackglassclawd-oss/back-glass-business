@@ -1,0 +1,13 @@
+<script type="application/ld+json">
+{%- capture bgp_json -%}
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": {{ shop.url | append: '/#organization' | json }},
+  "name": {{ shop.name | json }},
+  "url": {{ shop.url | json }}
+}
+{%- endcapture -%}
+{%- capture bgp_lt -%}{% raw %}\u003c{% endraw %}{%- endcapture -%}
+{{- bgp_json | replace: '<', bgp_lt -}}
+</script>

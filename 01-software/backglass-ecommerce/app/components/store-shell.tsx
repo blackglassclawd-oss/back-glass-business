@@ -1,19 +1,27 @@
 import { CircleUserRound, ShoppingBag } from "lucide-react";
 import { Link, NavLink } from "react-router";
 import { SHOPIFY_ORIGIN } from "../data/catalog.shared";
+import { organizationSchema } from "../data/seo";
+import { StructuredData } from "./structured-data";
 
 export function StoreShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="store-page">
+      <StructuredData value={organizationSchema()} />
       <div className="announcement">
-        Serving the mobile repair industry since 2015
+        Replacement parts for mobile-device repair professionals
       </div>
       <header className="store-header">
         <Link className="store-brand" to="/">
           Back Glass Pros
         </Link>
         <nav aria-label="Primary navigation">
-          <NavLink to="/">Catalog</NavLink>
+          <NavLink to="/" end>All Products</NavLink>
+          <NavLink to="/collections/back-glass">Back Glass</NavLink>
+          <NavLink to="/collections/wireless-charging-coils">
+            Wireless Charging Coils
+          </NavLink>
+          <NavLink to="/models">Shop by Model</NavLink>
           <NavLink to="/quick-order">Quick order</NavLink>
         </nav>
         <div className="store-actions">
@@ -36,6 +44,7 @@ export function StoreShell({ children }: { children: React.ReactNode }) {
       {children}
       <footer className="store-footer">
         <p>Back Glass Pros</p>
+        <nav aria-label="Support and guidance"><a href="https://backglasspros.com/pages/contact">Contact</a>{" · "}<Link to="/pages/buyer-guidance">Buyer guidance</Link>{import.meta.env.DEV && <>{" · "}<Link to="/pages/support-review">Support information review</Link></>}{" · "}<a href="https://backglasspros.com/policies/privacy-policy">Privacy policy</a></nav>
         <p>Checkout and order processing remain secured by Shopify.</p>
       </footer>
     </div>
