@@ -1,3 +1,9 @@
+{%- comment -%}
+  Replaces the theme's Organization block. Drops the nine empty sameAs strings
+  (invalid, and we have no approved social profiles to put there) while keeping
+  every piece of first-party identity the theme already had, including the
+  conditional logo. No invented business facts.
+{%- endcomment -%}
 <script type="application/ld+json">
 {%- capture bgp_json -%}
 {
@@ -5,6 +11,9 @@
   "@type": "Organization",
   "@id": {{ shop.url | append: '/#organization' | json }},
   "name": {{ shop.name | json }},
+  {%- if settings.logo -%}
+  "logo": {{ settings.logo | image_url: width: 500 | prepend: 'https:' | json }},
+  {%- endif -%}
   "url": {{ shop.url | json }}
 }
 {%- endcapture -%}

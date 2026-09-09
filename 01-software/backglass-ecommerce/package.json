@@ -30,7 +30,8 @@
     "preview": "npm run build && vite preview",
     "repair:storefront": "node scripts/repair-storefront-snapshot.mjs",
     "cf-typegen": "wrangler types",
-    "postinstall": "wrangler types"
+    "postinstall": "wrangler types",
+    "validate:shipnow": "tsx scripts/seo-shipnow-validate.ts"
   },
   "dependencies": {
     "isbot": "^5.1.36",

@@ -1,3 +1,11 @@
+> **Superseded for action, 2026-09-09.** Act on
+> [SEO_SHIP_NOW.md](SEO_SHIP_NOW.md) instead: eleven theme assets and four
+> collection descriptions, needing four wording decisions from Jason and one
+> conditional question for Michael. This document is retained as background
+> evidence. Its 54 product SEO-title rows were verified to be no-ops and its
+> empty-tab and homepage-metadata transformations were verified to be broken;
+> both are fixed in the ship-now proposal.
+
 # Back Glass Pros SEO/GEO owner approval packet
 
 Prepared 2026-09-09 (Asia/Taipei), branch `agent/web/seo-geo-readiness`.

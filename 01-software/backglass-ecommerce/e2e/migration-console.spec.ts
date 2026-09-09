@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { storefrontPositioning } from "../app/data/store-content";
 
 test("renders the storefront without horizontal overflow", async ({
   page,
@@ -12,9 +13,13 @@ test("renders the storefront without horizontal overflow", async ({
 
   await page.goto("/");
 
+  // Assert against the shared constant so the heading and this test cannot
+  // drift apart, and hold the rule that drove the current wording: the
+  // storefront must not headline a category with no purchasable products.
   await expect(
-    page.getByRole("heading", { name: "iPhone Back Glass, Half Assemblies & Wireless Charging Coils", exact: true }),
+    page.getByRole("heading", { name: storefrontPositioning.heading, exact: true }),
   ).toBeVisible();
+  expect(storefrontPositioning.heading).not.toMatch(/coil/i);
   await expect(
     page.getByText(/54 active Back Glass products and 30 standalone/),
   ).toBeVisible();

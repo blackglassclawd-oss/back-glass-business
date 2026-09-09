@@ -1,5 +1,20 @@
-{%- comment -%}Replace product | structured_data inside its existing script tag; do not append duplicate Product schema. No inferred brand/manufacturer. Live Shopify commerce only.{%- endcomment -%}
+{%- comment -%}
+  Replaces product | structured_data inside its existing script tag; do not
+  append duplicate Product schema. No inferred brand/manufacturer: the native
+  output declared Apple as the brand of an aftermarket replacement part.
+  Everything else comes from live Shopify commerce data.
+  variesBy/color follow Google's product-variant requirements: the group
+  declares its variant-identifying dimension and each variant carries its own
+  value. category is the merchant's own product type, not an inferred claim.
+{%- endcomment -%}
 {%- assign bgp_url = shop.url | append: product.url -%}
+{%- assign bgp_color_index = -1 -%}
+{%- for bgp_option in product.options -%}
+  {%- assign bgp_option_name = bgp_option | downcase -%}
+  {%- if bgp_option_name == 'color' or bgp_option_name == 'colour' -%}
+    {%- assign bgp_color_index = forloop.index0 -%}
+  {%- endif -%}
+{%- endfor -%}
 {%- capture bgp_json -%}
 {
   "@context": "https://schema.org",
@@ -8,6 +23,12 @@
   "url": {{ bgp_url | json }},
   "name": {{ product.title | json }},
   "description": {{ product.description | strip_html | strip_newlines | json }},
+  {%- if product.type != blank -%}
+  "category": {{ product.type | json }},
+  {%- endif -%}
+  {%- if bgp_color_index >= 0 -%}
+  "variesBy": ["https://schema.org/color"],
+  {%- endif -%}
   "productGroupID": {{ product.id | append: '' | json }},
   "hasVariant": [
     {%- for variant in product.variants -%}
@@ -18,6 +39,10 @@
         "name": {{ product.title | append: ' — ' | append: variant.title | json }},
         "url": {{ variant_url | json }},
         "isVariantOf": {"@id": {{ bgp_url | append: '#product' | json }}}
+        {%- if bgp_color_index >= 0 -%}
+          {%- assign bgp_color = variant.options[bgp_color_index] -%}
+          {%- if bgp_color != blank -%},"color": {{ bgp_color | json }}{%- endif -%}
+        {%- endif -%}
         {%- if variant.sku != blank -%},"sku": {{ variant.sku | json }}{%- endif -%}
         {%- assign bgp_image = variant.featured_image | default: product.featured_image -%}
         {%- if bgp_image -%}

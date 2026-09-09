@@ -32,12 +32,12 @@ do {
 } while (after);
 if (products.some(p => p.variants.pageInfo.hasNextPage)) throw new Error("Variant pagination exceeds adapter limit; refusing a partial plan.");
 interface Collection { id: string; handle: string; title: string; descriptionHtml: string; seo: { title: string | null; description: string | null }; onlineStoreUrl: string | null }
-interface Page { id: string; handle: string; title: string; isPublished: boolean }
+interface Page { id: string; handle: string; title: string; isPublished: boolean; body: string | null }
 const collections: Collection[] = []; const pages: Page[] = []; const redirects: Array<{ path: string; target: string }> = [];
 for (const key of ["collections", "pages", "urlRedirects"] as const) {
   let cursor: string | null = null;
   do {
-    const fields = key === "collections" ? "id handle title descriptionHtml seo{title description}" : key === "pages" ? "id handle title isPublished" : "path target";
+    const fields = key === "collections" ? "id handle title descriptionHtml seo{title description}" : key === "pages" ? "id handle title isPublished body" : "path target";
     const data: Record<string, { nodes: unknown[]; pageInfo: { hasNextPage: boolean; endCursor: string } }> = await client.query(`query SeoResources($after:String){${key}(first:100,after:$after){pageInfo{hasNextPage endCursor} nodes{${fields}}}}`, { after: cursor });
     if (key === "collections") collections.push(...data[key].nodes as Collection[]);
     else if (key === "pages") pages.push(...data[key].nodes as Page[]);
@@ -64,9 +64,17 @@ const productPlans = products.filter(p => p.status === "ACTIVE" && p.onlineStore
   const body = block ? block + related : null;
   const descriptionPlan = planProductDescription(p.descriptionHtml, body);
   const blockers = [...facts.issues, ...descriptionPlan.blockers];
+  // When seo.title is blank Shopify already renders product.title, so writing
+  // product.title into the seo.title field changes no rendered output. Marking
+  // these as proposals inflated the approval queue with 54 no-ops.
+  const candidateSeo = { title: p.title, description: productDescription(facts) };
+  const renderedSeoTitle = p.seo.title?.trim() || p.title;
+  const seoTitleIsNoop = candidateSeo.title === renderedSeoTitle;
+  const seoDescriptionIsNoop = (p.seo.description ?? null) === candidateSeo.description;
   return { id: p.id, handle: p.handle, sourceSha256: createHash("sha256").update(JSON.stringify(p)).digest("hex"), blockers,
-    reviewCandidate: { existingDescriptionHtml: descriptionPlan.existingDescriptionHtml, candidateInformationHtml: descriptionPlan.candidateInformationHtml, existingSeo: p.seo, candidateSeo: { title: p.title, description: productDescription(facts) } },
-    proposal: descriptionPlan.descriptionHtml && !blockers.length ? { descriptionHtml: descriptionPlan.descriptionHtml, seo: { title: p.title, description: productDescription(facts) } } : null,
+    reviewCandidate: { existingDescriptionHtml: descriptionPlan.existingDescriptionHtml, candidateInformationHtml: descriptionPlan.candidateInformationHtml, existingSeo: p.seo, candidateSeo },
+    seoFieldEffect: { title: seoTitleIsNoop ? "already-equivalent" : "rendered-change", description: seoDescriptionIsNoop ? "already-equivalent" : "rendered-change", renderedSeoTitle },
+    proposal: descriptionPlan.descriptionHtml && !blockers.length ? { descriptionHtml: descriptionPlan.descriptionHtml, seo: candidateSeo } : null,
     unknownFacts: { includedComponents: facts.includedComponents === null, compatibility: facts.compatibleCoilHandles.length === 0 },
     // Variant colors and SKUs are consumed directly; never rewritten by this plan.
     variantCount: p.variants.nodes.length,
@@ -75,7 +83,12 @@ const productPlans = products.filter(p => p.status === "ACTIVE" && p.onlineStore
 const collectionPlans = Object.entries(collectionDefinitions).map(([handle, content]) => {
   const existing = collections.find(c => c.handle === handle);
   const links = content.related.filter(h => collections.some(c => c.handle === h && c.onlineStoreUrl));
-  return { handle, id: existing?.id ?? null, action: existing ? "update-proposal" : "creation-requires-review", public: Boolean(existing?.onlineStoreUrl),
+  const isPublic = Boolean(existing?.onlineStoreUrl);
+  // Only a published collection whose copy actually differs is a shippable
+  // change. Unpublished or nonexistent collections are out of ship-now scope:
+  // editing them changes nothing a visitor or crawler can see.
+  const shipNow = isPublic && (existing!.seo.description ?? "") !== content.description;
+  return { handle, id: existing?.id ?? null, action: existing ? "update-proposal" : "creation-requires-review", public: isPublic, shipNow,
     sourceSha256: existing ? createHash("sha256").update(JSON.stringify({ id: existing.id, handle: existing.handle, title: existing.title, descriptionHtml: existing.descriptionHtml, seo: existing.seo })).digest("hex") : null,
     existingContent: existing ? { descriptionHtml: existing.descriptionHtml, seo: existing.seo } : null,
     review: collectionContentReview,
@@ -98,15 +111,17 @@ const mainThemes = themes.themes.filter(t => t.role === "main");
 if (mainThemes.length !== 1) throw new Error("Expected one production theme.");
 const theme = mainThemes[0];
 const assets: Record<string, string> = {};
-for (const key of ["templates/product.json", "templates/index.json", "sections/main-product.liquid", "sections/header.liquid", "sections/footer.liquid", "sections/email-signup-banner.liquid", "layout/theme.liquid"]) {
+for (const key of ["templates/product.json", "templates/index.json", "sections/main-product.liquid", "sections/header.liquid", "sections/header-group.json", "sections/footer.liquid", "sections/email-signup-banner.liquid", "layout/theme.liquid"]) {
   const response = await rest(`/themes/${theme.id}/assets.json?asset%5Bkey%5D=${encodeURIComponent(key)}`) as { asset: { value: string } };
   assets[key] = response.asset.value;
 }
 const newAssets: Record<string, string> = {};
 for (const name of ["bgp-product-schema", "bgp-organization-schema", "bgp-breadcrumb-schema", "bgp-support-links"]) newAssets[`snippets/${name}.liquid`] = await readFile(`shopify/snippets/${name}.liquid`, "utf8");
 newAssets["sections/bgp-introduction.liquid"] = `<section class="page-width"><h1>${escapeHtml(storefrontPositioning.heading)}</h1><p>${escapeHtml(storefrontPositioning.introduction)}</p><nav aria-label="Browse parts"><ul>${storefrontPositioning.importantCollections.map(h => `{% if collections['${h}'] != blank %}<li><a href="{{ collections['${h}'].url }}">${escapeHtml(collectionDefinitions[h].title)}</a></li>{% endif %}`).join("")}</ul></nav></section>\n{% schema %}{"name":"BGP product introduction","settings":[]}{% endschema %}\n`;
-const themePlan = planThemeChanges(assets, newAssets);
-const repeatThemePlan = planThemeChanges({ ...assets, ...Object.fromEntries(themePlan.changes.map(change => [change.key, change.value])) }, newAssets);
+// A collapsible tab pointing at a missing or empty Page still renders empty.
+const pagesWithContent = new Set(pages.filter(p => p.isPublished && (p.body ?? "").replace(/<[^>]*>/g, "").trim()).map(p => p.handle));
+const themePlan = planThemeChanges(assets, newAssets, pagesWithContent);
+const repeatThemePlan = planThemeChanges({ ...assets, ...Object.fromEntries(themePlan.changes.map(change => [change.key, change.value])) }, newAssets, pagesWithContent);
 if (repeatThemePlan.changes.length) themePlan.blockers.push("theme-transform-not-idempotent");
 const redirectPlan = buildRedirectDecisions(products, redirects);
 const redirectHealth: Array<{ path: string; sourceStatus: number; targetStatus: number | null; location: string | null }> = [];
@@ -136,10 +151,18 @@ const plan = { version: 1, capturedAt: new Date().toISOString(), mode: "READ_ONL
   ownerReviewedDefaults,
   approvalsRequired: ["Michael: product facts and content", "Jason: publication and redirects"], metafieldContract: PRODUCT_FACTS_METAFIELD,
   liveSummary: { products: products.length, active: products.filter(p => p.status === "ACTIVE").length, coils: products.filter(p => p.productType === "Wireless Charging Coil").map(p => ({ handle: p.handle, status: p.status, public: Boolean(p.onlineStoreUrl), titleAnomaly: /OEM.*OEM/.test(p.title) })), collections: collections.map(c => ({ handle: c.handle, public: Boolean(c.onlineStoreUrl) })) },
+  // Separates what actually changes rendered output from what only looks like a change.
+  shipNowSummary: {
+    themeChanges: themePlan.changes.map(c => c.key),
+    publicCollectionUpdates: collectionPlans.filter(c => c.shipNow).map(c => c.handle),
+    productSeoTitlesAlreadyEquivalent: productPlans.filter(p => p.seoFieldEffect.title === "already-equivalent").length,
+    productSeoTitlesRenderedChange: productPlans.filter(p => p.seoFieldEffect.title === "rendered-change").length,
+    deferred: ["54 product-description merges", "4 buyer-guidance pages", "28 retired-URL redirects", "coil publication", "back-glass collection creation"],
+  },
   excludedActiveProducts: products.filter(p => p.status === "ACTIVE" && (!p.onlineStoreUrl || /full assembly/i.test(p.title))).map(p => ({ handle: p.handle, reason: !p.onlineStoreUrl ? "No Online Store URL; ACTIVE does not imply Online Store publication." : "Retired full-assembly title; excluded by policy." })),
   products: productPlans, collections: collectionPlans,
   pages: Object.entries(buyerGuidance).map(([handle, p]) => ({ handle, existingId: pages.find(page => page.handle === handle)?.id ?? null, isPublished: false, title: p.title, body: guidanceHtml(handle), reviewStatus: p.status, blockers: p.status === "OWNER_REVIEWED_PUBLICATION_PENDING" ? ["Jason exact wording and publication approval required"] : ["Michael unresolved technical facts required", "Jason publication approval required"], seo: { title: p.title, description: p.description } })),
   redirects: redirectPlan, redirectHealth, theme: { id: theme.id, idempotent: repeatThemePlan.changes.length === 0, ...themePlan }, trust: supportReview,
 };
 await mkdir(dirname(output), { recursive: true }); await writeFile(output, JSON.stringify(plan, null, 2) + "\n", { mode: 0o600 });
-console.log(JSON.stringify({ output, active: plan.liveSummary.active, productProposals: productPlans.filter(p => p.proposal).length, blockedProducts: productPlans.filter(p => !p.proposal).length, coilDrafts: plan.liveSummary.coils.length, redirectDecisions: redirectPlan.length, themeChanges: themePlan.changes.length, themeBlockers: themePlan.blockers, writesToShopify: 0 }, null, 2));
+console.log(JSON.stringify({ output, active: plan.liveSummary.active, productProposals: productPlans.filter(p => p.proposal).length, blockedProducts: productPlans.filter(p => !p.proposal).length, coilDrafts: plan.liveSummary.coils.length, redirectDecisions: redirectPlan.length, themeChanges: themePlan.changes.length, themeBlockers: themePlan.blockers, shipNow: plan.shipNowSummary, writesToShopify: 0 }, null, 2));

@@ -36,3 +36,66 @@ it.each(["none", "always", "reduce-logo-size", "on-scroll-up"])("preserves heade
   expect(await engine.parseAndRender(normalizeHeaderTag(source), context)).toBe(await engine.parseAndRender(source, context));
   expect(normalizeHeaderTag(normalizeHeaderTag(source))).toBe(normalizeHeaderTag(source));
 });
+
+import { collapsibleTabIsEmpty } from "./seo-theme-plan";
+import { storefrontPositioning } from "../../app/data/store-content";
+
+// The live theme points three tabs at page handles Shopify does not serve, so
+// they render as empty accordions. Blank-page detection alone missed all three.
+it("treats a tab pointing at a missing or empty page as empty, and keeps real ones", () => {
+  const pages = new Set(["care-guide"]);
+  expect(collapsibleTabIsEmpty({ content: "", page: "product-features" }, pages)).toBe(true);
+  expect(collapsibleTabIsEmpty({ content: "", page: "" }, pages)).toBe(true);
+  expect(collapsibleTabIsEmpty({ content: "", page: "care-guide" }, pages)).toBe(false);
+  expect(collapsibleTabIsEmpty({ content: "Verified text", page: "product-features" }, pages)).toBe(false);
+});
+
+const liveShapedAssets = () => ({
+  "templates/product.json": JSON.stringify({ sections: { main: { type: "main-product", blocks: {
+    kept: { type: "collapsible_tab", settings: { heading: "Care", content: "", page: "care-guide" } },
+    missing: { type: "collapsible_tab", settings: { heading: "Merchandising tips", content: "", page: "merchandising-tips" } },
+    app: { type: "shopify://apps/test", settings: {} },
+  }, block_order: ["kept", "missing", "app"] } } }),
+  "sections/main-product.liquid": '<script type="application/ld+json">{{ product | structured_data }}</script>',
+  "sections/header.liquid": logo + '<script type="application/ld+json">{"@type":"Organization","sameAs":[""]}</script>',
+  "layout/theme.liquid": "<head><title>{{ page_title }}</title>{% render 'meta-tags' %}</head>",
+  "templates/index.json": '{"sections":{},"order":[]}',
+  "sections/header-group.json": JSON.stringify({ sections: { "announcement-bar": { blocks: {
+    "announcement-bar-0": { type: "announcement", settings: { text: "Serving Mobile Repair Industry Since 2015", link: "" } },
+    other: { type: "announcement", settings: { text: "Shop & Refer to Maximize your SAVINGS!", link: "" } },
+  } } } }),
+});
+
+it("passes homepage metadata into the isolated meta-tags render", () => {
+  const plan = planThemeChanges(liveShapedAssets(), {}, new Set(["care-guide"]));
+  const layout = plan.changes.find(c => c.key === "layout/theme.liquid")!.value;
+  expect(layout).toContain("{% render 'meta-tags', page_title: page_title, page_description: page_description %}");
+  expect(layout).not.toMatch(/\{%-?\s*render\s+'meta-tags'\s*-?%\}/);
+  expect(plan.blockers).toEqual([]);
+});
+
+it("removes only the empty tab and replaces only the unsupported history claim", () => {
+  const plan = planThemeChanges(liveShapedAssets(), {}, new Set(["care-guide"]));
+  const template = JSON.parse(plan.changes.find(c => c.key === "templates/product.json")!.value);
+  expect(template.sections.main.block_order).toEqual(["kept", "app"]);
+  const group = JSON.parse(plan.changes.find(c => c.key === "sections/header-group.json")!.value);
+  const blocks = group.sections["announcement-bar"].blocks;
+  expect(blocks["announcement-bar-0"].settings.text).toBe(storefrontPositioning.announcement);
+  expect(blocks["announcement-bar-0"].settings.text).not.toMatch(/2015/);
+  expect(blocks.other.settings.text).toBe("Shop & Refer to Maximize your SAVINGS!");
+});
+
+it("stays idempotent across every new transformation", () => {
+  const assets = liveShapedAssets();
+  const pages = new Set(["care-guide"]);
+  const plan = planThemeChanges(assets, {}, pages);
+  const again = planThemeChanges({ ...assets, ...Object.fromEntries(plan.changes.map(c => [c.key, c.value])) }, {}, pages);
+  expect(again.changes).toEqual([]);
+  expect(again.blockers).toEqual([]);
+});
+
+it("never advertises a category with no purchasable products", () => {
+  const copy = [storefrontPositioning.title, storefrontPositioning.heading, storefrontPositioning.announcement].join(" ");
+  expect(copy).not.toMatch(/coil/i);
+  expect(storefrontPositioning.importantCollections).not.toContain("wireless-charging-coils");
+});
