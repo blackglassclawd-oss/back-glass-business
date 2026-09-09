@@ -1,13 +1,16 @@
 import { ClipboardPaste, PackageCheck, ShoppingCart, Trash2 } from "lucide-react";
 import { useMemo, useState } from "react";
+import { Link } from "react-router";
 import type { Route } from "./+types/quick-order";
 import { StoreShell } from "../components/store-shell";
 import { filterProducts } from "../data/catalog.server";
 import {
   formatMoney,
   getProductPrice,
+  isPurchasableVariant,
   SHOPIFY_ORIGIN,
 } from "../data/catalog.shared";
+import { coilDraftProducts } from "../data/product-taxonomy";
 import {
   buildShopifyCartUrl,
   parseQuickOrder,
@@ -19,8 +22,28 @@ export function meta() {
 }
 
 export function loader({ request }: Route.LoaderArgs) {
-  const query = new URL(request.url).searchParams.get("q") ?? "";
-  return { products: filterProducts(query, "all"), query };
+  const url = new URL(request.url);
+  const query = url.searchParams.get("q") ?? "";
+  const partType =
+    url.searchParams.get("partType") === "wireless-charging-coils"
+      ? "wireless-charging-coils"
+      : "back-glass";
+  const normalizedQuery = query.trim().toLowerCase();
+  const matchingCoilDrafts = coilDraftProducts.filter(
+    (product) =>
+      !normalizedQuery ||
+      [product.title, product.model, product.grade]
+        .join(" ")
+        .toLowerCase()
+        .includes(normalizedQuery),
+  );
+  return {
+    matchingCoilDrafts: matchingCoilDrafts.length,
+    partType,
+    products:
+      partType === "back-glass" ? filterProducts(query, "back-glass") : [],
+    query,
+  };
 }
 
 export default function QuickOrder({ loaderData }: Route.ComponentProps) {
@@ -96,6 +119,7 @@ export default function QuickOrder({ loaderData }: Route.ComponentProps) {
           <PackageCheck aria-hidden="true" size={36} />
         </section>
         <form className="quick-search" method="get">
+          <input name="partType" type="hidden" value={loaderData.partType} />
           <input
             aria-label="Search quick order catalog"
             defaultValue={loaderData.query}
@@ -105,7 +129,42 @@ export default function QuickOrder({ loaderData }: Route.ComponentProps) {
           />
           <button type="submit">Find parts</button>
         </form>
-        <section className="quick-paste" aria-labelledby="paste-order-title">
+        <nav aria-label="Quick Order part type" className="quick-part-tabs">
+          <Link
+            aria-current={loaderData.partType === "back-glass" ? "page" : undefined}
+            to={loaderData.query ? `/quick-order?q=${encodeURIComponent(loaderData.query)}` : "/quick-order"}
+          >
+            Back Glass
+          </Link>
+          <Link
+            aria-current={
+              loaderData.partType === "wireless-charging-coils"
+                ? "page"
+                : undefined
+            }
+            to={`/quick-order?partType=wireless-charging-coils${
+              loaderData.query
+                ? `&q=${encodeURIComponent(loaderData.query)}`
+                : ""
+            }`}
+          >
+            Wireless Charging Coils
+          </Link>
+        </nav>
+        {loaderData.partType === "wireless-charging-coils" && (
+          <section className="quick-draft-notice" role="status">
+            <h2>Wireless Charging Coils are not available in Quick Order yet</h2>
+            <p>
+              {loaderData.matchingCoilDrafts} matching OEM and Aftermarket
+              drafts are waiting for approved price, inventory, SKU, and media.
+            </p>
+            <Link to="/collections/wireless-charging-coils">
+              Review the coil catalog
+            </Link>
+          </section>
+        )}
+        {loaderData.partType === "back-glass" && (
+          <section className="quick-paste" aria-labelledby="paste-order-title">
           <div>
             <ClipboardPaste aria-hidden="true" size={20} />
             <div>
@@ -130,8 +189,10 @@ export default function QuickOrder({ loaderData }: Route.ComponentProps) {
               ))}
             </ul>
           )}
-        </section>
-        <div className="quick-order-list" aria-live="polite">
+          </section>
+        )}
+        {loaderData.partType === "back-glass" && (
+          <div className="quick-order-list" aria-live="polite">
           {loaderData.products.map((product) => (
             <article key={product.id}>
               <div className="quick-product-heading">
@@ -153,7 +214,7 @@ export default function QuickOrder({ loaderData }: Route.ComponentProps) {
                       <span className="sr-only">Quantity for {variant.sku}</span>
                       <input
                         aria-label={`Quantity for ${variant.sku}`}
-                        disabled={!variant.available}
+                        disabled={!isPurchasableVariant(variant)}
                         inputMode="numeric"
                         min="0"
                         onChange={(event) =>
@@ -168,11 +229,13 @@ export default function QuickOrder({ loaderData }: Route.ComponentProps) {
               </div>
             </article>
           ))}
-        </div>
-        {!loaderData.products.length && (
+          </div>
+        )}
+        {loaderData.partType === "back-glass" && !loaderData.products.length && (
           <p className="quick-empty">No products match that model or SKU.</p>
         )}
-        <aside className="quick-cart-bar" aria-label="Quick order summary">
+        {loaderData.partType === "back-glass" && (
+          <aside className="quick-cart-bar" aria-label="Quick order summary">
           <div>
             <strong>
               {selectedUnits} {selectedUnits === 1 ? "unit" : "units"}
@@ -196,7 +259,8 @@ export default function QuickOrder({ loaderData }: Route.ComponentProps) {
             <ShoppingCart aria-hidden="true" size={18} />
             Review on Shopify
           </button>
-        </aside>
+          </aside>
+        )}
         <p className="quick-order-note">
           Final availability, shipping, taxes, and payment are confirmed on{" "}
           {new URL(SHOPIFY_ORIGIN).hostname}.

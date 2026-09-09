@@ -1,5 +1,10 @@
 # Product Strategy Decision
 
+> Historical decision record. The 2026-08-29 catalog direction supersedes the
+> `OEM Pull` charging-flex naming and one-product/two-variant design. Current
+> direction is separate standalone `OEM` and `Aftermarket` Wireless Charging
+> Coil product drafts, with no invented SKU, price, inventory, or media.
+
 ## Owner direction
 
 Recorded July 29, 2026 from the product owner's messages:

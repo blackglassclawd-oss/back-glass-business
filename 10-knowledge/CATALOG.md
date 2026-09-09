@@ -17,27 +17,36 @@
   nothing.
 - Continue Premium and A Grade half assemblies without the wireless charging
   coil.
-- Offer the wireless NFC charging flex with flashlight flex separately.
-- Give charging-flex products `Aftermarket` and `OEM Pull` variants.
-- A full set may be assembled by buying the half assembly and appropriate flex.
+- Offer Wireless Charging Coils as standalone products, separate from Back
+  Glass.
+- Create separate `OEM` and `Aftermarket` product drafts for each verified
+  model. Do not reuse the former Full Assembly product identity or SKU.
+- Do not publish a coil until selling price, inventory, SKU, compatibility,
+  included components, grade definition, model-specific media rights, and
+  Michael's product/media approval are complete.
+- The verified draft mapping covers 15 models across iPhone 17, 16, 15, and 14.
+  Jason directed that iPhone 17e be included as an unavailable draft even
+  though its model-specific image and commercial fields remain blocked. iPhone
+  16e remains blocked for lack of an approved source. No iPhone 14 Pro or Pro
+  Max coil listing is established.
 
-This is recorded owner direction. A fresh Shopify audit must confirm how much of
-it has actually been applied.
+The 2026-09-01 production correction verified all 28 Full Assembly records as
+Draft without deletion. The Extend Commerce collections and rules were
+preserved unchanged.
 
 ## Media policy
 
 - Preserve explicit model, grade, color, assembly, and coil associations.
 - Do not use generated product imagery.
 - Do not use Full Assembly imagery to represent a Half Assembly.
-- Use verified supplier or warehouse photography before final publication.
+- Use rights-cleared, model-specific photography approved by Michael before
+  final publication.
 - Variant-level image assignments matter because the Quick Order surface uses
   each variant's featured image.
 
-Michael's 2026-08-06 email says the available MobileSentrix photos were either
-full assemblies with wireless charging or half assemblies lacking the expected
-heat-dissipation film. He suggested evaluating a PhoneLCDParts iPhone 15 Pro Max
-image and attached another reference. This is feedback to evaluate imagery, not
-a license grant or publication approval.
+Michael's 2026-08-06 email says the available supplier photos did not fully
+match the intended configurations. This is feedback to evaluate imagery, not a
+license grant or publication approval.
 
 ## Required purchasable-variant fields
 
@@ -66,4 +75,3 @@ a license grant or publication approval.
 - [`../01-software/backglass-ecommerce/docs/SHOPIFY_CORRECTIONS_2026-08-03.md`](../01-software/backglass-ecommerce/docs/SHOPIFY_CORRECTIONS_2026-08-03.md)
 - [`../01-software/backglass-ecommerce/docs/SHORT_TERM_PLAN_2026-07-28.md`](../01-software/backglass-ecommerce/docs/SHORT_TERM_PLAN_2026-07-28.md)
 - [`../03-data/owner-correspondence/2026-08-06/重发网站问题.eml`](../03-data/owner-correspondence/2026-08-06/重发网站问题.eml)
-

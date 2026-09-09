@@ -1,16 +1,20 @@
 import {
   Archive,
   ArrowLeft,
-  Cable,
-  ImageOff,
+  BatteryCharging,
+  PanelsTopLeft,
   ShieldCheck,
 } from "lucide-react";
 import { Link } from "react-router";
 
 import type { Route } from "./+types/catalog-transition";
 import { StoreShell } from "../components/store-shell";
-import pricingDraft from "../../data/pricing/draft-price-sheet-2026-07-28.json";
-import productStrategy from "../../data/catalog/product-strategy-2026-07-29.json";
+import { customerVisibleProducts } from "../data/catalog.server";
+import {
+  blockedCoilModels,
+  coilCatalogModels,
+  coilDraftProducts,
+} from "../data/product-taxonomy";
 
 export function meta() {
   return [
@@ -18,7 +22,7 @@ export function meta() {
     {
       name: "description",
       content:
-        "Review-only transition from full assemblies to half assemblies and separate charging flex products.",
+        "Review-only transition from retired full assemblies to separate Back Glass and Wireless Charging Coil products.",
     },
     { name: "robots", content: "noindex, nofollow" },
   ];
@@ -26,33 +30,22 @@ export function meta() {
 
 export function loader() {
   return {
-    chargingFlex: pricingDraft.rows.map((row) => ({
-      aftermarket: row.prices.aftermarket_nfc_charging_flex,
-      model: row.model,
-      oemPull: row.prices.original_nfc_charging_flex,
-      skus: {
-        aftermarket: buildSku(row.model, "AM"),
-        oemPull: buildSku(row.model, "OEM-PULL"),
-      },
+    blockedModels: blockedCoilModels,
+    coilModels: coilCatalogModels.map((model) => ({
+      ...model,
+      products: coilDraftProducts.filter(
+        (product) => product.model === model.model,
+      ),
     })),
-    rules: productStrategy.rules,
-    sourceDate: productStrategy.capturedAt,
+    counts: {
+      activeBackGlass: customerVisibleProducts.length,
+      activeFullAssemblies: 8,
+      coilDrafts: coilDraftProducts.length,
+      draftFullAssemblies: 20,
+      historicalFullAssemblies: 28,
+    },
+    sourceDate: "2026-08-29",
   };
-}
-
-function buildSku(model: string, source: "AM" | "OEM-PULL") {
-  return `SKU-${model
-    .replace(/^iPhone\s+/i, "I")
-    .replaceAll(" ", "-")
-    .toUpperCase()}-NFC-FLEX-${source}`;
-}
-
-function formatDraftPrice(value: number | null) {
-  if (value === null) return "Pending";
-  return new Intl.NumberFormat("en-US", {
-    currency: "USD",
-    style: "currency",
-  }).format(value);
 }
 
 export default function CatalogTransition({
@@ -63,23 +56,23 @@ export default function CatalogTransition({
       <main className="review-shell">
         <Link className="back-link" to="/">
           <ArrowLeft aria-hidden="true" size={17} />
-          Back to catalog
+          Back to All Products
         </Link>
 
         <header className="review-heading">
           <div>
-            <p className="store-kicker">Owner direction · staged</p>
+            <p className="store-kicker">Authoritative direction · staged</p>
             <h1>Catalog transition</h1>
             <p>
-              Retain no-coil half assemblies, sell the charging flex separately,
-              and move full assemblies out of the offered catalog.
+              Retire Full Assembly products and keep Back Glass and standalone
+              Wireless Charging Coils as separate product types.
             </p>
           </div>
           <div className="review-status transition-approved">
             <ShieldCheck aria-hidden="true" size={22} />
             <div>
-              <strong>Structure approved</strong>
-              <span>Shopify writes remain draft-only and reversible.</span>
+              <strong>Local structure complete</strong>
+              <span>Production Shopify changes still require approval.</span>
             </div>
           </div>
         </header>
@@ -87,116 +80,102 @@ export default function CatalogTransition({
         <section className="transition-summary" aria-label="Catalog change summary">
           <div>
             <Archive aria-hidden="true" size={22} />
-            <strong>Full assembly</strong>
+            <strong>Full assemblies</strong>
             <span>
-              {loaderData.rules.fullAssembly.liveProducts} active ·{" "}
-              {loaderData.rules.fullAssembly.publishedProducts} published
+              {loaderData.counts.draftFullAssemblies} Draft ·{" "}
+              {loaderData.counts.activeFullAssemblies} still Active
             </span>
-            <p>Move to draft. Delete nothing.</p>
+            <p>Move all to Draft. Delete nothing.</p>
           </div>
           <div>
-            <ImageOff aria-hidden="true" size={22} />
-            <strong>Half assembly</strong>
-            <span>
-              {loaderData.rules.halfAssembly.liveProducts} products ·{" "}
-              {loaderData.rules.halfAssembly.liveVariants} variants
-            </span>
-            <p>
-              Keep active. Replace{" "}
-              {loaderData.rules.halfAssembly.assignedVariantImages} assigned
-              thumbnails.
-            </p>
+            <PanelsTopLeft aria-hidden="true" size={22} />
+            <strong>Back Glass</strong>
+            <span>{loaderData.counts.activeBackGlass} active snapshot products</span>
+            <p>Retain as a separate part type.</p>
           </div>
           <div>
-            <Cable aria-hidden="true" size={22} />
-            <strong>Charging flex</strong>
+            <BatteryCharging aria-hidden="true" size={22} />
+            <strong>Wireless Charging Coils</strong>
             <span>
-              {loaderData.rules.chargingFlex.draftProducts} products ·{" "}
-              {loaderData.rules.chargingFlex.draftVariants} variants
+              {loaderData.coilModels.length} models ·{" "}
+              {loaderData.counts.coilDrafts} grade-specific drafts
             </span>
-            <p>Create drafts with Aftermarket and OEM Pull options.</p>
+            <p>OEM and Aftermarket remain unavailable.</p>
           </div>
         </section>
 
-        <section className="transition-workstream" aria-labelledby="half-assembly-heading">
+        <section className="transition-workstream" aria-labelledby="retirement-heading">
           <div>
-            <p className="store-kicker">Product photography</p>
-            <h2 id="half-assembly-heading">Half assembly image correction</h2>
+            <p className="store-kicker">Reversible retirement</p>
+            <h2 id="retirement-heading">Preserve records, stop selling</h2>
           </div>
           <div className="transition-copy">
             <p>
-              The existing interior photos show a wireless charging coil and
-              cannot represent a no-coil half assembly.
+              Historical Full Assembly records and URLs remain available for
+              audit and redirect decisions, but the storefront exposes no cart
+              action for them.
             </p>
             <p>
-              Shopify's quick-order rows use each variant's assigned image, not
-              only the product hero. All 96 color variants are now tracked
-              separately for verified, color-matched replacement.
+              A production-gated script moves the remaining active records to
+              Draft and verifies that the Extend Commerce All Products
+              collection is unchanged.
             </p>
-            <p>
-              The preview keeps the exterior color reference and masks the
-              misleading interior. Existing assignments stay in place until
-              accurate no-coil replacements are ready.
-            </p>
-            <Link to="/review/iphone-17-series">Review iPhone 17 colors</Link>
           </div>
         </section>
 
         <section
           className="transition-workstream"
-          id="charging-flex"
-          aria-labelledby="charging-flex-heading"
+          aria-labelledby="charging-coils-heading"
         >
           <div>
             <p className="store-kicker">Separate product line</p>
-            <h2 id="charging-flex-heading">
-              Wireless NFC charging flex with flashlight cable
-            </h2>
+            <h2 id="charging-coils-heading">Wireless Charging Coils</h2>
             <p className="transition-section-note">
-              One draft product per model with two source options.
+              One standalone draft per model and grade. No SKU or price is
+              invented.
             </p>
           </div>
           <div className="transition-table">
             <div className="transition-table-header" aria-hidden="true">
               <span>Model</span>
+              <span>OEM</span>
               <span>Aftermarket</span>
-              <span>OEM Pull</span>
               <span>Status</span>
             </div>
-            {loaderData.chargingFlex.map((product) => {
-              const pending =
-                product.aftermarket === null || product.oemPull === null;
-              return (
-                <article className="transition-table-row" key={product.model}>
-                  <strong>{product.model}</strong>
-                  <div>
-                    <span>{formatDraftPrice(product.aftermarket)}</span>
-                    <small>{product.skus.aftermarket}</small>
+            {loaderData.coilModels.map((model) => (
+              <article className="transition-table-row" key={model.slug}>
+                <strong>{model.model}</strong>
+                {model.products.map((product) => (
+                  <div key={product.grade}>
+                    <span>{product.grade}</span>
+                    <small>Price · inventory · SKU · media pending</small>
                   </div>
-                  <div>
-                    <span>{formatDraftPrice(product.oemPull)}</span>
-                    <small>{product.skus.oemPull}</small>
-                  </div>
-                  <span
-                    className={
-                      pending
-                        ? "transition-state transition-state-pending"
-                        : "transition-state"
-                    }
-                  >
-                    {pending ? "Draft · price pending" : "Draft · priced"}
-                  </span>
-                </article>
-              );
-            })}
+                ))}
+                <span className="transition-state transition-state-pending">
+                  Draft · unavailable
+                </span>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="transition-workstream" aria-labelledby="blocked-models-heading">
+          <div>
+            <p className="store-kicker">No listings created</p>
+            <h2 id="blocked-models-heading">Blocked models</h2>
+          </div>
+          <div className="transition-copy">
+            {loaderData.blockedModels.map((model) => (
+              <p key={model.slug}>
+                <strong>{model.model}:</strong> {model.reason}
+              </p>
+            ))}
           </div>
         </section>
 
         <footer className="transition-footer">
           <p>Direction recorded {loaderData.sourceDate}.</p>
-          <p>
-            Prices remain staged until confirmed as wholesale selling prices.
-          </p>
+          <p>Supplier reference media remains unpublished.</p>
         </footer>
       </main>
     </StoreShell>

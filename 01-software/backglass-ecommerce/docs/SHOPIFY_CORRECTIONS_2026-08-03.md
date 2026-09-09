@@ -1,5 +1,11 @@
 # Shopify Corrections
 
+> Historical correction plan. The 2026-08-29 catalog direction supersedes the
+> charging-flex creation details below. Full Assembly retirement remains valid;
+> standalone Wireless Charging Coil drafts now use separate `OEM` and
+> `Aftermarket` products and remain blocked on approved commerce and media
+> fields.
+
 ## Execution order
 
 Apply and review these changes in Shopify first. Cloudflare remains on the

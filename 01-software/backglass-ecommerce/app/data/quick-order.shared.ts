@@ -1,4 +1,7 @@
-import type { StorefrontProduct } from "./catalog.shared";
+import {
+  isPurchasableVariant,
+  type StorefrontProduct,
+} from "./catalog.shared";
 
 export interface QuickOrderLine {
   quantity: number;
@@ -42,7 +45,7 @@ export function parseQuickOrder(
         errors.push(`Line ${index + 1}: SKU not found (${match[1].trim()})`);
         return;
       }
-      if (!variant.available) {
+      if (!isPurchasableVariant(variant)) {
         errors.push(`Line ${index + 1}: SKU is unavailable (${variant.sku})`);
         return;
       }
