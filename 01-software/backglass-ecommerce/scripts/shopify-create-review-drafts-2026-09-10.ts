@@ -229,6 +229,16 @@ function planPremiumPlus(products: ProductNode[]): {
   const skipped: Array<{ model: string; reason: string }> = [];
 
   for (const entry of premiumPlusGrade.eligibleModels) {
+    // Defence in depth: the iPhone 14 series is Glass Only, so no 14-series half
+    // assembly may ever be planned even if the canonical record is edited wrongly.
+    if (/^iPhone 14\b/.test(entry.model)) {
+      skipped.push({
+        model: entry.model,
+        reason:
+          "The iPhone 14 series is Glass Only in this catalog. Premium Plus is a half assembly, so no iPhone 14 model is eligible. Intentional architecture, not a blocker.",
+      });
+      continue;
+    }
     const source = products.find(
       (product) =>
         product.productType === BACK_GLASS_TYPE &&
@@ -238,7 +248,7 @@ function planPremiumPlus(products: ProductNode[]): {
       skipped.push({
         model: entry.model,
         reason:
-          "No Premium half-assembly product exists for this model in Shopify, so there is no corresponding Premium image set to inherit and no canonical record that a half assembly is offered. Not fabricated.",
+          "No Premium half-assembly product exists for this model in Shopify, so there is no corresponding Premium image set to inherit. Not fabricated.",
       });
       continue;
     }

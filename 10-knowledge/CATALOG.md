@@ -17,10 +17,15 @@
   nothing.
 - Continue Premium and A Grade half assemblies without the wireless charging
   coil.
+- The entire iPhone 14 series is **Glass Only** in this catalog. There is no
+  iPhone 14 half assembly of any grade, including iPhone 14 Pro Max. This is
+  intentional product architecture, not missing data, and must never be reported
+  as a media or sourcing blocker.
 - Premium Plus is a third back-glass grade recorded on 2026-09-09 by Jason and
   awaiting Michael's confirmation. It reuses the Premium half-assembly product
-  logic and exists only for iPhone 14 Pro Max, iPhone 15 Pro Max, iPhone 16 Pro
-  Max and iPhone 17 Pro Max. The only stated difference is the camera lens:
+  logic and exists only for **iPhone 15 Pro Max, iPhone 16 Pro Max and iPhone 17
+  Pro Max** (corrected 2026-09-10 from the earlier 14-17 range, because the
+  iPhone 14 series is Glass Only). The only stated difference is the camera lens:
   "Sapphire glass camera lens" and "OEM-quality camera lens". OEM-quality is a
   stated standard, not evidence of Apple origin or OEM supply, and no durability,
   optical, scratch-resistance, pricing or warranty difference is established.
@@ -46,6 +51,14 @@ preserved unchanged.
 
 ## Media policy
 
+- **Media evidence is not compatibility evidence.** A filename, a model-named
+  image, or a supplier page that matches a model never establishes physical
+  fitment. Compatibility status changes only on Michael's verification.
+- Vendor-derived imagery (MobileSentrix, Phone LCD Parts, Injured Gadgets and
+  similar) is **temporary internal reference only** until rights are cleared and
+  Michael approves the exact presentation. It must never be uploaded to Shopify,
+  including onto draft products: Shopify CDN files are publicly reachable even
+  when the product itself is unpublished.
 - Preserve explicit model, grade, color, assembly, and coil associations.
 - Do not use generated product imagery.
 - Do not use Full Assembly imagery to represent a Half Assembly.

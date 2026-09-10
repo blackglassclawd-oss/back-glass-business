@@ -28,7 +28,7 @@ function halfAssembly(model: string, grade: string, tags = [grade.toLowerCase()]
   return { ...premiumHalfAssembly, tags, title: `${model} Back Glass Half Assembly (No Coil) - ${grade}` };
 }
 
-const eligibleModels = ["iPhone 14 Pro Max", "iPhone 15 Pro Max", "iPhone 16 Pro Max", "iPhone 17 Pro Max"];
+const eligibleModels = ["iPhone 15 Pro Max", "iPhone 16 Pro Max", "iPhone 17 Pro Max"];
 
 describe("Premium Plus eligibility", () => {
   it.each(eligibleModels)("allows Premium Plus for %s", (model) => {
@@ -42,7 +42,7 @@ describe("Premium Plus eligibility", () => {
     expect(belongsToCollection(halfAssembly(model, "Premium Plus"), "premium-plus")).toBe(true);
   });
 
-  it("records exactly the four eligible Pro Max models", () => {
+  it("records exactly the three eligible Pro Max models (iPhone 15-17)", () => {
     expect(premiumPlusGrade.eligibleModels.map((entry) => entry.model).sort()).toEqual([...eligibleModels].sort());
   });
 
@@ -58,6 +58,26 @@ describe("Premium Plus eligibility", () => {
     expect(isPremiumPlusProduct(facts)).toBe(false);
     expect(facts.issues).toContain("premium-plus-model-eligibility-conflict");
     expect(belongsToCollection(product, "premium-plus")).toBe(false);
+  });
+
+  it("rejects Premium Plus for iPhone 14 Pro Max because the iPhone 14 series is Glass Only", () => {
+    const product = halfAssembly("iPhone 14 Pro Max", "Premium Plus");
+    const facts = getProductInformation(product);
+
+    expect(isPremiumPlusModel("iPhone 14 Pro Max")).toBe(false);
+    expect(isPremiumPlusProduct(facts)).toBe(false);
+    expect(facts.issues).toContain("premium-plus-model-eligibility-conflict");
+    expect(belongsToCollection(product, "premium-plus")).toBe(false);
+    expect(premiumPlusGrade.eligibleModels.map((entry) => entry.model)).not.toContain("iPhone 14 Pro Max");
+    // The exclusion is recorded as intentional architecture, not a sourcing blocker.
+    const excluded = premiumPlusGrade.excludedModels.find((entry) => entry.model === "iPhone 14 Pro Max")!;
+    expect(excluded.status).toBe("INELIGIBLE_GLASS_ONLY_SERIES");
+    expect(excluded.reason).toMatch(/Glass Only/);
+    expect(excluded.reason).toMatch(/not missing data|intentional/i);
+    // No iPhone 14 model of any kind is eligible.
+    for (const model of ["iPhone 14", "iPhone 14 Plus", "iPhone 14 Pro", "iPhone 14 Pro Max"]) {
+      expect(isPremiumPlusModel(model)).toBe(false);
+    }
   });
 
   it("rejects Premium Plus for an older Pro Max such as iPhone 13 Pro Max", () => {
@@ -154,7 +174,9 @@ describe("Premium Plus customer-facing wording", () => {
     const definition = collectionDefinitions["premium-plus"];
 
     expect(definition.description).toContain("Sapphire glass camera lens");
-    expect(definition.description).toContain("iPhone 14 Pro Max");
+    expect(definition.description).toContain("iPhone 15 Pro Max");
+    // The iPhone 14 series is Glass Only, so it must never appear in Premium Plus copy.
+    expect(definition.description).not.toContain("iPhone 14");
     expect(definition.description).toMatch(/does not establish Apple or OEM origin/);
     expect(definition.description).not.toMatch(/genuine OEM|Apple-original|OEM-supplied/i);
   });

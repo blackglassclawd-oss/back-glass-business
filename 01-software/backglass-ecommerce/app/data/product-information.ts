@@ -20,6 +20,8 @@ export const premiumPlusGrade = premiumPlusGradeJson as {
   customerFacingWording: string[];
   eligibilityRule: string;
   eligibleModels: Array<{ family: string; model: string; slug: string }>;
+  /** Models deliberately outside Premium Plus, with the architectural reason. Not blockers. */
+  excludedModels: Array<{ family: string; model: string; reason: string; slug: string; status: string }>;
   evidenceId: string;
   grade: "Premium Plus";
   inheritsFrom: "Premium";
