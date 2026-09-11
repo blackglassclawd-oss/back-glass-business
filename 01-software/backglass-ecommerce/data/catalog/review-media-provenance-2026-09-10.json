@@ -21,10 +21,16 @@
       "imageCount": 4
     },
     "iphone-17-pro-max": {
-      "source": null,
-      "status": "BLOCKED_NO_APPROVED_HALF_ASSEMBLY_MEDIA",
-      "imageCount": 0,
-      "reason": "The iPhone 17 Pro Max Premium half assembly's own media depicts a full-assembly/coil-bearing configuration (alt text and file names reference iphone-17-pro-max-back-glass-full-assembly-with-coil-premium; variant SKUs end -FA). Inheriting it would represent a half assembly with full-assembly imagery.",
+      "source": "Shared from the iPhone 17 Pro Max Premium half assembly (iphone-17-pro-max-half-assembly-no-coil-premium)",
+      "status": "APPROVED_OWNER_REVIEWED_STORE_MEDIA",
+      "imageCount": 3,
+      "ownerReview": "MICHAEL-2026-09-12-17-SERIES",
+      "visualVerification": "2026-09-12: all three Premium images (Silver, Cosmic Orange, Deep Blue) show the magnet ring and metallic film with no charging coil, NFC or flashlight flex. They match the 2026-08-14 review set Michael was shown on 2026-09-10.",
+      "labelNote": "Alt text and file names still read 'full-assembly-with-coil' / '-fa'. Those labels are left over from the product's former Full Assembly handle and do not describe the pictures, so the label-based full-assembly check is bypassed for this model only. The retired label text is not copied into Premium Plus alt text.",
+      "supersedes": {
+        "status": "BLOCKED_NO_APPROVED_HALF_ASSEMBLY_MEDIA",
+        "reason": "The 2026-09-10 blocker was inferred from the labels, not the pixels. The candidate overlay set awaited Michael's ruling on the visible magnet ring; his 2026-09-12 approval of the iPhone 17 series gives that ruling."
+      },
       "candidateSources": [
         {
           "path": "02-assets/product-previews/iphone-16-and-17-model-specific-half-assembly-no-coil/2026-08-14/model-name-overlay-awaiting-approval/images/iphone-17-pro-max/",
@@ -33,8 +39,9 @@
             "Cosmic Orange",
             "Deep Blue"
           ],
-          "status": "awaiting-owner-approval",
-          "blocker": "Overlay manifest status is awaiting-owner-approval; not cleared for Shopify."
+          "status": "owner-reviewed-2026-09-12",
+          "blocker": null,
+          "note": "Same pictures as the images already on the iPhone 17 Pro Max Premium product. Nothing new is uploaded from this local set."
         },
         {
           "vendor": "MobileSentrix",

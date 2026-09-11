@@ -67,5 +67,16 @@
     "source": "Owner correction relayed by Jason, 2026-09-10",
     "supersedes": "The 2026-09-09 rule that made Premium Plus eligible for iPhone 14 to iPhone 17 Pro Max.",
     "note": "Scope narrowed from 14-17 Pro Max to 15-17 Pro Max because the iPhone 14 series is Glass Only."
-  }
+  },
+  "ownerReview": [
+    {
+      "model": "iPhone 17 Pro Max",
+      "slug": "iphone-17-pro-max",
+      "evidenceId": "MICHAEL-2026-09-12-17-SERIES",
+      "reviewedAt": "2026-09-12",
+      "satisfies": ["michaelGradeConfirmation"],
+      "scope": "Michael reviewed and approved the iPhone 17 series for publication, which included this Premium Plus draft, its lens wording and its image set. It covers iPhone 17 Pro Max only. iPhone 15 Pro Max and iPhone 16 Pro Max Premium Plus still await Michael's confirmation.",
+      "stillRequired": ["lensProvenanceEvidence", "approvedSellingPrice", "startingInventory", "sku"]
+    }
+  ]
 }

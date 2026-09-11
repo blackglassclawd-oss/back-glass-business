@@ -9,11 +9,14 @@
  *
  * The script never publishes, never activates, never touches inventory, never
  * deletes, and refuses to write to any product outside the two authorized sets.
+ * --premium-plus-only limits a run to the Premium Plus drafts and leaves every
+ * coil draft untouched; --only-model=<slug> narrows it to one eligible model.
  */
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 import coilCatalog from "../data/catalog/wireless-charging-coils-2026-08-29.json";
+import mediaProvenance from "../data/catalog/review-media-provenance-2026-09-10.json";
 import { ShopifyAdminClient } from "../app/services/shopify/admin.server";
 import { loadShopifyConfig } from "../app/services/shopify/config";
 import {
@@ -32,6 +35,11 @@ const NO_APPROVED_PRICE = "0.00";
 const SHARED_MEDIA_MARKER = "shared from the Premium half-assembly image set";
 /** Recognises images this script added under any alt-text generation it has used. */
 const SHARED_MEDIA_PATTERN = /shared from the .*premium half[ -]assembly image set/i;
+/** Labels left over from the retired Full Assembly identity. */
+const RETIRED_LABEL_PATTERN = /full.assembly|with.coil|[-_]fa\b|[-_]fa\./i;
+/** Premium image sets that were visually verified and owner reviewed, keyed by model slug. */
+const ownerReviewedMedia = mediaProvenance.premiumPlusMedia as Record<string, { imageCount: number; status: string }>;
+const ownerReviewedModels = new Map((premiumPlusGrade.ownerReview ?? []).map((review) => [review.model, review]));
 
 interface Variant {
   id: string;
@@ -136,6 +144,12 @@ const DELETE_MEDIA_MUTATION = `#graphql
 
 const apply = process.argv.includes("--apply");
 const confirmed = process.argv.includes("--confirm-shopify-draft-review");
+const premiumPlusOnly = process.argv.includes("--premium-plus-only");
+/** --only-model=<slug> narrows the Premium Plus pass to one eligible model. */
+const onlyModel = process.argv.find((value) => value.startsWith("--only-model="))?.split("=")[1] ?? null;
+if (onlyModel && !premiumPlusGrade.eligibleModels.some((model) => model.slug === onlyModel)) {
+  throw new Error(`--only-model=${onlyModel} is not a Premium Plus eligible model.`);
+}
 const expected = (flag: string) => {
   const argument = process.argv.find((value) => value.startsWith(`${flag}=`));
   return argument ? Number(argument.split("=")[1]) : Number.NaN;
@@ -209,12 +223,20 @@ interface PremiumPlusPlan {
  * only usable when nothing about it says it depicts a different part: the repository
  * media policy forbids representing a half assembly with full-assembly imagery.
  */
-function mediaBlocker(source: ProductNode) {
+function mediaBlocker(source: ProductNode, slug: string) {
   if (source.mediaCount.count === 0) return "Premium source has no media.";
-  const wrongPart = source.media.nodes.filter((node) => {
-    const text = `${node.image?.altText ?? ""} ${node.image?.url ?? ""}`.toLowerCase();
-    return /full.assembly|with.coil|[-_]fa\b|[-_]fa\./.test(text);
-  });
+  // A set whose pixels were checked and owner reviewed is not judged by its labels:
+  // retired full-assembly wording there is left over from the old handle. The
+  // count must still match, so a changed source set is re-verified, not trusted.
+  const reviewed = ownerReviewedMedia[slug];
+  if (reviewed?.status === "APPROVED_OWNER_REVIEWED_STORE_MEDIA") {
+    return source.mediaCount.count === reviewed.imageCount
+      ? null
+      : `Premium source has ${source.mediaCount.count} images but the owner-reviewed set has ${reviewed.imageCount}; re-verify before sharing.`;
+  }
+  const wrongPart = source.media.nodes.filter((node) =>
+    RETIRED_LABEL_PATTERN.test(`${node.image?.altText ?? ""} ${node.image?.url ?? ""}`),
+  );
   if (wrongPart.length) {
     return `${wrongPart.length} of ${source.mediaCount.count} Premium source images are labelled as full-assembly media; half-assembly imagery is not verified.`;
   }
@@ -228,7 +250,7 @@ function planPremiumPlus(products: ProductNode[]): {
   const plans: PremiumPlusPlan[] = [];
   const skipped: Array<{ model: string; reason: string }> = [];
 
-  for (const entry of premiumPlusGrade.eligibleModels) {
+  for (const entry of premiumPlusGrade.eligibleModels.filter((model) => !onlyModel || model.slug === onlyModel)) {
     // Defence in depth: the iPhone 14 series is Glass Only, so no 14-series half
     // assembly may ever be planned even if the canonical record is edited wrongly.
     if (/^iPhone 14\b/.test(entry.model)) {
@@ -261,12 +283,13 @@ function planPremiumPlus(products: ProductNode[]): {
 
     const title = `${entry.model} Back Glass Half Assembly (No Coil) - Premium Plus`;
     const handle = `${entry.slug}-half-assembly-no-coil-premium-plus`;
-    const blocked = mediaBlocker(source);
+    const blocked = mediaBlocker(source, entry.slug);
+    const ownerReview = ownerReviewedModels.get(entry.model);
     const tags = [
       "premium plus",
       entry.slug,
       "commercial-data-blocked",
-      "owner-review-pending",
+      ...(ownerReview ? [] : ["owner-review-pending"]),
       ...(blocked ? ["media-blocked"] : []),
     ];
     const facts = getProductInformation({
@@ -297,7 +320,11 @@ function planPremiumPlus(products: ProductNode[]): {
 
     plans.push({
       colors,
-      descriptionHtml: `${generated}<h2>Draft review status</h2><ul><li>Draft for Michael's review. Not published, not for sale.</li><li>No approved selling price, SKU or starting inventory. Price shown as ${NO_APPROVED_PRICE} is this catalog's "no approved price" marker, not a proposed price.</li><li>${escapeHtml(blocked ?? `Images are shared from the ${entry.model} Premium half assembly (${source.handle}). No separate Premium Plus photography exists.`)}</li><li>Camera-lens description is owner-specified (${escapeHtml(premiumPlusGrade.evidenceId)}) and awaits Michael's confirmation. It does not establish Apple origin or OEM supply.</li></ul>`,
+      descriptionHtml: `${generated}<h2>Draft review status</h2><ul><li>Draft for Michael's review. Not published, not for sale.</li><li>No approved selling price, SKU or starting inventory. Price shown as ${NO_APPROVED_PRICE} is this catalog's "no approved price" marker, not a proposed price.</li><li>${escapeHtml(blocked ?? `Images are shared from the ${entry.model} Premium half assembly (${source.handle}). No separate Premium Plus photography exists.`)}</li><li>${
+        ownerReview
+          ? `Michael reviewed this draft with the iPhone 17 series on ${escapeHtml(ownerReview.reviewedAt)} (${escapeHtml(ownerReview.evidenceId)}). The camera-lens description still needs supporting evidence and does not establish Apple origin or OEM supply.`
+          : `Camera-lens description is owner-specified (${escapeHtml(premiumPlusGrade.evidenceId)}) and awaits Michael's confirmation. It does not establish Apple origin or OEM supply.`
+      }</li></ul>`,
       handle,
       mediaBlockedReason: blocked,
       model: entry.model,
@@ -311,7 +338,9 @@ function planPremiumPlus(products: ProductNode[]): {
             .map((node, index, all) => ({
               // The index keeps each alt unique even when the Premium source images
               // carry no alt text of their own, which is what makes reconciliation stable.
-              alt: `${entry.model} Premium Plus — image ${index + 1} of ${all.length}, ${SHARED_MEDIA_MARKER} (${source.handle}).${node.image?.altText?.trim() ? ` ${node.image.altText.trim()}` : ""}`,
+              // Retired full-assembly wording in a source alt is dropped rather than
+              // copied onto a half assembly's customer-visible alt text.
+              alt: `${entry.model} Premium Plus — image ${index + 1} of ${all.length}, ${SHARED_MEDIA_MARKER} (${source.handle}).${node.image?.altText?.trim() && !RETIRED_LABEL_PATTERN.test(node.image.altText) ? ` ${node.image.altText.trim()}` : ""}`,
               url: node.image!.url,
             })),
       tags,
@@ -460,7 +489,7 @@ async function reconcileMedia(
 
 const before = await inventory();
 const { plans: premiumPlusPlans, skipped } = planPremiumPlus(before);
-const coilPlans = planCoils(before);
+const coilPlans = premiumPlusOnly ? [] : planCoils(before);
 const beforeById = new Map(before.map((product) => [product.id, product]));
 
 const premiumPlusExisting = new Map(
@@ -474,7 +503,9 @@ const coilCreates = coilPlans.filter((plan) => !plan.existingId);
 const coilUpdates = coilPlans.filter((plan) => plan.existingId);
 
 const plan = {
-  authorizedScope: ["Premium Plus back-glass DRAFT products", "Wireless Charging Coil DRAFT products"],
+  authorizedScope: premiumPlusOnly
+    ? ["Premium Plus back-glass DRAFT products"]
+    : ["Premium Plus back-glass DRAFT products", "Wireless Charging Coil DRAFT products"],
   capturedAt: new Date().toISOString(),
   mode: apply ? "APPLY" : "DRY_RUN",
   premiumPlus: {

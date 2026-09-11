@@ -27,6 +27,8 @@ export const premiumPlusGrade = premiumPlusGradeJson as {
   inheritsFrom: "Premium";
   owner: "Michael";
   prohibitedClaims: string[];
+  /** Per-model owner reviews. A review covers only its own model, never the whole grade. */
+  ownerReview?: Array<{ evidenceId: string; model: string; reviewedAt: string; satisfies: string[]; scope: string; slug: string; stillRequired: string[] }>;
   productForm: "half-assembly";
   recordedBy: "Jason";
   requiredBeforePublication: string[];

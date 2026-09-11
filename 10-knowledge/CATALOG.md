@@ -31,7 +31,21 @@
   optical, scratch-resistance, pricing or warranty difference is established.
   Eligibility, wording and publication blockers live in
   [`../01-software/backglass-ecommerce/data/catalog/premium-plus-grade-2026-09-09.json`](../01-software/backglass-ecommerce/data/catalog/premium-plus-grade-2026-09-09.json).
-  No Premium Plus product record, SKU, price or media exists yet.
+  Premium Plus exists only as unpublished Shopify drafts with no price, SKU or
+  inventory. Michael's 2026-09-12 approval of the iPhone 17 series satisfies the
+  owner review for the iPhone 17 Pro Max draft only.
+- On 2026-09-12 Michael reviewed the iPhone 17 series and approved it for
+  publication, approved adding **iPhone 17e Back Glass**, and allowed the first
+  17e listing to use iPhone 16e imagery temporarily, knowing the 16e part has no
+  magnets and the 17e part does. Owner review is not a price, stock, media-rights
+  or coil decision. Only iPhone 17 A Grade ($12) and Premium ($18) have approved
+  prices. 17 Pro, 17 Pro Max and Air stay blocked on price, Air also on its
+  full-assembly imagery, and 17 Pro / Pro Max A Grade stay withdrawn. iPhone 17e
+  is Premium-only Half Assembly (No Coil) in Black, White and Soft Pink, with no
+  price yet. No iPhone 16e image exists anywhere, so the reuse cannot happen
+  until one is supplied; model-specific 17e photography should replace it
+  later. Canonical record:
+  [`../01-software/backglass-ecommerce/data/catalog/iphone-17-series-owner-approval-2026-09-12.json`](../01-software/backglass-ecommerce/data/catalog/iphone-17-series-owner-approval-2026-09-12.json).
 - Offer Wireless Charging Coils as standalone products, separate from Back
   Glass.
 - Create separate `OEM` and `Aftermarket` product drafts for each verified

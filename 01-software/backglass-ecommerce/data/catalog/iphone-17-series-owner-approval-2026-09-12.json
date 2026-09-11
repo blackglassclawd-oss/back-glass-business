@@ -1,0 +1,351 @@
+{
+  "recordedAt": "2026-09-12",
+  "evidenceId": "MICHAEL-2026-09-12-17-SERIES",
+  "decidedBy": "Michael",
+  "relayedBy": "Jason",
+  "source": "Michael's messages relayed by Jason, 2026-09-12",
+  "reviewInterval": "Before any further iPhone 17-series publication, and when 17e photography, prices or inventory change",
+  "decisions": [
+    {
+      "id": "iphone-17-series-publication",
+      "quote": "我看了17系列了，17可以发布了",
+      "meaning": "Michael has reviewed the iPhone 17 series and approves it for publication.",
+      "scope": "Satisfies the owner-review gate for iPhone 17-series back glass only. It is not a price, SKU, inventory, media-rights or compatibility decision, and it covers no wireless charging coil."
+    },
+    {
+      "id": "iphone-17e-back-glass-addition",
+      "quote": "可以加17e背玻璃",
+      "meaning": "Add iPhone 17e Back Glass to the catalog."
+    },
+    {
+      "id": "iphone-17e-temporary-16e-imagery",
+      "quote": "17e背玻璃可以用16e的图片，虽然16e没有磁铁，17e有，先求有再求好",
+      "meaning": "The first iPhone 17e Back Glass listing may temporarily use iPhone 16e Back Glass imagery. Michael knows the 16e part has no magnets and the 17e part does; the mismatch is intentional and temporary.",
+      "scope": "Image only. Nothing else transfers from 16e to 17e: no price, SKU, inventory, compatibility, specification or included-component claim."
+    }
+  ],
+  "notApprovedByThisRecord": [
+    "Any selling price other than the iPhone 17 A Grade $12.00 and Premium $18.00 already approved by Jason on 2026-09-09",
+    "Wireless charging coil publication, compatibility, grade definitions or media, for any model including iPhone 17e",
+    "Supplier or reference coil media",
+    "Inventory quantities or tracking changes",
+    "Reviving iPhone 17 Pro / Pro Max A Grade, which Michael removed on 2026-09-01",
+    "Any model outside the iPhone 17 generation"
+  ],
+  "publicationChannels": [
+    "Online Store",
+    "Shop",
+    "Point of Sale"
+  ],
+  "publicationGates": [
+    "Every variant price equals the approved selling price",
+    "Every variant has a SKU and an assigned image from the approved media set",
+    "The product is not a member of full-assembly-with-charging-coil or new-arrivals (stale smart-collection membership left over from the Full Assembly retitle)",
+    "The product is still an unpublished DRAFT immediately before the write"
+  ],
+  "backGlass": [
+    {
+      "productId": "gid://shopify/Product/8675370991788",
+      "handle": "iphone-17-half-assembly-no-coil-a-grade",
+      "title": "iPhone 17 Back Glass Half Assembly (No Coil) - A Grade",
+      "colors": [
+        "Black",
+        "White",
+        "Mist Blue",
+        "Lavender",
+        "Sage"
+      ],
+      "model": "iPhone 17",
+      "grade": "A Grade",
+      "catalogDecision": "OFFERED",
+      "ownerReview": "MICHAEL-2026-09-12-17-SERIES",
+      "approvedSellingPrice": "12.00",
+      "priceEvidence": "JASON-2026-09-09-IPHONE17-PRICE",
+      "media": {
+        "status": "OWNER_APPROVED",
+        "count": 5,
+        "altPrefix": "BGP owner-approved iPhone 17 model-label v5 2026-08-15",
+        "note": "Owner-approved iPhone 17 model-label v5 pack (ownerApprovalDate 2026-08-15); every image shows the magnet ring and metallic film with no charging coil, NFC or flashlight flex (visually re-checked 2026-09-12)."
+      },
+      "publication": "APPROVED",
+      "openFactualBlockers": []
+    },
+    {
+      "productId": "gid://shopify/Product/8675371090092",
+      "handle": "iphone-17-half-assembly-no-coil-premium",
+      "title": "iPhone 17 Back Glass Half Assembly (No Coil) - Premium",
+      "colors": [
+        "Black",
+        "White",
+        "Mist Blue",
+        "Lavender",
+        "Sage"
+      ],
+      "model": "iPhone 17",
+      "grade": "Premium",
+      "catalogDecision": "OFFERED",
+      "ownerReview": "MICHAEL-2026-09-12-17-SERIES",
+      "approvedSellingPrice": "18.00",
+      "priceEvidence": "JASON-2026-09-09-IPHONE17-PRICE",
+      "media": {
+        "status": "OWNER_APPROVED",
+        "count": 5,
+        "altPrefix": "BGP owner-approved iPhone 17 model-label v5 2026-08-15",
+        "note": "Owner-approved iPhone 17 model-label v5 pack (ownerApprovalDate 2026-08-15); every image shows the magnet ring and metallic film with no charging coil, NFC or flashlight flex (visually re-checked 2026-09-12)."
+      },
+      "publication": "APPROVED",
+      "openFactualBlockers": []
+    },
+    {
+      "productId": "gid://shopify/Product/8675371417772",
+      "handle": "iphone-17-pro-half-assembly-no-coil-premium",
+      "title": "iPhone 17 Pro Back Glass Half Assembly (No Coil) - Premium",
+      "colors": [
+        "Silver",
+        "Cosmic Orange",
+        "Deep Blue"
+      ],
+      "model": "iPhone 17 Pro",
+      "grade": "Premium",
+      "catalogDecision": "OFFERED",
+      "ownerReview": "MICHAEL-2026-09-12-17-SERIES",
+      "approvedSellingPrice": null,
+      "priceEvidence": null,
+      "unconfirmedSheetPrice": "10.00",
+      "media": {
+        "status": "OWNER_REVIEWED",
+        "count": 3,
+        "note": "Model-label v4 pack applied 2026-08-14 and reviewed by Michael as part of the iPhone 17 series on 2026-09-12. Images show the magnet ring with no charging coil (visually re-checked 2026-09-12). File names and alt text still carry the retired '-fa' / 'full-assembly-with-coil' labels; those are naming leftovers, not what the pictures show."
+      },
+      "publication": "BLOCKED",
+      "openFactualBlockers": [
+        "approvedSellingPrice"
+      ],
+      "blockerNote": "Shopify and the 2026-07-28 sheet read $10.00, below the $15.00 shipped iPhone 16 Pro Premium. Jason's 2026-09-09 price ruling covers iPhone 17 only, and open decision #3 (sheet semantics) is unresolved. Michael's publication approval does not confirm a price."
+    },
+    {
+      "productId": "gid://shopify/Product/8675371614380",
+      "handle": "iphone-17-pro-max-half-assembly-no-coil-premium",
+      "title": "iPhone 17 Pro Max Back Glass Half Assembly (No Coil) - Premium",
+      "colors": [
+        "Silver",
+        "Cosmic Orange",
+        "Deep Blue"
+      ],
+      "model": "iPhone 17 Pro Max",
+      "grade": "Premium",
+      "catalogDecision": "OFFERED",
+      "ownerReview": "MICHAEL-2026-09-12-17-SERIES",
+      "approvedSellingPrice": null,
+      "priceEvidence": null,
+      "unconfirmedSheetPrice": "10.00",
+      "media": {
+        "status": "OWNER_REVIEWED",
+        "count": 3,
+        "note": "Model-label v4 pack applied 2026-08-14 and reviewed by Michael as part of the iPhone 17 series on 2026-09-12. Images show the magnet ring with no charging coil (visually re-checked 2026-09-12). File names and alt text still carry the retired '-fa' / 'full-assembly-with-coil' labels; those are naming leftovers, not what the pictures show."
+      },
+      "publication": "BLOCKED",
+      "openFactualBlockers": [
+        "approvedSellingPrice"
+      ],
+      "blockerNote": "Shopify and the 2026-07-28 sheet read $10.00, below the $15.00 shipped iPhone 16 Pro Max Premium. Same unresolved price question as iPhone 17 Pro Premium."
+    },
+    {
+      "productId": "gid://shopify/Product/8675371253932",
+      "handle": "iphone-air-half-assembly-no-coil-premium",
+      "title": "iPhone Air Back Glass Half Assembly (No Coil) - Premium",
+      "colors": [
+        "Space Black",
+        "Cloud White",
+        "Light Gold",
+        "Sky Blue"
+      ],
+      "model": "iPhone Air",
+      "grade": "Premium",
+      "catalogDecision": "OFFERED",
+      "ownerReview": "MICHAEL-2026-09-12-17-SERIES",
+      "approvedSellingPrice": null,
+      "priceEvidence": null,
+      "unconfirmedSheetPrice": "60.00",
+      "media": {
+        "status": "BLOCKED_FULL_ASSEMBLY_IMAGERY",
+        "count": 4,
+        "note": "Images are the former Full Assembly (With Coil) photography: alt text reads 'back glass full assembly with charging coil' and the inward face shows the coil/flex assembly (visually re-checked 2026-09-12). A half assembly must not be shown with full-assembly imagery."
+      },
+      "publication": "BLOCKED",
+      "openFactualBlockers": [
+        "approvedSellingPrice",
+        "approvedProductMedia"
+      ],
+      "blockerNote": "$60.00 matches the sheet but is four times the shipped $15.00 iPhone 16 Pro Premium and has never been confirmed."
+    },
+    {
+      "productId": "gid://shopify/Product/8675371188396",
+      "handle": "iphone-air-half-assembly-no-coil-a-grade",
+      "title": "iPhone Air Back Glass Half Assembly (No Coil) - A Grade",
+      "colors": [
+        "Space Black",
+        "Cloud White",
+        "Light Gold",
+        "Sky Blue"
+      ],
+      "model": "iPhone Air",
+      "grade": "A Grade",
+      "catalogDecision": "OFFERED",
+      "ownerReview": "MICHAEL-2026-09-12-17-SERIES",
+      "approvedSellingPrice": null,
+      "priceEvidence": null,
+      "unconfirmedSheetPrice": null,
+      "media": {
+        "status": "BLOCKED_FULL_ASSEMBLY_IMAGERY",
+        "count": 4,
+        "note": "Images are the former Full Assembly (With Coil) photography: alt text reads 'back glass full assembly with charging coil' and the inward face shows the coil/flex assembly (visually re-checked 2026-09-12). A half assembly must not be shown with full-assembly imagery."
+      },
+      "publication": "BLOCKED",
+      "openFactualBlockers": [
+        "approvedSellingPrice",
+        "approvedProductMedia"
+      ],
+      "blockerNote": "Shopify reads $0.00 and the owner sheet has no iPhone Air A Grade price."
+    },
+    {
+      "productId": "gid://shopify/Product/8675371352236",
+      "handle": "iphone-17-pro-half-assembly-no-coil-a-grade",
+      "title": "iPhone 17 Pro Back Glass Half Assembly (No Coil) - A Grade",
+      "colors": [
+        "Silver",
+        "Cosmic Orange",
+        "Deep Blue"
+      ],
+      "model": "iPhone 17 Pro",
+      "grade": "A Grade",
+      "catalogDecision": "NOT_OFFERED",
+      "ownerReview": null,
+      "approvedSellingPrice": null,
+      "priceEvidence": null,
+      "publication": "NEVER",
+      "openFactualBlockers": [],
+      "blockerNote": "Michael's 2026-09-01 iPhone 17-series email removed A Grade from iPhone 17 Pro. The record stays DRAFT for history; it is not an offer and his 2026-09-12 approval does not revive it."
+    },
+    {
+      "productId": "gid://shopify/Product/8675371516076",
+      "handle": "iphone-17-pro-max-half-assembly-no-coil-a-grade",
+      "title": "iPhone 17 Pro Max Back Glass  Half Assembly (No Coil) - A Grade",
+      "colors": [
+        "Silver",
+        "Cosmic Orange",
+        "Deep Blue"
+      ],
+      "model": "iPhone 17 Pro Max",
+      "grade": "A Grade",
+      "catalogDecision": "NOT_OFFERED",
+      "ownerReview": null,
+      "approvedSellingPrice": null,
+      "priceEvidence": null,
+      "publication": "NEVER",
+      "openFactualBlockers": [],
+      "blockerNote": "Michael's 2026-09-01 iPhone 17-series email removed A Grade from iPhone 17 Pro Max. The record stays DRAFT for history. (Its Shopify title also carries a double space.)"
+    },
+    {
+      "productId": "gid://shopify/Product/8748929941676",
+      "handle": "iphone-17-pro-max-half-assembly-no-coil-premium-plus",
+      "title": "iPhone 17 Pro Max Back Glass Half Assembly (No Coil) - Premium Plus",
+      "colors": [
+        "Silver",
+        "Cosmic Orange",
+        "Deep Blue"
+      ],
+      "model": "iPhone 17 Pro Max",
+      "grade": "Premium Plus",
+      "catalogDecision": "OFFERED",
+      "ownerReview": "MICHAEL-2026-09-12-17-SERIES",
+      "approvedSellingPrice": null,
+      "priceEvidence": null,
+      "media": {
+        "status": "OWNER_REVIEWED",
+        "count": 3,
+        "note": "Inherits the iPhone 17 Pro Max Premium image set (see premiumPlusMedia in review-media-provenance-2026-09-10.json)."
+      },
+      "publication": "BLOCKED",
+      "openFactualBlockers": [
+        "lensProvenanceEvidence",
+        "approvedSellingPrice",
+        "sku",
+        "startingInventory"
+      ],
+      "blockerNote": "Owner review is satisfied for this model only. Premium Plus has no approved price, SKU or starting inventory, and the sapphire / OEM-quality lens description still needs supporting evidence. Stays DRAFT."
+    }
+  ],
+  "iphone17eBackGlass": {
+    "status": "APPROVED_CATALOG_ADDITION",
+    "shopifyProductId": "gid://shopify/Product/8756207452332",
+    "shopifyStatus": "DRAFT",
+    "shopifyCreatedAt": "2026-09-12",
+    "additionApprovedBy": "MICHAEL-2026-09-12-17-SERIES",
+    "structureApprovedBy": "Jason, 2026-09-09 (17e structure approval: Premium only, Half Assembly (No Coil), Black / White / Soft Pink, SKU token I17E)",
+    "title": "iPhone 17e Back Glass Half Assembly (No Coil) - Premium",
+    "handle": "iphone-17e-half-assembly-no-coil-premium",
+    "productType": "Back Glass",
+    "vendor": "Back Glass Pros",
+    "productForm": "half-assembly",
+    "coilIncluded": false,
+    "grades": [
+      "Premium"
+    ],
+    "notCreated": [
+      "A Grade",
+      "Glass Only",
+      "Full Assembly",
+      "Premium Plus"
+    ],
+    "colors": [
+      "Black",
+      "White",
+      "Soft Pink"
+    ],
+    "colorSource": "Apple's official iPhone 17e finishes",
+    "skus": {
+      "Black": "SKU-I17E-PREMIUM-BLACK-HA",
+      "White": "SKU-I17E-PREMIUM-WHITE-HA",
+      "Soft Pink": "SKU-I17E-PREMIUM-SOFTPINK-HA"
+    },
+    "approvedSellingPrice": null,
+    "draftPriceMarker": "0.00",
+    "priceNote": "No owner sheet has an iPhone 17e row. The 16e Premium cell ($10) must not be copied.",
+    "inventoryDecision": null,
+    "inventoryNote": "Tracking, sell-at-zero and starting quantity are undecided. The draft is created untracked with no quantity, matching every other product in the store; that is not a stock claim.",
+    "michaelFactReview": "PENDING",
+    "michaelFactReviewScope": "Included and excluded components, exact fitment scope, any customer-facing Premium definition, model-specific exceptions",
+    "requiredBeforePublication": [
+      "approvedSellingPrice",
+      "inventoryDecision",
+      "productMedia",
+      "michaelFactReview"
+    ],
+    "media": {
+      "temporaryImageSourceModel": "iPhone 16e",
+      "intendedProductModel": "iPhone 17e",
+      "ownerApprovedTemporaryReuse": true,
+      "ownerApprovedAt": "2026-09-12",
+      "ownerEvidence": "MICHAEL-2026-09-12-17-SERIES",
+      "knownVisualDifference": "iPhone 16e imagery does not show the magnet configuration present on iPhone 17e",
+      "replacementStatus": "replace when model-specific iPhone 17e photography is available",
+      "sourceAssetStatus": "NO_16E_IMAGE_EXISTS",
+      "sourceAssetNote": "The catalog has no iPhone 16e product, and no iPhone 16e image exists in Shopify Files, the repository or the local supplier stores (exhaustive search 2026-09-09, Shopify Files and catalog re-checked 2026-09-12). The reuse is authorised but cannot be carried out until a 16e back-glass image set is supplied. Scraping an unlicensed supplier photo does not satisfy it.",
+      "internalLabel": "TEMPORARY 16e VISUAL PLACEHOLDER — REPLACE WITH 17e PHOTO",
+      "customerImageNote": "Representative photo: shows the iPhone 16e version of this part, which does not have the magnets found on the iPhone 17e part.",
+      "prohibited": [
+        "AI editing a 16e photo to add magnets",
+        "fabricated or generated 17e photography",
+        "recolouring",
+        "Apple photography",
+        "the rejected 17e photos showing an installed charging coil"
+      ],
+      "mediaIsNotCompatibilityEvidence": true
+    }
+  },
+  "coils": {
+    "decision": "UNCHANGED",
+    "note": "Michael's 2026-09-12 messages do not mention coils. All iPhone 17-family coil drafts, including both iPhone 17e coils, stay DRAFT with their existing blockers. No compatibility, media or publication approval is inferred."
+  }
+}
