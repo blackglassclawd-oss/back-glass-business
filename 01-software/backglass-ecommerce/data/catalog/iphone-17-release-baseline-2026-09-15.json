@@ -1,0 +1,190 @@
+{
+  "recordedAt": "2026-09-15",
+  "approvalEvidence": "MICHAEL-2026-09-12-17-SERIES",
+  "source": "Authenticated read-only Shopify Admin API capture of the two release targets, 2026-09-15",
+  "purpose": "Exact verified invariants for publishing the base iPhone 17 back glass. The release engine (scripts/lib/iphone17-release.ts) refuses to publish, and fails its post-write verification, unless live Shopify state matches this record exactly. It records existing verified state only: it is not a price, SKU, inventory, media or catalog decision, and changing any value here needs the same approvals as changing it in Shopify.",
+  "identityNote": "Variant and media IDs are Shopify GIDs for the exact objects. Replacing or re-uploading an image yields a new media ID even when the image count and alt text stay the same, so a same-count substitution or a colour swap cannot pass. The same IDs are exposed publicly on the storefront.",
+  "skuNote": "The -FA suffix is legacy naming. SKUs must stay exactly as recorded for this release; normalisation needs a separate approval.",
+  "inventoryNote": "Untracked, DENY and quantity 0 is the store-wide baseline. It is recorded so publication cannot change or reinterpret inventory state; it is not a stock or availability claim.",
+  "collectionNote": "The gate is target membership: each target must be in its required collections and absent from the forbidden ones. Total collection counts are diagnostics only. On 2026-09-15 both forbidden collections had one conditions source (title contains 'full assembly' / 'iPhone 16', no exclusions, no sub-collections) whose inclusion also manually selects the 8 retitled iPhone 17 / Air half-assembly drafts. Their membership comes from those manual selections, not from the title conditions, so re-saving or re-evaluating the conditions cannot remove it.",
+  "releaseChannels": [
+    "Online Store",
+    "Shop",
+    "Point of Sale"
+  ],
+  "targets": [
+    {
+      "productId": "gid://shopify/Product/8675370991788",
+      "handle": "iphone-17-half-assembly-no-coil-a-grade",
+      "title": "iPhone 17 Back Glass Half Assembly (No Coil) - A Grade",
+      "productType": "Back Glass",
+      "approvedSellingPrice": "12.00",
+      "colors": [
+        "Black",
+        "White",
+        "Mist Blue",
+        "Lavender",
+        "Sage"
+      ],
+      "mediaIds": [
+        "gid://shopify/MediaImage/34112678985900",
+        "gid://shopify/MediaImage/34112722075820",
+        "gid://shopify/MediaImage/34112722174124",
+        "gid://shopify/MediaImage/34112722010284",
+        "gid://shopify/MediaImage/34112721879212"
+      ],
+      "variants": [
+        {
+          "color": "Black",
+          "variantId": "gid://shopify/ProductVariant/46825690202284",
+          "sku": "SKU-I17-A-GRADE-BLACK-FA",
+          "price": "12.00",
+          "inventoryTracked": false,
+          "inventoryPolicy": "DENY",
+          "inventoryQuantity": 0,
+          "mediaId": "gid://shopify/MediaImage/34112678985900"
+        },
+        {
+          "color": "White",
+          "variantId": "gid://shopify/ProductVariant/46825690235052",
+          "sku": "SKU-I17-A-GRADE-WHITE-FA",
+          "price": "12.00",
+          "inventoryTracked": false,
+          "inventoryPolicy": "DENY",
+          "inventoryQuantity": 0,
+          "mediaId": "gid://shopify/MediaImage/34112722075820"
+        },
+        {
+          "color": "Mist Blue",
+          "variantId": "gid://shopify/ProductVariant/46825690267820",
+          "sku": "SKU-I17-A-GRADE-MISTBLUE-FA",
+          "price": "12.00",
+          "inventoryTracked": false,
+          "inventoryPolicy": "DENY",
+          "inventoryQuantity": 0,
+          "mediaId": "gid://shopify/MediaImage/34112722174124"
+        },
+        {
+          "color": "Lavender",
+          "variantId": "gid://shopify/ProductVariant/46825690300588",
+          "sku": "SKU-I17-A-GRADE-LAVENDER-FA",
+          "price": "12.00",
+          "inventoryTracked": false,
+          "inventoryPolicy": "DENY",
+          "inventoryQuantity": 0,
+          "mediaId": "gid://shopify/MediaImage/34112722010284"
+        },
+        {
+          "color": "Sage",
+          "variantId": "gid://shopify/ProductVariant/46825690333356",
+          "sku": "SKU-I17-A-GRADE-SAGE-FA",
+          "price": "12.00",
+          "inventoryTracked": false,
+          "inventoryPolicy": "DENY",
+          "inventoryQuantity": 0,
+          "mediaId": "gid://shopify/MediaImage/34112721879212"
+        }
+      ],
+      "requiredCollections": [
+        "half-assembly-without-charging-coil",
+        "a-grade"
+      ],
+      "forbiddenCollections": [
+        "full-assembly-with-charging-coil",
+        "new-arrivals"
+      ],
+      "preReleaseStatus": "DRAFT",
+      "preReleasePublications": []
+    },
+    {
+      "productId": "gid://shopify/Product/8675371090092",
+      "handle": "iphone-17-half-assembly-no-coil-premium",
+      "title": "iPhone 17 Back Glass Half Assembly (No Coil) - Premium",
+      "productType": "Back Glass",
+      "approvedSellingPrice": "18.00",
+      "colors": [
+        "Black",
+        "White",
+        "Mist Blue",
+        "Lavender",
+        "Sage"
+      ],
+      "mediaIds": [
+        "gid://shopify/MediaImage/34112678985900",
+        "gid://shopify/MediaImage/34112722075820",
+        "gid://shopify/MediaImage/34112722174124",
+        "gid://shopify/MediaImage/34112722010284",
+        "gid://shopify/MediaImage/34112721879212"
+      ],
+      "variants": [
+        {
+          "color": "Black",
+          "variantId": "gid://shopify/ProductVariant/46825690431660",
+          "sku": "SKU-I17-PREMIUM-BLACK-FA",
+          "price": "18.00",
+          "inventoryTracked": false,
+          "inventoryPolicy": "DENY",
+          "inventoryQuantity": 0,
+          "mediaId": "gid://shopify/MediaImage/34112678985900"
+        },
+        {
+          "color": "White",
+          "variantId": "gid://shopify/ProductVariant/46825690464428",
+          "sku": "SKU-I17-PREMIUM-WHITE-FA",
+          "price": "18.00",
+          "inventoryTracked": false,
+          "inventoryPolicy": "DENY",
+          "inventoryQuantity": 0,
+          "mediaId": "gid://shopify/MediaImage/34112722075820"
+        },
+        {
+          "color": "Mist Blue",
+          "variantId": "gid://shopify/ProductVariant/46825690497196",
+          "sku": "SKU-I17-PREMIUM-MISTBLUE-FA",
+          "price": "18.00",
+          "inventoryTracked": false,
+          "inventoryPolicy": "DENY",
+          "inventoryQuantity": 0,
+          "mediaId": "gid://shopify/MediaImage/34112722174124"
+        },
+        {
+          "color": "Lavender",
+          "variantId": "gid://shopify/ProductVariant/46825690529964",
+          "sku": "SKU-I17-PREMIUM-LAVENDER-FA",
+          "price": "18.00",
+          "inventoryTracked": false,
+          "inventoryPolicy": "DENY",
+          "inventoryQuantity": 0,
+          "mediaId": "gid://shopify/MediaImage/34112722010284"
+        },
+        {
+          "color": "Sage",
+          "variantId": "gid://shopify/ProductVariant/46825690562732",
+          "sku": "SKU-I17-PREMIUM-SAGE-FA",
+          "price": "18.00",
+          "inventoryTracked": false,
+          "inventoryPolicy": "DENY",
+          "inventoryQuantity": 0,
+          "mediaId": "gid://shopify/MediaImage/34112721879212"
+        }
+      ],
+      "requiredCollections": [
+        "half-assembly-without-charging-coil",
+        "premium"
+      ],
+      "forbiddenCollections": [
+        "full-assembly-with-charging-coil",
+        "new-arrivals"
+      ],
+      "preReleaseStatus": "DRAFT",
+      "preReleasePublications": []
+    }
+  ],
+  "canonical17e": {
+    "productId": "gid://shopify/Product/8756207452332",
+    "handle": "iphone-17e-half-assembly-no-coil-premium",
+    "title": "iPhone 17e Back Glass Half Assembly (No Coil) - Premium",
+    "productType": "Back Glass",
+    "status": "DRAFT"
+  }
+}
