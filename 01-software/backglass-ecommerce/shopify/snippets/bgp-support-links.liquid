@@ -1,0 +1,6 @@
+<nav class="page-width" aria-label="Support">
+  <a href="{{ routes.root_url }}pages/contact">Contact Back Glass Pros</a>
+  {%- if pages['buyer-guidance'] != blank -%}
+    · <a href="{{ pages['buyer-guidance'].url }}">Buyer guidance</a>
+  {%- endif -%}
+</nav>

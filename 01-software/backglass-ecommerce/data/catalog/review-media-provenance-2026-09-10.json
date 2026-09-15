@@ -1,0 +1,66 @@
+{
+  "recordedAt": "2026-09-10",
+  "recordedBy": "Jason",
+  "purpose": "Machine-readable media-provenance rules for the Premium Plus and wireless-charging-coil draft review pass, so future automation cannot mistake reference media for production media.",
+  "rules": {
+    "mediaEvidenceIsNotCompatibilityEvidence": "A model-named filename, a matching supplier page, or an attached image never establishes physical fitment. Coil compatibility stays UNVERIFIED until Michael verifies it, independently of media.",
+    "draftIsNotPrivate": "Shopify CDN files are publicly reachable even when the product is DRAFT and unpublished. Attaching media to a draft is effectively publishing that file, so rights must be cleared before upload, not before activation.",
+    "vendorDerivedMediaNeverProduction": "Imagery derived from MobileSentrix, Phone LCD Parts, Injured Gadgets or any other vendor is temporary internal reference only. It must not be uploaded to Shopify until rights are cleared and Michael approves the exact presentation.",
+    "temporaryReviewMediaLabel": "TEMP REVIEW MEDIA \u2014 vendor-reference-derived \u2014 replace before publication",
+    "noFabricatedRepresentation": "Editing a photograph of one product configuration so that it depicts a different configuration (for example removing a coil or MagSafe magnet to make a full assembly look like a half assembly) creates a fabricated representation of the part and is prohibited, even for internal review."
+  },
+  "premiumPlusMedia": {
+    "iphone-15-pro-max": {
+      "source": "Shared from the iPhone 15 Pro Max Premium half assembly (iphone-15-pro-max-half-assembly-no-coil-premium)",
+      "status": "APPROVED_EXISTING_STORE_MEDIA",
+      "imageCount": 4
+    },
+    "iphone-16-pro-max": {
+      "source": "Shared from the iPhone 16 Pro Max Premium half assembly (iphone-16-pro-max-half-assembly-no-coil-premium)",
+      "status": "APPROVED_EXISTING_STORE_MEDIA",
+      "imageCount": 4
+    },
+    "iphone-17-pro-max": {
+      "source": "Shared from the iPhone 17 Pro Max Premium half assembly (iphone-17-pro-max-half-assembly-no-coil-premium)",
+      "status": "APPROVED_OWNER_REVIEWED_STORE_MEDIA",
+      "imageCount": 3,
+      "ownerReview": "MICHAEL-2026-09-12-17-SERIES",
+      "visualVerification": "2026-09-12: all three Premium images (Silver, Cosmic Orange, Deep Blue) show the magnet ring and metallic film with no charging coil, NFC or flashlight flex. They match the 2026-08-14 review set Michael was shown on 2026-09-10.",
+      "labelNote": "Alt text and file names still read 'full-assembly-with-coil' / '-fa'. Those labels are left over from the product's former Full Assembly handle and do not describe the pictures, so the label-based full-assembly check is bypassed for this model only. The retired label text is not copied into Premium Plus alt text.",
+      "supersedes": {
+        "status": "BLOCKED_NO_APPROVED_HALF_ASSEMBLY_MEDIA",
+        "reason": "The 2026-09-10 blocker was inferred from the labels, not the pixels. The candidate overlay set awaited Michael's ruling on the visible magnet ring; his 2026-09-12 approval of the iPhone 17 series gives that ruling."
+      },
+      "candidateSources": [
+        {
+          "path": "02-assets/product-previews/iphone-16-and-17-model-specific-half-assembly-no-coil/2026-08-14/model-name-overlay-awaiting-approval/images/iphone-17-pro-max/",
+          "colors": [
+            "Silver",
+            "Cosmic Orange",
+            "Deep Blue"
+          ],
+          "status": "owner-reviewed-2026-09-12",
+          "blocker": null,
+          "note": "Same pictures as the images already on the iPhone 17 Pro Max Premium product. Nothing new is uploaded from this local set."
+        },
+        {
+          "vendor": "MobileSentrix",
+          "status": "REFERENCE_ONLY_RIGHTS_UNVERIFIED",
+          "blocker": "Vendor photography depicting a MagSafe/NFC/flashlight-flex configuration. Rights unverified and it does not depict our Half Assembly (No Coil)."
+        }
+      ]
+    }
+  },
+  "coilMedia": {
+    "status": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA",
+    "localReviewSet": "02-assets/product-previews/nfc-charging-coils/2026-08-14/images/",
+    "fileCount": 14,
+    "modelsWithoutImage": [
+      "iPhone 17e"
+    ],
+    "provenance": "Standardised renders of vendor product photography retrieved from MobileSentrix (and Phone LCD Parts for one model) via Michael's supplier-link sheet. Michael supplied the supplier sheet, not the photographs.",
+    "provenanceEvidence": "02-assets/product-previews/nfc-charging-coils/2026-08-09/supplier-source-manifest.tsv records rights_status=UNVERIFIED and publish_status=NO for every row; the 2026-08-14 README states INTERNAL REVIEW ONLY - NOT UPLOADED TO SHOPIFY.",
+    "uploadGate": "Do not attach to Shopify drafts until rights_status is cleared and Michael approves the presentation. approvedProductMedia remains a publication blocker in wireless-charging-coils-2026-08-29.json.",
+    "gradeHandling": "If one image exists for a model and the source files show no grade-specific visual distinction, the same approved image serves both the OEM and Aftermarket drafts. Do not invent a distinction absent from the source files."
+  }
+}

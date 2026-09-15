@@ -1,0 +1,132 @@
+{
+  "capturedAt": "2026-08-29",
+  "status": "DRAFT_ONLY",
+  "productType": "Wireless Charging Coil",
+  "grades": ["OEM", "Aftermarket"],
+  "mediaPolicy": "Use the same approved model-specific image for both grades. No image is approved yet.",
+  "requiredBeforePublication": [
+    "approvedSellingPrice",
+    "startingInventory",
+    "sku",
+    "approvedProductMedia",
+    "compatibilityDetails",
+    "includedComponents",
+    "gradeDefinition"
+  ],
+  "models": [
+    {
+      "family": "iPhone 17",
+      "model": "iPhone 17 Pro Max",
+      "slug": "iphone-17-pro-max",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    },
+    {
+      "family": "iPhone 17",
+      "model": "iPhone 17 Pro",
+      "slug": "iphone-17-pro",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    },
+    {
+      "family": "iPhone 17",
+      "model": "iPhone 17 Air",
+      "slug": "iphone-17-air",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    },
+    {
+      "family": "iPhone 17",
+      "model": "iPhone 17",
+      "slug": "iphone-17",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    },
+    {
+      "family": "iPhone 17",
+      "model": "iPhone 17e",
+      "slug": "iphone-17e",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_NO_MODEL_SPECIFIC_IMAGE"
+    },
+    {
+      "family": "iPhone 16",
+      "model": "iPhone 16 Pro Max",
+      "slug": "iphone-16-pro-max",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    },
+    {
+      "family": "iPhone 16",
+      "model": "iPhone 16 Pro",
+      "slug": "iphone-16-pro",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    },
+    {
+      "family": "iPhone 16",
+      "model": "iPhone 16 Plus",
+      "slug": "iphone-16-plus",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    },
+    {
+      "family": "iPhone 16",
+      "model": "iPhone 16",
+      "slug": "iphone-16",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    },
+    {
+      "family": "iPhone 15",
+      "model": "iPhone 15 Pro Max",
+      "slug": "iphone-15-pro-max",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    },
+    {
+      "family": "iPhone 15",
+      "model": "iPhone 15 Pro",
+      "slug": "iphone-15-pro",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    },
+    {
+      "family": "iPhone 15",
+      "model": "iPhone 15 Plus",
+      "slug": "iphone-15-plus",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    },
+    {
+      "family": "iPhone 15",
+      "model": "iPhone 15",
+      "slug": "iphone-15",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    },
+    {
+      "family": "iPhone 14",
+      "model": "iPhone 14 Plus",
+      "slug": "iphone-14-plus",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    },
+    {
+      "family": "iPhone 14",
+      "model": "iPhone 14",
+      "slug": "iphone-14",
+      "sourceStatus": "VERIFIED_MODEL_MAPPING",
+      "mediaStatus": "BLOCKED_UNAPPROVED_REFERENCE_MEDIA"
+    }
+  ],
+  "blockedModels": [
+    {
+      "family": "iPhone 16",
+      "model": "iPhone 16e",
+      "slug": "iphone-16e",
+      "reason": "No approved model source exists.",
+      "status": "BLOCKED_NO_APPROVED_SOURCE"
+    }
+  ]
+}

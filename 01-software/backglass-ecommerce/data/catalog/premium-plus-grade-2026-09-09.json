@@ -1,0 +1,82 @@
+{
+  "grade": "Premium Plus",
+  "recordedAt": "2026-09-09",
+  "evidenceId": "JASON-2026-09-09-PREMIUM-PLUS",
+  "recordedBy": "Jason",
+  "owner": "Michael",
+  "status": "SPECIFIED_OWNER_APPROVAL_PENDING",
+  "source": "Jason's Premium Plus grade specification, 2026-09-09",
+  "reviewInterval": "Before publication and whenever the eligible model list or camera-lens wording changes",
+  "productForm": "half-assembly",
+  "inheritsFrom": "Premium",
+  "inheritanceNote": "Premium Plus reuses the Premium half-assembly product logic. The camera lens is the only stated difference; no other Premium fact is restated or altered here.",
+  "eligibleModels": [
+    {
+      "family": "iPhone 17",
+      "model": "iPhone 17 Pro Max",
+      "slug": "iphone-17-pro-max"
+    },
+    {
+      "family": "iPhone 16",
+      "model": "iPhone 16 Pro Max",
+      "slug": "iphone-16-pro-max"
+    },
+    {
+      "family": "iPhone 15",
+      "model": "iPhone 15 Pro Max",
+      "slug": "iphone-15-pro-max"
+    }
+  ],
+  "eligibilityRule": "Premium Plus exists only for the three listed Pro Max models (iPhone 15 to iPhone 17). No other model, and no generation outside iPhone 15 to iPhone 17, may be listed as Premium Plus.",
+  "cameraLens": "Sapphire glass camera lens. OEM-quality camera lens.",
+  "customerFacingWording": [
+    "Sapphire glass camera lens",
+    "OEM-quality camera lens"
+  ],
+  "prohibitedClaims": [
+    "genuine OEM, Apple-original or OEM-supplied lens provenance",
+    "compatibility with any model outside the eligible list",
+    "additional material properties beyond the stated sapphire glass lens",
+    "durability, service-life or breakage claims",
+    "optical-performance claims",
+    "scratch-resistance claims",
+    "pricing",
+    "supplier identity",
+    "a warranty or RMA term that differs from Premium"
+  ],
+  "requiredBeforePublication": [
+    "michaelGradeConfirmation",
+    "lensProvenanceEvidence",
+    "approvedSellingPrice",
+    "startingInventory",
+    "sku",
+    "approvedProductMedia"
+  ],
+  "excludedModels": [
+    {
+      "family": "iPhone 14",
+      "model": "iPhone 14 Pro Max",
+      "slug": "iphone-14-pro-max",
+      "reason": "The whole iPhone 14 series is Glass Only in this catalog. Premium Plus is a half assembly, so no iPhone 14 product is eligible. This is intentional product architecture, not missing data, and must not be reported as a media or sourcing blocker.",
+      "status": "INELIGIBLE_GLASS_ONLY_SERIES"
+    }
+  ],
+  "correction": {
+    "recordedAt": "2026-09-10",
+    "recordedBy": "Jason",
+    "source": "Owner correction relayed by Jason, 2026-09-10",
+    "supersedes": "The 2026-09-09 rule that made Premium Plus eligible for iPhone 14 to iPhone 17 Pro Max.",
+    "note": "Scope narrowed from 14-17 Pro Max to 15-17 Pro Max because the iPhone 14 series is Glass Only."
+  },
+  "ownerReview": [
+    {
+      "model": "iPhone 17 Pro Max",
+      "slug": "iphone-17-pro-max",
+      "evidenceId": "MICHAEL-2026-09-12-17-SERIES",
+      "reviewedAt": "2026-09-12",
+      "satisfies": ["michaelGradeConfirmation"],
+      "scope": "Michael reviewed and approved the iPhone 17 series for publication, which included this Premium Plus draft, its lens wording and its image set. It covers iPhone 17 Pro Max only. iPhone 15 Pro Max and iPhone 16 Pro Max Premium Plus still await Michael's confirmation.",
+      "stillRequired": ["lensProvenanceEvidence", "approvedSellingPrice", "startingInventory", "sku"]
+    }
+  ]
+}

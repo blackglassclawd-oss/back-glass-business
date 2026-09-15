@@ -6,9 +6,13 @@
     "node": ">=22.22.0"
   },
   "scripts": {
+    "check:seo-geo": "tsx scripts/seo-geo-check.ts",
+    "plan:seo-geo": "tsx --env-file=.dev.vars scripts/shopify-seo-geo-plan.ts",
     "audit:public": "node scripts/public-status.mjs",
     "audit:shopify": "tsx --env-file=.dev.vars scripts/shopify-audit.ts",
     "plan:catalog-transition": "tsx --env-file=.dev.vars scripts/shopify-catalog-transition-plan.ts",
+    "retire:full-assemblies": "tsx --env-file=.dev.vars scripts/shopify-retire-full-assemblies.ts",
+    "create:coil-drafts": "tsx --env-file=.dev.vars scripts/shopify-create-coil-drafts.ts",
     "build": "react-router build",
     "postbuild": "node scripts/sanitize-build.mjs",
     "capture:storefront": "node scripts/storefront-snapshot.mjs --publish-catalog",
@@ -26,7 +30,8 @@
     "preview": "npm run build && vite preview",
     "repair:storefront": "node scripts/repair-storefront-snapshot.mjs",
     "cf-typegen": "wrangler types",
-    "postinstall": "wrangler types"
+    "postinstall": "wrangler types",
+    "validate:shipnow": "tsx scripts/seo-shipnow-validate.ts"
   },
   "dependencies": {
     "isbot": "^5.1.36",
@@ -45,6 +50,7 @@
     "@types/react-dom": "^19.2.3",
     "cheerio": "^1.2.0",
     "fast-xml-parser": "^5.10.1",
+    "liquidjs": "^10.29.0",
     "tailwindcss": "^4.2.2",
     "tsx": "^4.23.1",
     "typescript": "^5.9.3",

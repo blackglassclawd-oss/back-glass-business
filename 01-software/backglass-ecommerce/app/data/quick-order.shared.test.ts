@@ -8,8 +8,9 @@ import {
 const products = [
   {
     variants: [
-      { available: true, id: 101, sku: "SKU-I15-BLACK" },
-      { available: false, id: 102, sku: "SKU-I15-BLUE" },
+      { available: true, id: 101, price: "12.00", sku: "SKU-I15-BLACK" },
+      { available: false, id: 102, price: "12.00", sku: "SKU-I15-BLUE" },
+      { available: true, id: 103, price: "0.00", sku: "SKU-ZERO" },
     ],
   },
 ] as StorefrontProduct[];
@@ -29,12 +30,12 @@ describe("parseQuickOrder", () => {
 
   it("reports malformed, missing, and unavailable SKUs", () => {
     const result = parseQuickOrder(
-      "bad line\nmissing-sku, 2\nSKU-I15-BLUE, 1",
+      "bad line\nmissing-sku, 2\nSKU-I15-BLUE, 1\nSKU-ZERO, 1",
       products,
     );
 
     expect(result.lines).toEqual([]);
-    expect(result.errors).toHaveLength(3);
+    expect(result.errors).toHaveLength(4);
   });
 });
 

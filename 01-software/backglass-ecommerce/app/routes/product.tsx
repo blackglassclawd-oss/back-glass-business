@@ -3,12 +3,17 @@ import { Link } from "react-router";
 import type { Route } from "./+types/product";
 import { HalfAssemblyMedia } from "../components/half-assembly-media";
 import { StoreShell } from "../components/store-shell";
+import { ProductInformation } from "../components/product-information";
+import { StructuredData } from "../components/structured-data";
+import { seoMeta, productSchema, breadcrumbSchema } from "../data/seo";
+import { getProductInformation, productDescription } from "../data/product-information";
 import { findProduct } from "../data/catalog.server";
 import {
   formatMoney,
   getProductImage,
   isFullAssemblyProduct,
   isHalfAssemblyProduct,
+  isPurchasableVariant,
   SHOPIFY_ORIGIN,
 } from "../data/catalog.shared";
 
@@ -17,21 +22,12 @@ export function loader({ params }: Route.LoaderArgs) {
   if (!product) {
     throw new Response("Product not found", { status: 404 });
   }
-  return { product };
+  return { product, facts: getProductInformation(product, undefined, "Local Shopify storefront snapshot") };
 }
 
 export function meta({ loaderData }: Route.MetaArgs) {
   const product = loaderData?.product;
-  return [
-    {
-      title: product
-        ? `${product.title} | Back Glass Pros`
-        : "Product | Back Glass Pros",
-    },
-    ...(product && isFullAssemblyProduct(product)
-      ? [{ name: "robots", content: "noindex, nofollow" }]
-      : []),
-  ];
+  return seoMeta(product ? `${product.title} | Back Glass Pros` : "Product | Back Glass Pros", loaderData ? productDescription(loaderData.facts) ?? "This product is no longer offered by Back Glass Pros." : "Back Glass Pros product information.", product ? `/products/${product.handle}` : "/");
 }
 
 export default function Product({ loaderData }: Route.ComponentProps) {
@@ -40,11 +36,13 @@ export default function Product({ loaderData }: Route.ComponentProps) {
   const isDiscontinued = isFullAssemblyProduct(product);
   const isHalfAssembly = isHalfAssemblyProduct(product);
   const availableVariants = product.variants.filter(
-    (variant) => variant.available,
+    isPurchasableVariant,
   );
 
   return (
     <StoreShell>
+      <StructuredData value={productSchema(product, loaderData.facts)} />
+      <StructuredData value={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Back Glass", path: "/collections/back-glass" }, { name: product.title, path: `/products/${product.handle}` }])} />
       <main className="product-detail-shell">
         <Link className="back-link" to="/">
           <ArrowLeft aria-hidden="true" size={17} />
@@ -74,28 +72,27 @@ export default function Product({ loaderData }: Route.ComponentProps) {
           <section className="product-purchase">
             <p className="store-kicker">{product.product_type}</p>
             <h1>{product.title}</h1>
-            <p className="product-vendor">{product.vendor}</p>
             {isDiscontinued ? (
               <div className="product-discontinued" role="status">
                 <CircleSlash2 aria-hidden="true" size={22} />
                 <div>
                   <h2>No longer offered</h2>
                   <p>
-                    Build this configuration with a Premium or A Grade half
-                    assembly and a separate Aftermarket or OEM Pull charging flex.
+                    Full assemblies are retired. No equivalent replacement
+                    configuration has been verified. Separate back glass and
+                    coil listings do not establish compatibility or equivalence.
                   </p>
                   <div>
-                    <Link to="/?category=half-assembly">
-                      Browse half assemblies
-                    </Link>
-                    <Link to="/review/catalog-transition#charging-flex">
-                      Review charging flex
+                    <Link to="/collections/back-glass">Browse Back Glass</Link>
+                    <Link to="/collections/wireless-charging-coils">
+                      Browse Wireless Charging Coils
                     </Link>
                   </div>
                 </div>
               </div>
             ) : (
               <>
+                <ProductInformation facts={loaderData.facts} />
                 <ul className="product-assurances">
                   {isHalfAssembly && (
                     <li>
@@ -117,12 +114,12 @@ export default function Product({ loaderData }: Route.ComponentProps) {
                   <select id="variant" name="id" required>
                     {product.variants.map((variant) => (
                       <option
-                        disabled={!variant.available}
+                        disabled={!isPurchasableVariant(variant)}
                         key={variant.id}
                         value={variant.id}
                       >
                         {variant.title} - {formatMoney(variant.price)}
-                        {!variant.available ? " - Sold out" : ""}
+                        {!isPurchasableVariant(variant) ? " - Unavailable" : ""}
                       </option>
                     ))}
                   </select>

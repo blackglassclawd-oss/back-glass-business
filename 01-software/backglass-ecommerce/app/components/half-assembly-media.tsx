@@ -11,10 +11,20 @@ export function HalfAssemblyMedia({
   loading = "lazy",
   src,
 }: HalfAssemblyMediaProps) {
+  const hasLocalReviewAsset = src.startsWith("/");
+
   return (
     <div className="half-assembly-media">
       <span className="half-assembly-exterior">
-        <img alt={alt} loading={loading} src={src} />
+        {hasLocalReviewAsset ? (
+          <img alt={alt} loading={loading} src={src} />
+        ) : (
+          <span className="half-assembly-exterior-pending">
+            <ImageOff aria-hidden="true" size={22} />
+            <strong>Exterior photo</strong>
+            <small>Unavailable</small>
+          </span>
+        )}
       </span>
       <span className="half-assembly-photo-pending">
         <ImageOff aria-hidden="true" size={22} />

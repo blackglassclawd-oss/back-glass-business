@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { storefrontPositioning } from "../app/data/store-content";
 
 test("renders the storefront without horizontal overflow", async ({
   page,
@@ -12,14 +13,31 @@ test("renders the storefront without horizontal overflow", async ({
 
   await page.goto("/");
 
+  // Assert against the shared constant so the heading and this test cannot
+  // drift apart, and hold the rule that drove the current wording: the
+  // storefront must not headline a category with no purchasable products.
   await expect(
-    page.getByRole("heading", { name: "Back Glass Pros parts catalog" }),
+    page.getByRole("heading", { name: storefrontPositioning.heading, exact: true }),
   ).toBeVisible();
-  await expect(page.getByText("54 products and 252 captured variants")).toBeVisible();
+  expect(storefrontPositioning.heading).not.toMatch(/coil/i);
+  await expect(
+    page.getByText(/54 active Back Glass products and 30 standalone/),
+  ).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "Catalog", exact: true }),
   ).toBeVisible();
   await expect(page.getByRole("link", { name: "Full assembly" })).toHaveCount(0);
+  await expect(
+    page.getByRole("link", {
+      exact: true,
+      name: "iPhone 17 Pro Max Wireless Charging Coil - OEM",
+    }),
+  ).toBeVisible();
+  await expect(
+    page.locator('nav[aria-label="Primary navigation"]').getByRole("link", {
+      name: "Wireless Charging Coils",
+    }),
+  ).toBeVisible();
 
   const hasHorizontalOverflow = await page.evaluate(
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
@@ -31,6 +49,57 @@ test("renders the storefront without horizontal overflow", async ({
     path: testInfo.outputPath("storefront.png"),
     fullPage: true,
   });
+});
+
+test("groups standalone coil drafts by model without publishing blocked models", async ({
+  page,
+}) => {
+  await page.goto("/collections/wireless-charging-coils");
+
+  await expect(
+    page.getByRole("heading", { name: "Wireless Charging Coils", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator(".family-section")).toHaveCount(4);
+  await expect(page.locator(".model-product-section")).toHaveCount(15);
+  await expect(page.locator(".product-card-draft")).toHaveCount(30);
+  await expect(page.getByText("iPhone 17e", { exact: true })).toBeVisible();
+  await expect(page.getByText("iPhone 16e", { exact: true })).toHaveCount(0);
+  await expect(page.getByRole("button")).toHaveCount(0);
+
+  const hasHorizontalOverflow = await page.evaluate(
+    () =>
+      document.documentElement.scrollWidth >
+      document.documentElement.clientWidth,
+  );
+  expect(hasHorizontalOverflow).toBe(false);
+});
+
+test("cross-links Back Glass and standalone coils on a model page", async ({
+  page,
+}) => {
+  await page.goto("/models/iphone-16-pro-max");
+
+  await expect(
+    page.getByRole("heading", { name: "iPhone 16 Pro Max", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Back Glass", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Wireless Charging Coils", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", {
+      exact: true,
+      name: "iPhone 16 Pro Max Wireless Charging Coil - OEM",
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", {
+      exact: true,
+      name: "iPhone 16 Pro Max Wireless Charging Coil - Aftermarket",
+    }),
+  ).toBeVisible();
 });
 
 test("opens a captured product and exposes Shopify checkout handoff", async ({
@@ -69,7 +138,7 @@ test("blocks discontinued full assemblies from checkout", async ({ page }) => {
     "noindex, nofollow",
   );
   await expect(
-    page.getByRole("link", { name: "Browse half assemblies" }),
+    page.getByRole("link", { name: "Browse Back Glass" }),
   ).toBeVisible();
 });
 
@@ -207,23 +276,19 @@ test("stages the owner-approved catalog transition", async ({ page }) => {
   await expect(
     page.getByRole("heading", { name: "Catalog transition" }),
   ).toBeVisible();
-  await expect(page.getByText("28 active · 12 published")).toBeVisible();
-  await expect(page.getByText("20 products · 96 variants")).toBeVisible();
-  await expect(page.getByText("15 products · 30 variants")).toBeVisible();
-  await expect(
-    page.getByText("Keep active. Replace 96 assigned thumbnails."),
-  ).toBeVisible();
-  await expect(
-    page.getByText(/All 96 color variants are now tracked separately/),
-  ).toBeVisible();
+  await expect(page.getByText("20 Draft · 8 still Active")).toBeVisible();
+  await expect(page.getByText("54 active snapshot products")).toBeVisible();
+  await expect(page.getByText("15 models · 30 grade-specific drafts")).toBeVisible();
   await expect(
     page.getByRole("heading", {
-      name: "Wireless NFC charging flex with flashlight cable",
+      name: "Wireless Charging Coils",
+      exact: true,
     }),
   ).toBeVisible();
   await expect(page.locator(".transition-table-row")).toHaveCount(15);
-  await expect(page.getByText("OEM Pull").first()).toBeVisible();
-  await expect(page.getByText("Delete nothing.")).toBeVisible();
+  await expect(page.getByText("OEM").first()).toBeVisible();
+  await expect(page.getByText("iPhone 16e:")).toBeVisible();
+  await expect(page.getByText("Move all to Draft. Delete nothing.")).toBeVisible();
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
     "content",
     "noindex, nofollow",

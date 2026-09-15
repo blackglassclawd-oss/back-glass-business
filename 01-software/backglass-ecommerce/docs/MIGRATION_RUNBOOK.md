@@ -37,10 +37,10 @@ Observed on July 28, 2026:
 - Nineteen installed Shopify apps are inventoried. Five overlap on quick-order and
   bulk-cart behavior; the preservation-first review is recorded in
   `docs/APP_CONSOLIDATION.md`.
-- The product owner directed the catalog to retain no-coil half assemblies,
-  discontinue full assemblies, and sell Aftermarket and OEM Pull charging flexes
-  separately. The reversible transition is recorded in
-  `docs/PRODUCT_STRATEGY_2026-07-29.md`.
+- The current catalog direction retains no-coil Back Glass, retires Full
+  Assemblies, and stages standalone OEM and Aftermarket Wireless Charging Coil
+  products. The canonical draft mapping is
+  `data/catalog/wireless-charging-coils-2026-08-29.json`.
 - `backglasspros.com` is staged in Cloudflare on the Free plan with nine
   imported Porkbun DNS records. Authoritative nameservers remain at Porkbun.
 - Wrangler is authenticated as `blackglassclawd@gmail.com`.
@@ -69,10 +69,12 @@ Observed on July 28, 2026:
 - Headless channel, Customer Account API, and Storefront Cart API credentials
   are not configured.
 - The current store has no Shopify B2B companies or wholesale catalogs.
-- Twenty-eight full-assembly products remain active in Shopify because the
-  migration app has no write scope. The dry-run targets `DRAFT`, not deletion.
-- Accurate no-coil interior photos and standalone charging-flex photos are
-  pending.
+- The 2026-08-29 live audit found 28 Full Assembly products: 20 Draft and 8
+  iPhone 17-family products still Active. Three active products contain a
+  $0.00 variant. The production-gated retirement targets `DRAFT`, not deletion.
+- Standalone coil price, inventory, SKU, compatibility, included components,
+  grade definition, rights-cleared model media, and product-owner approval are
+  pending. iPhone 17e and 16e remain blocked.
 - Production nameserver cutover is intentionally held until the remaining
   migration checks and rollback plan are approved.
 

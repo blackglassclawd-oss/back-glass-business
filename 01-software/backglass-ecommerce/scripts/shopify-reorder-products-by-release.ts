@@ -8,8 +8,6 @@ const TARGET_HANDLES = new Set([
   "a-grade",
   "premium",
   "half-assembly-without-charging-coil",
-  "full-assembly-with-charging-coil",
-  "do-not-delete-all-products-generated-by-extend-commerce",
   "glass-only",
   "new-arrivals",
 ]);
