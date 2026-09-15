@@ -2,15 +2,17 @@
  * Releases the base iPhone 17 back glass approved in Michael's 2026-09-12 record
  * (data/catalog/iphone-17-series-owner-approval-2026-09-12.json), guarded by the
  * exact verified invariants in data/catalog/iphone-17-release-baseline-2026-09-15.json
- * and the all-or-nothing engine in scripts/lib/iphone17-release.ts.
+ * and the release engine in scripts/lib/iphone17-release.ts.
  *
  * Dry run by default. Applying requires
  *   --apply --confirm-iphone17-owner-approval --expect-publish=2 --expect-create=0
  *
- * It publishes both baseline targets or neither, creates nothing (iPhone 17e
- * already exists and is only verified by its canonical product ID), never
- * changes a price, SKU, inventory, image, collection or coil, and rolls back
- * any partial release it cannot verify.
+ * A guarded two-product release with compensating rollback on detected or
+ * runtime failures. It is not atomic: abrupt process termination between writes
+ * cannot be compensated and can require manual reconciliation, which the next
+ * dry run reports as POSSIBLE PARTIAL RELEASE. It creates nothing (iPhone 17e is
+ * only verified by its canonical product ID) and never changes a price, SKU,
+ * inventory, image, collection or coil.
  */
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
@@ -75,6 +77,7 @@ const plan = {
     title: target.title,
   })),
   releaseChannels: baseline.releaseChannels,
+  releaseState: checks.releaseState,
   summary,
 };
 

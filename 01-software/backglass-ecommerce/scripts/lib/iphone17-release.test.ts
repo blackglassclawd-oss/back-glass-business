@@ -11,11 +11,13 @@ import {
   type AdminClient,
   type ReleaseBaseline,
   type ReleaseTargetBaseline,
+  type SelectedOption,
 } from "./iphone17-release";
 
 const baseline = baselineJson as unknown as ReleaseBaseline;
 const [aGrade, premium] = baseline.targets;
-const STALE = ["full-assembly-with-charging-coil", "new-arrivals"];
+const FORBIDDEN = ["full-assembly-with-charging-coil", "new-arrivals"];
+const COIL_ID = "gid://shopify/Product/8736047268012";
 const CHANNELS = [
   { id: "gid://shopify/Publication/1", name: "Online Store" },
   { id: "gid://shopify/Publication/2", name: "Shop" },
@@ -29,6 +31,7 @@ interface FakeVariant {
   inventoryTracked: boolean;
   mediaIds: string[];
   price: string;
+  selectedOptions: SelectedOption[];
   sku: string | null;
   title: string;
 }
@@ -66,6 +69,7 @@ function productFor(target: ReleaseTargetBaseline): FakeProduct {
       inventoryTracked: variant.inventoryTracked,
       mediaIds: [variant.mediaId],
       price: variant.price,
+      selectedOptions: [{ name: "Color", value: variant.color }],
       sku: variant.sku,
       title: variant.color,
     })),
@@ -74,7 +78,10 @@ function productFor(target: ReleaseTargetBaseline): FakeProduct {
 
 const simple = (id: string, handle: string, title: string, productType: string): FakeProduct => ({
   collections: [], colors: [], handle, id, mediaIds: [], productType, published: [], status: "DRAFT", title,
-  variants: [{ id: `${id}/v`, inventoryPolicy: "DENY", inventoryQuantity: 0, inventoryTracked: false, mediaIds: [], price: "0.00", sku: null, title: "Default" }],
+  variants: [{
+    id: `${id}/v`, inventoryPolicy: "DENY", inventoryQuantity: 0, inventoryTracked: false, mediaIds: [], price: "0.00",
+    selectedOptions: [{ name: "Title", value: "Default Title" }], sku: null, title: "Default Title",
+  }],
 });
 
 /** In-memory Admin API: answers only the release engine's named operations and throws on anything else. */
@@ -86,15 +93,15 @@ class FakeShopify implements AdminClient {
   products = new Map<string, FakeProduct>();
   truncatedVariants = new Set<string>();
 
-  constructor(stale = false) {
+  constructor(forbiddenMembership = false) {
     for (const target of baseline.targets) {
       const product = productFor(target);
-      if (stale) product.collections.push(...STALE);
+      if (forbiddenMembership) product.collections.push(...FORBIDDEN);
       this.add(product);
     }
     const e = baseline.canonical17e;
     this.add({ ...simple(e.productId, e.handle, e.title, e.productType), colors: ["Black", "White", "Soft Pink"] });
-    this.add(simple("gid://shopify/Product/8736047268012", "iphone-17-wireless-charging-coil-oem", "iPhone 17 Wireless Charging Coil - OEM", "Wireless Charging Coil"));
+    this.add(simple(COIL_ID, "iphone-17-wireless-charging-coil-oem", "iPhone 17 Wireless Charging Coil - OEM", "Wireless Charging Coil"));
     this.add(simple("gid://shopify/Product/8675371417772", "iphone-17-pro-half-assembly-no-coil-premium", "iPhone 17 Pro Back Glass Half Assembly (No Coil) - Premium", "Back Glass"));
     this.add(simple("gid://shopify/Product/8748929941676", "iphone-17-pro-max-half-assembly-no-coil-premium-plus", "iPhone 17 Pro Max Back Glass Half Assembly (No Coil) - Premium Plus", "Back Glass"));
     this.add(simple("gid://shopify/Product/8675371253932", "iphone-air-half-assembly-no-coil-premium", "iPhone Air Back Glass Half Assembly (No Coil) - Premium", "Back Glass"));
@@ -114,10 +121,27 @@ class FakeShopify implements AdminClient {
     return this.calls.filter((call) => /Publish|Unpublish|SetStatus/.test(call.operation));
   }
 
-  private rawProduct(product: FakeProduct) {
-    const collections = product.collections.slice(0, this.collectionPageSize);
+  private rawVariant(variant: FakeVariant) {
     return {
-      collections: page(collections.map((handle) => ({ handle })), product.collections.length > this.collectionPageSize, String(this.collectionPageSize)),
+      id: variant.id,
+      inventoryItem: { tracked: variant.inventoryTracked },
+      inventoryPolicy: variant.inventoryPolicy,
+      inventoryQuantity: variant.inventoryQuantity,
+      media: page(variant.mediaIds.map((id) => ({ id }))),
+      price: variant.price,
+      selectedOptions: variant.selectedOptions,
+      sku: variant.sku,
+      title: variant.title,
+    };
+  }
+
+  private rawProduct(product: FakeProduct) {
+    return {
+      collections: page(
+        product.collections.slice(0, this.collectionPageSize).map((handle) => ({ handle })),
+        product.collections.length > this.collectionPageSize,
+        String(this.collectionPageSize),
+      ),
       handle: product.handle,
       id: product.id,
       media: page(product.mediaIds.map((id) => ({ id }))),
@@ -126,19 +150,7 @@ class FakeShopify implements AdminClient {
       resourcePublicationsV2: page(product.published.map((name) => ({ isPublished: true, publication: { name } }))),
       status: product.status,
       title: product.title,
-      variants: page(
-        product.variants.map((variant) => ({
-          id: variant.id,
-          inventoryItem: { tracked: variant.inventoryTracked },
-          inventoryPolicy: variant.inventoryPolicy,
-          inventoryQuantity: variant.inventoryQuantity,
-          media: page(variant.mediaIds.map((id) => ({ id }))),
-          price: variant.price,
-          sku: variant.sku,
-          title: variant.title,
-        })),
-        this.truncatedVariants.has(product.id),
-      ),
+      variants: page(product.variants.map((variant) => this.rawVariant(variant)), this.truncatedVariants.has(product.id)),
     };
   }
 
@@ -173,7 +185,7 @@ class FakeShopify implements AdminClient {
       }
       case "Iphone17ReleaseFamily": {
         // Whole catalog, like the live query: the engine must filter the family itself.
-        const catalog = [...this.products.values()].sort((l, r) => l.id.localeCompare(r.id));
+        const catalog = [...this.products.values()].sort((left, right) => left.id.localeCompare(right.id));
         const start = variables.after ? Number(variables.after) : 0;
         const nodes = catalog.slice(start, start + 10).map((product) => ({
           handle: product.handle,
@@ -183,10 +195,7 @@ class FakeShopify implements AdminClient {
           resourcePublicationsV2: page(product.published.map((name) => ({ publication: { name } }))),
           status: product.status,
           title: product.title,
-          variants: page(product.variants.map((variant) => ({
-            id: variant.id, inventoryItem: { tracked: variant.inventoryTracked }, inventoryPolicy: variant.inventoryPolicy,
-            inventoryQuantity: variant.inventoryQuantity, price: variant.price, sku: variant.sku,
-          }))),
+          variants: page(product.variants.map((variant) => this.rawVariant(variant))),
         }));
         return { products: page(nodes, catalog.length > start + 10, String(start + 10)) } as T;
       }
@@ -220,8 +229,12 @@ const failWhen = (predicate: (operation: string, variables: Record<string, unkno
     return undefined;
   };
 
-const activating = (productId: string) => (operation: string, variables: Record<string, unknown>) =>
-  operation === "Iphone17ReleaseSetStatus" && (variables.product as { id: string; status: string }).id === productId && (variables.product as { status: string }).status === "ACTIVE";
+const activating = (productId: string) => (operation: string, variables: Record<string, unknown>) => {
+  const product = variables.product as { id: string; status: string } | undefined;
+  return operation === "Iphone17ReleaseSetStatus" && product?.id === productId && product.status === "ACTIVE";
+};
+
+const variantId = (target: ReleaseTargetBaseline, index: number) => target.variants[index].variantId;
 
 describe("iPhone 17 release baseline", () => {
   it("records exactly the two approved base products with per-colour SKU, price, inventory and image", () => {
@@ -233,7 +246,7 @@ describe("iPhone 17 release baseline", () => {
     for (const target of baseline.targets) {
       expect(target.variants.map((variant) => variant.color)).toEqual(target.colors);
       expect(new Set(target.variants.map((variant) => variant.mediaId)).size).toBe(target.colors.length);
-      expect(target.forbiddenCollections).toEqual(STALE);
+      expect(target.forbiddenCollections).toEqual(FORBIDDEN);
       expect(target.preReleaseStatus).toBe("DRAFT");
     }
   });
@@ -244,10 +257,11 @@ describe("iPhone 17 release safety", () => {
     const store = new FakeShopify(true);
     const checks = await preflight(store, baseline);
 
-    for (const handle of STALE) {
+    for (const handle of FORBIDDEN) {
       expect(checks.targets[0].blockers).toContain(`Still a member of ${handle} (forbidden collection membership).`);
       expect(checks.targets[1].blockers).toContain(`Still a member of ${handle} (forbidden collection membership).`);
     }
+    expect(checks.releaseState).toBe("PRE_RELEASE");
     expect(releaseSummary(checks)).toMatchObject({ create: 0, publish: 0, publishBlocked: 2 });
     const result = await release(store);
     expect(result.outcome).toBe("BLOCKED");
@@ -290,14 +304,67 @@ describe("iPhone 17 release safety", () => {
   });
 
   it.each([
-    ["tracking", (variant: FakeVariant) => { variant.inventoryTracked = true; }, "inventory tracked is true"],
-    ["policy", (variant: FakeVariant) => { variant.inventoryPolicy = "CONTINUE"; }, "inventory policy is CONTINUE"],
-    ["quantity", (variant: FakeVariant) => { variant.inventoryQuantity = 7; }, "inventory quantity is 7"],
+    ["tracking", (variant: FakeVariant) => { variant.inventoryTracked = true; }, "Sage: inventory tracked is true, verified false."],
+    ["policy", (variant: FakeVariant) => { variant.inventoryPolicy = "CONTINUE"; }, "Sage: inventory policy is CONTINUE, verified DENY."],
+    ["quantity", (variant: FakeVariant) => { variant.inventoryQuantity = 7; }, "Sage: inventory quantity is 7, verified 0."],
   ])("5. blocks inventory %s drift", async (_name, change, message) => {
     const store = new FakeShopify();
     change(store.get(premium.productId).variants[4]);
 
-    expect((await preflight(store, baseline)).targets[1].blockers).toEqual([`Sage: ${message}, verified ${message.includes("tracked") ? "false" : message.includes("policy") ? "DENY" : "0"}.`]);
+    expect((await preflight(store, baseline)).targets[1].blockers).toEqual([message]);
+  });
+
+  describe("A. each variant ID must still report its verified Color in selectedOptions", () => {
+    it("blocks when the Black variant ID now reports Color=White, with SKU, image, price and title unchanged", async () => {
+      const store = new FakeShopify();
+      store.get(aGrade.productId).variants[0].selectedOptions = [{ name: "Color", value: "White" }];
+
+      expect((await preflight(store, baseline)).targets[0].blockers).toEqual([
+        `Black: variant ${variantId(aGrade, 0)} reports Color=White, verified Black.`,
+        `Color=White is reported by 2 variants: ${variantId(aGrade, 0)}, ${variantId(aGrade, 1)}.`,
+      ]);
+      expect((await release(store)).outcome).toBe("BLOCKED");
+      expect(store.mutationCalls()).toEqual([]);
+    });
+
+    it("blocks when two variant IDs report the same Color", async () => {
+      const store = new FakeShopify();
+      store.get(premium.productId).variants[3].selectedOptions = [{ name: "Color", value: "Sage" }];
+
+      expect((await preflight(store, baseline)).targets[1].blockers).toEqual([
+        `Lavender: variant ${variantId(premium, 3)} reports Color=Sage, verified Lavender.`,
+        `Color=Sage is reported by 2 variants: ${variantId(premium, 3)}, ${variantId(premium, 4)}.`,
+      ]);
+    });
+
+    it("blocks when selectedOptions lacks Color", async () => {
+      const store = new FakeShopify();
+      store.get(aGrade.productId).variants[2].selectedOptions = [{ name: "Title", value: "Mist Blue" }];
+
+      expect((await preflight(store, baseline)).targets[0].blockers).toEqual([
+        `Mist Blue: variant ${variantId(aGrade, 2)} has 0 Color options in selectedOptions, expected exactly 1.`,
+      ]);
+    });
+
+    it("blocks an unexpected Color value", async () => {
+      const store = new FakeShopify();
+      store.get(aGrade.productId).variants[4].selectedOptions = [{ name: "Color", value: "Cosmic Orange" }];
+
+      expect((await preflight(store, baseline)).targets[0].blockers).toEqual([
+        `Sage: variant ${variantId(aGrade, 4)} reports unexpected Color=Cosmic Orange.`,
+      ]);
+    });
+
+    it("passes correct Color mappings, including alongside additional non-Color options", async () => {
+      const store = new FakeShopify();
+      for (const target of baseline.targets) {
+        for (const variant of store.get(target.productId).variants) variant.selectedOptions.push({ name: "Material", value: "Glass" });
+      }
+
+      const checks = await preflight(store, baseline);
+      expect(checks.blockers).toEqual([]);
+      expect(releaseSummary(checks)).toMatchObject({ publish: 2, publishBlocked: 0 });
+    });
   });
 
   describe("6. binds iPhone 17e to its canonical product ID", () => {
@@ -349,6 +416,39 @@ describe("iPhone 17 release safety", () => {
 
       expect((await preflight(store, baseline)).targets[1].blockers).toEqual(["Still a member of new-arrivals (forbidden collection membership)."]);
       expect(store.calls.filter((call) => call.operation === "Iphone17ReleaseProductCollections").length).toBeGreaterThan(0);
+    });
+  });
+
+  describe("interrupted-release diagnostics (read-only)", () => {
+    it("reports POSSIBLE PARTIAL RELEASE when one target is ACTIVE and the other DRAFT", async () => {
+      const store = new FakeShopify();
+      Object.assign(store.get(aGrade.productId), { published: ["Online Store", "Shop", "Point of Sale"], status: "ACTIVE" });
+
+      const checks = await preflight(store, baseline);
+      expect(checks.releaseState).toBe("POSSIBLE_PARTIAL_RELEASE");
+      expect(checks.blockers[0]).toBe(
+        `POSSIBLE PARTIAL RELEASE — MANUAL RECONCILIATION REQUIRED — ${aGrade.title}: status ACTIVE, published to [Online Store, Point of Sale, Shop]; ${premium.title}: status DRAFT, published to [].`,
+      );
+      expect((await release(store)).outcome).toBe("BLOCKED");
+      expect(store.mutationCalls()).toEqual([]);
+    });
+
+    it("reports POSSIBLE PARTIAL RELEASE when release grants exist on only one DRAFT target", async () => {
+      const store = new FakeShopify();
+      store.get(premium.productId).published = ["Online Store", "Shop"];
+
+      const checks = await preflight(store, baseline);
+      expect(checks.releaseState).toBe("POSSIBLE_PARTIAL_RELEASE");
+      expect(checks.blockers[0]).toContain(`${premium.title}: status DRAFT, published to [Online Store, Shop]`);
+    });
+
+    it("reports an already released pair distinctly", async () => {
+      const store = new FakeShopify();
+      for (const target of baseline.targets) Object.assign(store.get(target.productId), { published: ["Online Store", "Shop", "Point of Sale"], status: "ACTIVE" });
+
+      const checks = await preflight(store, baseline);
+      expect(checks.releaseState).toBe("RELEASED");
+      expect(checks.blockers[0]).toMatch(/^BASE IPHONE 17 ALREADY RELEASED — /);
     });
   });
 
@@ -412,7 +512,7 @@ describe("iPhone 17 release safety", () => {
     expect(store.mutationCalls().some((call) => call.operation === "Iphone17ReleaseSetStatus")).toBe(false);
   });
 
-  it("9. reports PARTIAL_RELEASE_MANUAL_RECOVERY with exact differences when rollback fails", async () => {
+  it("9. reports PARTIAL_RELEASE_MANUAL_RECOVERY with exact differences when target rollback fails", async () => {
     const store = new FakeShopify();
     store.intercept = failWhen((operation, variables) => {
       const product = variables.product as { id: string; status: string } | undefined;
@@ -423,12 +523,35 @@ describe("iPhone 17 release safety", () => {
     const result = await release(store, { log: (line) => lines.push(line) });
 
     expect(result.outcome).toBe("PARTIAL_RELEASE_MANUAL_RECOVERY");
-    expect(result.recovery).toEqual([`${aGrade.title} (${aGrade.productId}): status ACTIVE, pre-release DRAFT.`]);
+    expect(result.recovery).toEqual([`${aGrade.title} (${aGrade.productId}): Status is ACTIVE, expected DRAFT.`]);
     expect(lines.join("\n")).toContain("PARTIAL RELEASE — MANUAL RECOVERY REQUIRED");
     expect(store.get(aGrade.productId).published).toEqual([]);
   });
 
-  it("E. fails closed and rolls back when media change after activation with the count intact", async () => {
+  it("B. collateral drift survives compensation: targets roll back but the result is manual recovery, not ROLLED_BACK", async () => {
+    const store = new FakeShopify();
+    store.intercept = (operation, variables, fake) => {
+      if (activating(premium.productId)(operation, variables)) fake.get(COIL_ID).variants[0].price = "5.00";
+      return undefined;
+    };
+
+    const result = await release(store);
+
+    expect(result.failures[0]).toMatch(/Final verification failed[\s\S]*Collateral change: iPhone 17 Wireless Charging Coil - OEM/);
+    for (const target of baseline.targets) {
+      expect(store.get(target.productId).status).toBe("DRAFT");
+      expect(store.get(target.productId).published).toEqual([]);
+    }
+    expect(result.outcome).not.toBe("ROLLED_BACK");
+    expect(result.outcome).toBe("PARTIAL_RELEASE_MANUAL_RECOVERY");
+    expect(result.recovery).toEqual([
+      `Collateral change: iPhone 17 Wireless Charging Coil - OEM (${COIL_ID}) changed during the release. Collateral state differs from the pre-release fingerprint; the release engine does not modify collateral records.`,
+    ]);
+    expect(store.get(COIL_ID).variants[0].price).toBe("5.00");
+    expect(result.mutations.every((mutation) => mutation.productId !== COIL_ID)).toBe(true);
+  });
+
+  it("E. an image change after activation is rolled back on status and channels but reported for manual recovery", async () => {
     const store = new FakeShopify();
     store.intercept = (operation, variables, fake) => {
       if (activating(premium.productId)(operation, variables)) {
@@ -441,9 +564,11 @@ describe("iPhone 17 release safety", () => {
 
     const result = await release(store);
 
-    expect(result.outcome).toBe("ROLLED_BACK");
     expect(result.failures[0]).toMatch(/Final verification failed[\s\S]*Black: assigned image/);
+    expect(result.outcome).toBe("PARTIAL_RELEASE_MANUAL_RECOVERY");
+    expect(result.recovery).toContain(`${aGrade.title} (${aGrade.productId}): Black: assigned image [gid://shopify/MediaImage/999] is not the approved Black image ${aGrade.variants[0].mediaId}.`);
     expect(store.get(aGrade.productId).status).toBe("DRAFT");
+    expect(store.get(aGrade.productId).published).toEqual([]);
   });
 
   it("10. never lets a blocked Pro, Air, withdrawn A Grade or Premium Plus record into the release set", () => {
@@ -460,24 +585,14 @@ describe("iPhone 17 release safety", () => {
     expect(() => assertReleaseScope(repriced, publishableIphone17BackGlass())).toThrow(/not the approved price/);
   });
 
-  it("11. keeps coils and every other family record out of the mutation set and fails on collateral change", async () => {
+  it("11. keeps coils and every other family record out of the mutation set", async () => {
     const store = new FakeShopify();
-    const coil = store.get("gid://shopify/Product/8736047268012");
     const released = await release(store);
 
     const targetIds = baseline.targets.map((target) => target.productId);
     expect(released.outcome).toBe("RELEASED");
     expect(store.mutationCalls().every((call) => targetIds.includes((call.variables.id ?? (call.variables.product as { id: string }).id) as string))).toBe(true);
-    expect([coil.status, coil.published]).toEqual(["DRAFT", []]);
-
-    const second = new FakeShopify();
-    second.intercept = (operation, variables, fake) => {
-      if (activating(premium.productId)(operation, variables)) fake.get("gid://shopify/Product/8736047268012").variants[0].price = "5.00";
-      return undefined;
-    };
-    const collateral = await release(second);
-    expect(collateral.outcome).toBe("ROLLED_BACK");
-    expect(collateral.failures[0]).toMatch(/Collateral change: iPhone 17 Wireless Charging Coil - OEM/);
+    expect([store.get(COIL_ID).status, store.get(COIL_ID).published]).toEqual(["DRAFT", []]);
   });
 
   it("F. fingerprints every iPhone 17-family record, coils included, from a full catalog scan", async () => {

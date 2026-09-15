@@ -1,15 +1,16 @@
 /**
- * All-or-nothing release engine for the base iPhone 17 back-glass products.
+ * Guarded two-product release engine for the base iPhone 17 back glass.
  *
- * Shopify has no multi-product transaction, so a release is staged and
- * compensated instead:
+ * Shopify has no multi-product transaction. This is a guarded release with a
+ * compensating rollback on detected or runtime failures, not an atomic one:
  *
  *  1. Preflight: every target must match its verified baseline exactly —
- *     identity, colour order, variant IDs, SKUs, approved price, inventory
- *     state, product media IDs, the approved image on each colour variant,
- *     required collections, no forbidden (stale) collection, DRAFT and
- *     unpublished — and canonical iPhone 17e must be bound to its product ID.
- *     Every gating connection is read to completion or the read fails.
+ *     identity, colour order, variant IDs, the Color each variant ID reports in
+ *     selectedOptions, SKUs, approved price, inventory state, product media IDs,
+ *     the approved image on each colour variant, required collections, no
+ *     forbidden collection, DRAFT and unpublished — and canonical iPhone 17e
+ *     must be bound to its product ID. Every gating connection is read to
+ *     completion or the read fails.
  *  2. The caller captures a backup, then everything is re-read immediately
  *     before the first write, so a slow backup cannot bless stale state.
  *  3. Channels are granted to BOTH targets while they are still DRAFT.
@@ -21,8 +22,17 @@
  *  5. Final state and every other iPhone 17-family record are verified.
  *  6. Any error or failed verification triggers compensation from fresh state:
  *     restore the captured status first (hide), then withdraw only the channel
- *     grants this run introduced, then verify by a fresh read. If the rollback
- *     cannot be verified the outcome is PARTIAL_RELEASE_MANUAL_RECOVERY.
+ *     grants this run introduced. Rollback is reported clean only if both
+ *     targets again match their full pre-release state AND every other
+ *     iPhone 17-family record matches its pre-release fingerprint. Collateral
+ *     records are never mutated; any remaining difference is reported as
+ *     PARTIAL_RELEASE_MANUAL_RECOVERY.
+ *
+ * Limitation: compensation runs inside this process. An abrupt termination
+ * (killed process, crash, lost machine) between writes cannot be compensated
+ * and can leave one target staged or active. The next preflight recognises that
+ * shape and reports POSSIBLE PARTIAL RELEASE — MANUAL RECONCILIATION REQUIRED;
+ * it never mutates anything on startup.
  */
 import { createHash } from "node:crypto";
 
@@ -70,6 +80,11 @@ export interface ReleaseBaseline {
   targets: ReleaseTargetBaseline[];
 }
 
+export interface SelectedOption {
+  name: string;
+  value: string;
+}
+
 export interface VariantState {
   id: string;
   inventoryPolicy: string;
@@ -77,6 +92,7 @@ export interface VariantState {
   inventoryTracked: boolean;
   mediaIds: string[];
   price: string;
+  selectedOptions: SelectedOption[];
   sku: string | null;
   title: string;
 }
@@ -101,7 +117,7 @@ export class IncompleteReadError extends Error {
   }
 }
 
-/** Loop guard for paginated reads; far above any real iPhone 17-family size. */
+/** Loop guard for paginated per-product reads. */
 export const MAX_PAGES = 25;
 
 interface PageInfo {
@@ -124,6 +140,7 @@ const PRODUCT_QUERY = `#graphql
         pageInfo { hasNextPage }
         nodes {
           id title sku price inventoryPolicy inventoryQuantity
+          selectedOptions { name value }
           inventoryItem { tracked }
           media(first: 5) { pageInfo { hasNextPage } nodes { id } }
         }
@@ -167,7 +184,7 @@ const FAMILY_QUERY = `#graphql
       nodes {
         id handle title status productType
         media(first: 20) { pageInfo { hasNextPage } nodes { id } }
-        variants(first: 30) { pageInfo { hasNextPage } nodes { id sku price inventoryPolicy inventoryQuantity inventoryItem { tracked } } }
+        variants(first: 30) { pageInfo { hasNextPage } nodes { id sku price inventoryPolicy inventoryQuantity selectedOptions { name value } inventoryItem { tracked } } }
         resourcePublicationsV2(first: 10, onlyPublished: true) { pageInfo { hasNextPage } nodes { publication { name } } }
       }
     }
@@ -212,6 +229,7 @@ interface RawVariant {
   inventoryQuantity: number | null;
   media: Connection<{ id: string }>;
   price: string;
+  selectedOptions: SelectedOption[];
   sku: string | null;
   title: string;
 }
@@ -266,6 +284,7 @@ export async function readProductState(client: AdminClient, productId: string): 
       inventoryTracked: variant.inventoryItem.tracked,
       mediaIds: variant.media.nodes.map((node) => node.id),
       price: variant.price,
+      selectedOptions: variant.selectedOptions.map(({ name, value }) => ({ name, value })),
       sku: variant.sku,
       title: variant.title,
     })),
@@ -299,7 +318,15 @@ interface RawFamilyProduct {
   resourcePublicationsV2: Connection<{ publication: { name: string } }>;
   status: string;
   title: string;
-  variants: Connection<{ id: string; inventoryItem: { tracked: boolean }; inventoryPolicy: string; inventoryQuantity: number | null; price: string; sku: string | null }>;
+  variants: Connection<{
+    id: string;
+    inventoryItem: { tracked: boolean };
+    inventoryPolicy: string;
+    inventoryQuantity: number | null;
+    price: string;
+    selectedOptions: SelectedOption[];
+    sku: string | null;
+  }>;
 }
 
 /** Compact per-product hashes of the release-sensitive fields of every iPhone 17-family record, coils included. */
@@ -323,7 +350,10 @@ export async function familyFingerprints(client: AdminClient) {
         title: product.title,
         variants: [...product.variants.nodes]
           .sort((left, right) => left.id.localeCompare(right.id))
-          .map((variant) => [variant.id, variant.sku, variant.price, variant.inventoryPolicy, variant.inventoryQuantity, variant.inventoryItem.tracked]),
+          .map((variant) => [
+            variant.id, variant.sku, variant.price, variant.inventoryPolicy, variant.inventoryQuantity, variant.inventoryItem.tracked,
+            variant.selectedOptions.map((option) => `${option.name}=${option.value}`),
+          ]),
       };
       records.set(product.id, {
         fingerprint: createHash("sha256").update(JSON.stringify(safeFields)).digest("hex"),
@@ -372,6 +402,29 @@ export const TARGET_CHECKS: Array<[string, Check]> = [
     const expected = sorted(target.variants.map((variant) => variant.variantId));
     return same(actual, expected) ? [] : [`Variant IDs [${actual.join(", ")}] differ from the verified [${expected.join(", ")}].`];
   }],
+  // selectedOptions is authoritative: variant title, array position and product option order are not.
+  // Non-Color options are ignored so an added option cannot hide or fake the Color mapping.
+  ["variantColorMapping", (state, target) => {
+    const blockers: string[] = [];
+    const claimedBy = new Map<string, string[]>();
+    for (const expected of target.variants) {
+      const actual = state.variants.find((variant) => variant.id === expected.variantId);
+      if (!actual) continue;
+      const colorOptions = actual.selectedOptions.filter((option) => option.name === "Color");
+      if (colorOptions.length !== 1) {
+        blockers.push(`${expected.color}: variant ${expected.variantId} has ${colorOptions.length} Color options in selectedOptions, expected exactly 1.`);
+        continue;
+      }
+      const color = colorOptions[0].value;
+      if (!target.colors.includes(color)) blockers.push(`${expected.color}: variant ${expected.variantId} reports unexpected Color=${color}.`);
+      else if (color !== expected.color) blockers.push(`${expected.color}: variant ${expected.variantId} reports Color=${color}, verified ${expected.color}.`);
+      claimedBy.set(color, [...(claimedBy.get(color) ?? []), expected.variantId]);
+    }
+    for (const [color, variantIds] of claimedBy) {
+      if (variantIds.length > 1) blockers.push(`Color=${color} is reported by ${variantIds.length} variants: ${variantIds.join(", ")}.`);
+    }
+    return blockers;
+  }],
   ["exactSkus", (state, target) => target.variants.flatMap((expected) => {
     const actual = state.variants.find((variant) => variant.id === expected.variantId);
     return actual && actual.sku !== expected.sku ? [`${expected.color}: SKU is "${actual.sku ?? ""}", expected exactly "${expected.sku}".`] : [];
@@ -408,9 +461,7 @@ export const TARGET_CHECKS: Array<[string, Check]> = [
     target.forbiddenCollections.filter((handle) => state.collections.includes(handle)).map((handle) => `Still a member of ${handle} (forbidden collection membership).`)],
   ["statusAndChannels", (state, target, phase, channels) => {
     const expectedStatus = phase === "RELEASED" ? "ACTIVE" : target.preReleaseStatus;
-    const expectedChannels = phase === "PRE_RELEASE"
-      ? sorted(target.preReleasePublications)
-      : sorted([...new Set([...target.preReleasePublications, ...channels])]);
+    const expectedChannels = phase === "PRE_RELEASE" ? sorted(target.preReleasePublications) : stagedChannels(target, channels);
     return [
       ...(state.status !== expectedStatus ? [`Status is ${state.status}, expected ${expectedStatus}.`] : []),
       ...(!same(state.publishedChannels, expectedChannels)
@@ -419,6 +470,9 @@ export const TARGET_CHECKS: Array<[string, Check]> = [
     ];
   }],
 ];
+
+const stagedChannels = (target: ReleaseTargetBaseline, channels: string[]) =>
+  sorted([...new Set([...target.preReleasePublications, ...channels])]);
 
 export function targetBlockers(state: ProductState | null, target: ReleaseTargetBaseline, phase: ReleasePhase, channels: string[]) {
   if (!state) return [`Product ${target.productId} not found.`];
@@ -471,10 +525,34 @@ export interface TargetCheck {
   state: ProductState | null;
 }
 
+export type ReleaseState = "PRE_RELEASE" | "RELEASED" | "POSSIBLE_PARTIAL_RELEASE" | "UNKNOWN";
+
 export interface Preflight {
   blockers: string[];
   canonical17e: string[];
+  releaseState: ReleaseState;
   targets: TargetCheck[];
+}
+
+/**
+ * Classifies the targets' status and channel grants together. Anything other
+ * than "all untouched" or "all fully released" looks like an interrupted run
+ * and is surfaced explicitly. Diagnostic only: nothing is mutated.
+ */
+export function classifyReleaseState(targets: TargetCheck[], channels: string[]): { lines: string[]; state: ReleaseState } {
+  if (targets.some((check) => !check.state)) return { lines: [], state: "UNKNOWN" };
+  const phase = ({ baseline: target, state }: TargetCheck) => {
+    if (state!.status === target.preReleaseStatus && same(state!.publishedChannels, sorted(target.preReleasePublications))) return "PRE_RELEASE";
+    if (state!.status === "ACTIVE" && same(state!.publishedChannels, stagedChannels(target, channels))) return "RELEASED";
+    return "OTHER";
+  };
+  const describe = targets
+    .map(({ baseline: target, state }) => `${target.title}: status ${state!.status}, published to [${state!.publishedChannels.join(", ")}]`)
+    .join("; ");
+  const phases = targets.map(phase);
+  if (phases.every((value) => value === "PRE_RELEASE")) return { lines: [], state: "PRE_RELEASE" };
+  if (phases.every((value) => value === "RELEASED")) return { lines: [`BASE IPHONE 17 ALREADY RELEASED — ${describe}.`], state: "RELEASED" };
+  return { lines: [`POSSIBLE PARTIAL RELEASE — MANUAL RECONCILIATION REQUIRED — ${describe}.`], state: "POSSIBLE_PARTIAL_RELEASE" };
 }
 
 export async function preflight(client: AdminClient, baseline: ReleaseBaseline): Promise<Preflight> {
@@ -495,14 +573,20 @@ export async function preflight(client: AdminClient, baseline: ReleaseBaseline):
     if (!(error instanceof IncompleteReadError)) throw error;
     canonical17e = [error.message];
   }
+  const releaseState = classifyReleaseState(targets, baseline.releaseChannels);
   return {
-    blockers: [...targets.flatMap((check) => check.blockers.map((blocker) => `${check.baseline.title}: ${blocker}`)), ...canonical17e],
+    blockers: [
+      ...releaseState.lines,
+      ...targets.flatMap((check) => check.blockers.map((blocker) => `${check.baseline.title}: ${blocker}`)),
+      ...canonical17e,
+    ],
     canonical17e,
+    releaseState: releaseState.state,
     targets,
   };
 }
 
-/** A release is all-or-nothing: any blocker anywhere means nothing is published. Nothing is ever created. */
+/** Publication requires every gate on every target to pass; any blocker anywhere plans no publication. Nothing is ever created. */
 export function releaseSummary(checks: Preflight) {
   const publish = checks.blockers.length === 0 ? checks.targets.length : 0;
   return {
@@ -538,7 +622,7 @@ export function assertReleaseScope(
     if (target.productType !== "Back Glass" || /coil/i.test(target.title.replace("(No Coil)", "")) || /premium plus/i.test(target.title)) {
       throw new Error(`${target.title}: only back glass may be released here.`);
     }
-    if (target.forbiddenCollections.length === 0) throw new Error(`${target.title}: the stale-collection gate is missing.`);
+    if (target.forbiddenCollections.length === 0) throw new Error(`${target.title}: the forbidden-collection gate is missing.`);
   }
   if (baseline.targets.length === 0) throw new Error("No release targets.");
 }
@@ -615,9 +699,9 @@ async function verifyTargets(client: AdminClient, baseline: ReleaseBaseline, pha
   for (const target of baseline.targets) {
     try {
       const state = await readProductState(client, target.productId);
-      failures.push(...targetBlockers(state, target, phase, baseline.releaseChannels).map((failure) => `${target.title}: ${failure}`));
+      failures.push(...targetBlockers(state, target, phase, baseline.releaseChannels).map((failure) => `${target.title} (${target.productId}): ${failure}`));
     } catch (error) {
-      failures.push(`${target.title}: ${messageOf(error)}`);
+      failures.push(`${target.title} (${target.productId}): ${messageOf(error)}`);
     }
   }
   return failures;
@@ -665,13 +749,19 @@ export async function executeRelease(options: ReleaseOptions): Promise<ReleaseRe
   } catch (error) {
     failures.push(messageOf(error));
     log(`RELEASE FAILED: ${messageOf(error)}\nCompensating toward the captured pre-release state.`);
-    const recovery = await compensate(client, baseline, captured, channelIds, mutations, log);
+    const recovery = await compensate(client, baseline, captured, channelIds, mutations, log, familyBefore);
     if (recovery.length) log(`PARTIAL RELEASE — MANUAL RECOVERY REQUIRED\n${recovery.join("\n")}`);
     return { blockers: [], failures, mutations, outcome: recovery.length ? "PARTIAL_RELEASE_MANUAL_RECOVERY" : "ROLLED_BACK", recovery };
   }
 }
 
-/** Restores captured status (hide first), withdraws only grants introduced by this run, then verifies by a fresh read. */
+/**
+ * Restores captured status (hide first) and withdraws only grants introduced by
+ * this run, on the release targets only. Then verifies, from fresh reads, that
+ * both targets match their full pre-release state and that every other
+ * iPhone 17-family record matches its pre-release fingerprint. Returns the
+ * remaining differences; an empty list is the only clean rollback.
+ */
 async function compensate(
   client: AdminClient,
   baseline: ReleaseBaseline,
@@ -679,6 +769,7 @@ async function compensate(
   channelIds: Map<string, string>,
   mutations: MutationRecord[],
   log: (line: string) => void,
+  familyBefore: Map<string, FamilyRecord>,
 ) {
   for (const [index, target] of baseline.targets.entries()) {
     const pre = captured[index];
@@ -706,22 +797,17 @@ async function compensate(
     }
   }
 
-  const issues: string[] = [];
-  for (const [index, target] of baseline.targets.entries()) {
-    const pre = captured[index];
-    try {
-      const now = await readProductState(client, target.productId);
-      if (!now) {
-        issues.push(`${target.title} (${target.productId}): not found after rollback.`);
-        continue;
-      }
-      if (now.status !== pre.status) issues.push(`${target.title} (${target.productId}): status ${now.status}, pre-release ${pre.status}.`);
-      if (!same(now.publishedChannels, pre.publishedChannels)) {
-        issues.push(`${target.title} (${target.productId}): published to [${now.publishedChannels.join(", ")}], pre-release [${pre.publishedChannels.join(", ")}].`);
-      }
-    } catch (error) {
-      issues.push(`${target.title} (${target.productId}): rollback could not be verified: ${messageOf(error)}`);
+  // Both targets against their full captured pre-release state (preflight proved captured == baseline).
+  const issues = await verifyTargets(client, baseline, "PRE_RELEASE");
+
+  // Collateral is verified, never repaired: the engine may only touch the release targets.
+  try {
+    const targetIds = new Set(baseline.targets.map((target) => target.productId));
+    for (const change of collateralChanges(familyBefore, await familyFingerprints(client), targetIds)) {
+      issues.push(`${change} Collateral state differs from the pre-release fingerprint; the release engine does not modify collateral records.`);
     }
+  } catch (error) {
+    issues.push(`Collateral state could not be verified after rollback: ${messageOf(error)}`);
   }
   return issues;
 }
