@@ -34,3 +34,6 @@ Own the definition and first computation of **30-day contribution profit from
 completed B2B orders** once M1 delivers landed COGS for the top 15 SKUs. Then
 propose a per-SKU price floor and check "free shipping over $150" against real
 parcel cost and AOV.
+
+> 2026-10-10: priorities now come from `10-knowledge/ROADMAP.md` and
+> `10-knowledge/ROSTER.md`. Where this file disagrees, those win.

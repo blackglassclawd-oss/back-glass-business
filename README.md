@@ -14,7 +14,9 @@ prototypes.
   decision records.
 - `90-archive/` — inactive prototypes and exact source archives.
 
-Start with [`10-knowledge/BUSINESS.md`](10-knowledge/BUSINESS.md), then read
+Start with [`10-knowledge/ROADMAP.md`](10-knowledge/ROADMAP.md) (the plan),
+[`10-knowledge/QUESTIONS.md`](10-knowledge/QUESTIONS.md) and
+[`10-knowledge/BUSINESS.md`](10-knowledge/BUSINESS.md), then read
 [`10-knowledge/DECISIONS.md`](10-knowledge/DECISIONS.md) before changing product,
 price, inventory, media, publishing, or infrastructure state. Search acquisition
 work starts from the dated baseline and approval gates in
@@ -25,7 +27,8 @@ work starts from the dated baseline and approval gates in
 The active migration repository is
 [`01-software/backglass-ecommerce`](01-software/backglass-ecommerce). Shopify is
 still the transaction and operational authority. Cloudflare currently hosts a
-preview, not an approved production replacement.
+preview, not an approved production replacement, and is frozen until the
+business has 10 paying shops.
 
 ## Safety boundary
 

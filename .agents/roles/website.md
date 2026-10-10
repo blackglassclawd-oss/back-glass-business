@@ -37,3 +37,6 @@ exists locally. Before any image goes live: rights confirmed or original
 photography substituted; physical sample matches; Michael approves the exact
 model-by-model presentation; only approved assets uploaded; live pages
 independently verified.
+
+> 2026-10-10: priorities now come from `10-knowledge/ROADMAP.md` and
+> `10-knowledge/ROSTER.md`. Where this file disagrees, those win.

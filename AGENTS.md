@@ -26,16 +26,17 @@ maintenance lane.
 - Specialists report to the CEO. They do not form a council, vote, recursively
   delegate, or poll every other model.
 
-## Current direction (see `10-knowledge/DECISIONS.md`, 2026-08-29)
+## Current direction (see `10-knowledge/ROADMAP.md`, 2026-10-10)
 
-1. Lean runtime: one persistent operator; four specialist profiles on the shelf;
-   0-2 active for a real mission; one temporary opposite-model reviewer only for
-   material calls.
-2. Shopify-first revenue path: unit economics -> fulfillment proof -> store
-   trust -> reactivation -> direct acquisition -> measure -> scale.
+1. Sell before building. Shopify had 6 online orders in 24 months; the plan is
+   local DFW repair-shop sales, marketplaces and free Google surfaces first.
+2. One thread per business row (`10-knowledge/ROSTER.md`); three run now, the
+   rest start when Michael's numbers land.
 3. Primary metric: **30-day contribution profit from completed B2B orders**
    (net product revenue − landed COGS − discounts − fees − shipping subsidy −
    RMA/refund credits).
+4. Frozen until 10 paying shops: Cloudflare rebuild, Buzz, Herdr/Pi runtime,
+   image scripts, SEO/GEO measurement framework.
 
 ## Repository map
 

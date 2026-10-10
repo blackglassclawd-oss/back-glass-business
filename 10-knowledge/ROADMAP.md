@@ -1,147 +1,116 @@
-# Operating Roadmap
+# Back Glass Pros: shortest route to profit
 
-**Owner:** CEO function (currently the operator agent + Jason).
-**Created:** 2026-08-29.
-**Status:** Draft for Jason approval. Supersedes the agent-count and phasing in
-the pasted "Agent Operating System v0.1" where the two conflict (see
-[`DECISIONS.md`](DECISIONS.md), 2026-08-29 entries).
+**Version:** 2026-10-10 · **Owner:** Jason · **Product/catalog authority:** Michael
+**Replaces:** `10-knowledge/ROADMAP.md` (2026-08-29) where they conflict.
 
-## Objective
+## 1. Where we actually are (checked 2026-10-10)
 
-First real, repeatable gross profit from mobile repair-shop orders within 90
-days, without new capital, without waiting on the Cloudflare rebuild, and
-without any customer-facing claim that is not backed by current evidence.
+Live Shopify analytics (store `kfczyu-kc`, read-only):
 
-## Why this shape
+| Metric | Value |
+| --- | --- |
+| Online orders, last 24 months | **6** (gross **$580**) |
+| Orders since Mar 2025 | 2 (Jun 2025 $7, Aug 2026 $23) |
+| Store sessions, last 6 months | 397, of which 369 "direct" (mostly us testing, inferred) |
+| Google search sessions, last 6 months | 18 |
+| Buyers by state | OK 2 ($344), TX 2 ($206), ID 1, CA 1 |
+| Best sellers | **Full Assembly with coil: $361 of $580 (62%)** |
 
-The business has ~5 orders and 13 customer records in the last authenticated
-export, and no approved unit-economics model. That is too little signal to
-justify a five-runtime AI executive team; building it first is the
-"optimize the agent system instead of the company" failure the spec itself
-names. The live Shopify store already converts with zero marketing, so the
-fastest path to cash is: make the live store safe to send traffic to, then
-drive repair-shop demand to it directly. The Cloudflare rebuild is real work
-but produces no revenue inside 90 days, so it runs in the background at low
-priority.
+What this means:
 
-## Structure (lean)
+1. **The website is not the business yet.** It has had about one real order a year.
+   Shopify Basic alone costs more than it earns.
+2. **Effort went to software, not selling.** The repo holds 847 files, ~40
+   image/catalog scripts and a Cloudflare rebuild. None of it touched revenue.
+3. **We may have shelved the only line that sold.** Full Assemblies were moved
+   to Draft on 2026-07-29; they were 62% of all online sales.
+4. **Buyers are regional.** 4 of 6 orders came from Texas and Oklahoma, which
+   fits a Dallas base.
+5. **The bottleneck is answers from Michael, not agent capacity.** M1-M3 have
+   been open since 2026-08-29; the 28-question sheet for Michael is blank.
 
-- **One operator / CEO function.** Owns prioritization, the roadmap, and the
-  decision record. Does not become the full-time coder, copywriter, or analyst.
-- **Two working hats, invoked on demand, not two standing runtimes:**
-  - *Commercial hat* — pricing, outbound, quoting, warranty/RMA wording,
-    reactivation. Every external or price-committing action needs Michael and/or
-    Jason approval per [`BUSINESS.md`](BUSINESS.md) governance.
-  - *Build hat* — Shopify fixes, storefront code, fulfillment instrumentation.
-- **On-demand opposite-model review** for any material or irreversible call,
-  per spec section 16. Reviewer's job is to falsify, not paraphrase.
-- **GitHub** is the task list and decision history. Plain issues; skip the label
-  taxonomy, mission-contract YAML, and multi-pane runtime until there is a
-  reason to parallelize (roughly >50 orders/month).
+If Michael has been selling since 2015 (per the question sheet, unconfirmed),
+the real revenue is offline. Step one is to find it and route it through a
+system we can measure.
 
-The five named specialist roles from the spec stay on the shelf as prepared
-profiles (Website — Opus 5, Commercial — Opus 5, Finance — Sol, BizDev — Sol)
-and are activated only when demand-driven work actually requires one, 0-2 at a
-time. Pi role files and lightweight Herdr launch commands live in
-[`../.agents/`](../.agents/) and [`../scripts/agents/`](../scripts/agents/) so
-specialization is deterministic later. No orchestration extension, mission bus,
-voting council, standing scheduler, or Fusion replacement is built.
+## 2. The thesis
 
-## Commercial priority chain (Active)
+A specialist with a $9 median part price will not out-SEO MobileSentrix,
+PhoneLCDParts or Injured Gadgets in 90 days. It can win three places fast:
 
-```
-unit economics -> fulfillment proof -> store trust / purchase-path blockers
--> reactivation -> direct repair-shop acquisition -> measure economics
--> scale what works
-```
+1. **Local speed.** A DFW repair shop with a customer waiting values same-day
+   delivery or pickup over a $1 price gap. National players ship overnight.
+2. **Where buyers already are.** eBay, Facebook repair-tech groups and Google
+   free shopping listings have demand today. SEO is a 6-12 month asset.
+3. **Configuration accuracy.** Right model, color, grade, coil/no-coil. This is
+   the moat, but only worth paying for once shops are buying.
 
-The live Shopify store is the revenue surface. Demand generation does not wait
-on the Cloudflare rebuild, which sits in a low-priority maintenance lane:
-codebase healthy, critical/security fixes only, tests and deploy knowledge
-preserved, build only what directly removes a commercial blocker, no
-speculative parity work while M1-M3 are open.
+## 3. Target and math (assumptions until Michael's numbers land)
 
-## Phase 1 — Truth and fulfillment (target: 2 weeks)
+| Input | Assumption | Source |
+| --- | --- | --- |
+| Avg unit price | $15 | Price range $3-$35, median $9; assemblies higher |
+| Gross margin | 35% | Placeholder; M1 replaces it |
+| Units per active shop | 20/month | ~5 back glass jobs a week |
 
-Nothing that spends money on acquisition starts until these are answered.
+**90-day goal:** 30 active shops (or equivalent marketplace volume) ≈ 600
+units ≈ **$9k revenue ≈ $3.1k contribution per month.** First checkpoint is
+10 paying shops by day 45. Every number is re-based once M1 delivers real cost.
 
-1. **Pricing basis.** Confirm whether the 2026-07-28 sheet is customer selling
-   price or internal cost, whether it applies across colors, and its effective
-   date. Owner: Michael. (Open decision #3.)
-2. **Unit economics for the top 15 SKUs by inventory value** — landed cost
-   incl. inbound freight, current sell price, gross margin %. Owner: Michael,
-   assembled into [`unit-economics/COGS-REQUEST.md`](unit-economics/COGS-REQUEST.md).
-3. **Inventory reality.** What the two Shopify locations physically are, what is
-   actually on hand, who updates counts, and replenishment lead time. Owner:
-   Michael + Jason. (Open decision #5.)
-4. **Fulfillment proof.** Place and ship 5-10 real orders end to end; record
-   lead time, pick accuracy, actual parcel cost vs. charged. Owner: build hat +
-   Michael.
-5. **Warranty / RMA in one paragraph** a repair shop can be quoted before their
-   first order — term, evidence required, refund vs. replacement, return
-   freight. Owner: Michael. (Open decisions #6.)
-6. **Shipping economics.** Confirm or kill "free over $150" against real parcel
-   cost and average order value. Owner: Michael + Finance review.
-7. **Store trust pass.** Fix only Shopify issues that block checkout or
-   credibility: broken/placeholder images, missing warranty/shipping page,
-   the duplicate "do-not-delete" collections, and the Full Assembly collection
-   that contradicts recorded catalog direction. Owner: build hat. No price,
-   publication, or deletion without approval.
+Primary metric stays: **30-day contribution profit from completed orders**
+(net revenue − landed COGS − discounts − fees − shipping subsidy − RMA credits).
 
-**Primary commercial metric (Active — amends Open decision #11):**
+## 4. The sequence
 
-> **30-day contribution profit from completed B2B orders**
-> = net product revenue
->   − landed product COGS
->   − discounts
->   − payment / transaction fees
->   − outbound shipping subsidy
->   − directly attributable RMA / refund credits
+### Week 0-1: Truth in one sitting
 
-Companion metrics tracked alongside it: active purchasing B2B accounts;
-contribution profit per active account; repeat-order rate; gross margin %;
-stock accuracy; order accuracy / fulfillment-error rate.
+- One 60-minute call with Michael answers the six questions in `QUESTIONS.md`
+  (revenue today, cost basis, stock, hours, cash, local delivery). Not 28.
+- Make the GitHub repo private (it is public today; see Risks).
+- Decide on Full Assemblies: if stock exists, re-publish the top sellers.
+- Store trust minimum: shipping page, one-paragraph warranty, real contact.
 
-The business first has to prove contribution profit exists and can be grown.
-Once customers have had a realistic chance to reorder, evaluate promoting
-**repeat contribution profit per active account** to the primary metric.
+### Week 1-4: Sell where buyers are
 
-## Phase 2 — Reactivate and pilot (target: weeks 3-6)
+- **DFW outbound:** list ~150 repair shops within 40 miles, call or visit
+  40/week, offer a sample pack and same-day delivery. Log every objection.
+- **Marketplaces:** list the 20 best SKUs on eBay; post in 3-5 repair-tech
+  groups. Measure sell-through and fees.
+- **Free Google surfaces:** Google Business Profile (wholesale, Dallas) and
+  Merchant Center free listings through the Shopify Google channel.
+- **Existing customers:** buy-again message to all 13 Shopify customers and
+  Michael's offline accounts.
 
-1. Reactivate existing and lapsed accounts with SKU-specific buy-again links
-   (pre-authorized campaign scope, wording approved once).
-2. Outbound to 20-40 US repair shops matching the existing customer profile;
-   first-order incentive; log every price / warranty / stock objection
-   verbatim.
-3. Run the quick-order pilot with 3-5 active shops; instrument search,
-   cart handoff, and order time against the launch gates in
-   [`../01-software/backglass-ecommerce/docs/B2B_GROWTH_PLAN.md`](../01-software/backglass-ecommerce/docs/B2B_GROWTH_PLAN.md).
+### Week 5-12: Keep what pays
 
-## Phase 3 — Decide the multipliers (target: weeks 7-12)
+- Weekly scorecard: shops contacted, samples, first orders, repeat orders,
+  contribution by channel.
+- Kill any channel with zero contribution after 4 weeks. Double the one that wins.
+- Only then: model hub pages for SEO, tier pricing, quick-order pilot, paid
+  search on exact part queries.
 
-With real CAC, repeat rate, and per-SKU margin in hand, decide:
+## 5. Freeze list (no work until 10 paying shops)
 
-1. Whether a wholesale / net-terms deal with a mid-size repair chain or regional
-   distributor is worth pursuing (BizDev activates here, not before).
-2. Whether narrow high-intent paid search clears margin.
-3. Whether and when the Cloudflare storefront is allowed to reach production
-   (Open decision #10).
+Cloudflare storefront rebuild · Buzz · Herdr/Pi multi-agent runtime · image
+overlay and gallery scripts · SEO/GEO measurement framework · extra quick-order
+apps (keep one).
 
-## First three missions
+## 6. Risks
 
-See [`missions/`](missions/). Summary:
+- **Public repo.** It holds the owner price-sheet photo (may be supplier cost),
+  owner screenshots, Michael's question sheet and competitor scrapes, while
+  `DECISIONS.md` says the repo is private.
+- **Unverified claims.** "Since 2015", "ships from Dallas", "same day before
+  5pm CT", "free UPS over $150" are unconfirmed; none go public until Michael
+  confirms.
+- **Supplier photos.** No supplier imagery goes live without rights and
+  Michael's approval (unchanged).
+- **Inventory.** Shopify shows zero tracked stock; selling what we cannot ship
+  is worse than not selling.
 
-| ID | Owner | Deliverable | Accept when |
-| --- | --- | --- | --- |
-| M1 | Michael | Pricing basis answer + top-15 SKU margin table | Table filled: SKU, landed cost, sell price, margin %; sheet basis stated |
-| M2 | Build hat + Michael | 5-10 real orders shipped and measured | Written log of 5+ shipped orders with lead time, pick accuracy, parcel cost vs charged; failure points listed |
-| M3 | Commercial hat (Michael sign-off) | One-paragraph warranty/RMA policy + reactivation email to existing accounts, drafted | Policy approved by Michael; email drafted and reviewed; not yet sent |
+## 7. Approval gates (unchanged)
 
-## Approval gates (unchanged from spec section 14)
-
-Autonomous: research, analysis, internal docs, code in branches, local tests,
-drafts, financial models. Requires Jason (and Michael where product/catalog):
-production deployment, any external message unless the campaign is
-pre-authorized, price or contract commitments, spending money, publishing
-supplier media, DNS cutover, destructive production changes, customer-policy
-changes.
+Autonomous: research, drafts, lead lists, analysis, code in branches.
+Needs Jason (and Michael for product facts): any message to a customer or
+shop, price changes, publishing or unpublishing products, spending money,
+marketplace accounts, production deploys.

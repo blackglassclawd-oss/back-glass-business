@@ -40,3 +40,6 @@ USER GATE      — none / Jason approval required
 M1 (pricing basis + top-15 margins, Michael) and M2 (fulfillment proof) are P0
 and block everything downstream. No paid acquisition before both land. Keep the
 Cloudflare rebuild in its maintenance lane.
+
+> 2026-10-10: priorities now come from `10-knowledge/ROADMAP.md` and
+> `10-knowledge/ROSTER.md`. Where this file disagrees, those win.
