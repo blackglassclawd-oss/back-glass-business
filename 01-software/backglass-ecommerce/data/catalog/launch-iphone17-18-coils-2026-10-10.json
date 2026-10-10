@@ -1,0 +1,532 @@
+{
+  "capturedAt": "2026-10-10",
+  "requestedBy": "Jason (project thread, 2026-10-10)",
+  "store": "kfczyu-kc.myshopify.com",
+  "rules": {
+    "deleteProducts": false,
+    "fullAssembly": "Stay in Draft. Do not relist.",
+    "activation": "A product goes ACTIVE only when every variant has an approvedPrice above zero and Michael has confirmed stock.",
+    "pricing": "proposedPrice is a Claude proposal, not an owner price. Only approvedPrice is ever written to Shopify."
+  },
+  "iphone17HalfAssemblies": {
+    "targetStatus": "ACTIVE once approved",
+    "fixes": [
+      "Rename variant SKU suffix -FA (full assembly) to -HA (half assembly) on 30 variants, matching the iPhone 14-16 convention.",
+      "Remove the double space in the iPhone 17 Pro Max A Grade title.",
+      "Add iPhone 17, iPhone Air and iPhone 18 titles to the New Arrivals smart collection (today it matches only 'iPhone 16')."
+    ],
+    "products": [
+      {
+        "handle": "iphone-17-half-assembly-no-coil-a-grade",
+        "currentPrice": "12.00",
+        "approvedPrice": "12.00",
+        "blocker": null
+      },
+      {
+        "handle": "iphone-17-half-assembly-no-coil-premium",
+        "currentPrice": "18.00",
+        "approvedPrice": "18.00",
+        "blocker": null
+      },
+      {
+        "handle": "iphone-air-half-assembly-no-coil-a-grade",
+        "currentPrice": "0.00",
+        "approvedPrice": null,
+        "blocker": "Sheet cell blank"
+      },
+      {
+        "handle": "iphone-air-half-assembly-no-coil-premium",
+        "currentPrice": "60.00",
+        "approvedPrice": null,
+        "blocker": "$60 is 3x every other Premium; confirm"
+      },
+      {
+        "handle": "iphone-17-pro-half-assembly-no-coil-a-grade",
+        "currentPrice": "0.00",
+        "approvedPrice": null,
+        "blocker": "Sheet cell blank"
+      },
+      {
+        "handle": "iphone-17-pro-half-assembly-no-coil-premium",
+        "currentPrice": "10.00",
+        "approvedPrice": null,
+        "blocker": "$10 is below iPhone 16 Pro Premium ($15); confirm price, not cost"
+      },
+      {
+        "handle": "iphone-17-pro-max-half-assembly-no-coil-a-grade",
+        "currentPrice": "0.00",
+        "approvedPrice": null,
+        "blocker": "Sheet cell blank"
+      },
+      {
+        "handle": "iphone-17-pro-max-half-assembly-no-coil-premium",
+        "currentPrice": "10.00",
+        "approvedPrice": null,
+        "blocker": "$10 is below iPhone 16 Pro Max Premium ($15); confirm price, not cost"
+      },
+      {
+        "handle": "iphone-17e-half-assembly-no-coil-premium",
+        "currentPrice": "0.00",
+        "approvedPrice": null,
+        "blocker": "No price, no photos, no A Grade product"
+      }
+    ]
+  },
+  "iphone18Drafts": {
+    "targetStatus": "DRAFT",
+    "source": "Apple announced iPhone 18 Pro and 18 Pro Max on 2026-09-09 (sales from 2026-09-18). Base iPhone 18 and 18e are expected in spring 2027 and are not drafted.",
+    "colorsNeedVerification": true,
+    "products": [
+      {
+        "handle": "iphone-18-pro-half-assembly-no-coil-premium",
+        "title": "iPhone 18 Pro Back Glass Half Assembly (No Coil) - Premium",
+        "productType": "Back Glass",
+        "tags": [
+          "premium",
+          "iphone-18-pro",
+          "owner-review-pending",
+          "media-blocked",
+          "commercial-data-blocked"
+        ],
+        "variants": [
+          {
+            "color": "Deep Black",
+            "sku": "SKU-I18-PRO-PREMIUM-DEEPBLACK-HA"
+          },
+          {
+            "color": "Silver",
+            "sku": "SKU-I18-PRO-PREMIUM-SILVER-HA"
+          },
+          {
+            "color": "Glacier Blue",
+            "sku": "SKU-I18-PRO-PREMIUM-GLACIERBLUE-HA"
+          },
+          {
+            "color": "Burgundy",
+            "sku": "SKU-I18-PRO-PREMIUM-BURGUNDY-HA"
+          }
+        ]
+      },
+      {
+        "handle": "iphone-18-pro-half-assembly-no-coil-a-grade",
+        "title": "iPhone 18 Pro Back Glass Half Assembly (No Coil) - A Grade",
+        "productType": "Back Glass",
+        "tags": [
+          "a grade",
+          "iphone-18-pro",
+          "owner-review-pending",
+          "media-blocked",
+          "commercial-data-blocked"
+        ],
+        "variants": [
+          {
+            "color": "Deep Black",
+            "sku": "SKU-I18-PRO-A-GRADE-DEEPBLACK-HA"
+          },
+          {
+            "color": "Silver",
+            "sku": "SKU-I18-PRO-A-GRADE-SILVER-HA"
+          },
+          {
+            "color": "Glacier Blue",
+            "sku": "SKU-I18-PRO-A-GRADE-GLACIERBLUE-HA"
+          },
+          {
+            "color": "Burgundy",
+            "sku": "SKU-I18-PRO-A-GRADE-BURGUNDY-HA"
+          }
+        ]
+      },
+      {
+        "handle": "iphone-18-pro-wireless-charging-coil-oem",
+        "title": "iPhone 18 Pro Wireless Charging Coil - OEM",
+        "productType": "Wireless Charging Coil",
+        "tags": [
+          "oem",
+          "iphone-18-pro",
+          "wireless charging coil",
+          "owner-review-pending",
+          "media-blocked",
+          "commercial-data-blocked"
+        ],
+        "variants": [
+          {
+            "color": null,
+            "sku": "SKU-I18-PRO-COIL-OEM"
+          }
+        ]
+      },
+      {
+        "handle": "iphone-18-pro-wireless-charging-coil-aftermarket",
+        "title": "iPhone 18 Pro Wireless Charging Coil - Aftermarket",
+        "productType": "Wireless Charging Coil",
+        "tags": [
+          "aftermarket",
+          "iphone-18-pro",
+          "wireless charging coil",
+          "owner-review-pending",
+          "media-blocked",
+          "commercial-data-blocked"
+        ],
+        "variants": [
+          {
+            "color": null,
+            "sku": "SKU-I18-PRO-COIL-AM"
+          }
+        ]
+      },
+      {
+        "handle": "iphone-18-pro-max-half-assembly-no-coil-premium",
+        "title": "iPhone 18 Pro Max Back Glass Half Assembly (No Coil) - Premium",
+        "productType": "Back Glass",
+        "tags": [
+          "premium",
+          "iphone-18-pro-max",
+          "owner-review-pending",
+          "media-blocked",
+          "commercial-data-blocked"
+        ],
+        "variants": [
+          {
+            "color": "Deep Black",
+            "sku": "SKU-I18-PRO-MAX-PREMIUM-DEEPBLACK-HA"
+          },
+          {
+            "color": "Silver",
+            "sku": "SKU-I18-PRO-MAX-PREMIUM-SILVER-HA"
+          },
+          {
+            "color": "Glacier Blue",
+            "sku": "SKU-I18-PRO-MAX-PREMIUM-GLACIERBLUE-HA"
+          },
+          {
+            "color": "Burgundy",
+            "sku": "SKU-I18-PRO-MAX-PREMIUM-BURGUNDY-HA"
+          }
+        ]
+      },
+      {
+        "handle": "iphone-18-pro-max-half-assembly-no-coil-a-grade",
+        "title": "iPhone 18 Pro Max Back Glass Half Assembly (No Coil) - A Grade",
+        "productType": "Back Glass",
+        "tags": [
+          "a grade",
+          "iphone-18-pro-max",
+          "owner-review-pending",
+          "media-blocked",
+          "commercial-data-blocked"
+        ],
+        "variants": [
+          {
+            "color": "Deep Black",
+            "sku": "SKU-I18-PRO-MAX-A-GRADE-DEEPBLACK-HA"
+          },
+          {
+            "color": "Silver",
+            "sku": "SKU-I18-PRO-MAX-A-GRADE-SILVER-HA"
+          },
+          {
+            "color": "Glacier Blue",
+            "sku": "SKU-I18-PRO-MAX-A-GRADE-GLACIERBLUE-HA"
+          },
+          {
+            "color": "Burgundy",
+            "sku": "SKU-I18-PRO-MAX-A-GRADE-BURGUNDY-HA"
+          }
+        ]
+      },
+      {
+        "handle": "iphone-18-pro-max-wireless-charging-coil-oem",
+        "title": "iPhone 18 Pro Max Wireless Charging Coil - OEM",
+        "productType": "Wireless Charging Coil",
+        "tags": [
+          "oem",
+          "iphone-18-pro-max",
+          "wireless charging coil",
+          "owner-review-pending",
+          "media-blocked",
+          "commercial-data-blocked"
+        ],
+        "variants": [
+          {
+            "color": null,
+            "sku": "SKU-I18-PRO-MAX-COIL-OEM"
+          }
+        ]
+      },
+      {
+        "handle": "iphone-18-pro-max-wireless-charging-coil-aftermarket",
+        "title": "iPhone 18 Pro Max Wireless Charging Coil - Aftermarket",
+        "productType": "Wireless Charging Coil",
+        "tags": [
+          "aftermarket",
+          "iphone-18-pro-max",
+          "wireless charging coil",
+          "owner-review-pending",
+          "media-blocked",
+          "commercial-data-blocked"
+        ],
+        "variants": [
+          {
+            "color": null,
+            "sku": "SKU-I18-PRO-MAX-COIL-AM"
+          }
+        ]
+      }
+    ]
+  },
+  "coils": {
+    "productType": "Wireless Charging Coil",
+    "collection": "wireless-charging-coils",
+    "targetStatus": "ACTIVE once approvedPrice is set",
+    "priceBasis": "Aftermarket proposal = the store's own former Premium Full Assembly price minus Premium Half Assembly price for that generation (14: $12, 15: $15, 15 Pro: $20); newer generations extrapolated. OEM proposal is Aftermarket plus about 50%. Retail references seen 2026-10-10: iPhone 15 Pro Max coil with flashlight flex $19.99, iPhone 16 Pro Max $24.35.",
+    "products": [
+      {
+        "handle": "iphone-14-wireless-charging-coil-aftermarket",
+        "model": "iPhone 14",
+        "source": "Aftermarket",
+        "sku": "SKU-I14-COIL-AM",
+        "proposedPrice": "12.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-14-wireless-charging-coil-oem",
+        "model": "iPhone 14",
+        "source": "OEM",
+        "sku": "SKU-I14-COIL-OEM",
+        "proposedPrice": "18.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-14-plus-wireless-charging-coil-aftermarket",
+        "model": "iPhone 14 Plus",
+        "source": "Aftermarket",
+        "sku": "SKU-I14-PLUS-COIL-AM",
+        "proposedPrice": "12.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-14-plus-wireless-charging-coil-oem",
+        "model": "iPhone 14 Plus",
+        "source": "OEM",
+        "sku": "SKU-I14-PLUS-COIL-OEM",
+        "proposedPrice": "18.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-15-wireless-charging-coil-aftermarket",
+        "model": "iPhone 15",
+        "source": "Aftermarket",
+        "sku": "SKU-I15-COIL-AM",
+        "proposedPrice": "15.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-15-wireless-charging-coil-oem",
+        "model": "iPhone 15",
+        "source": "OEM",
+        "sku": "SKU-I15-COIL-OEM",
+        "proposedPrice": "22.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-15-plus-wireless-charging-coil-aftermarket",
+        "model": "iPhone 15 Plus",
+        "source": "Aftermarket",
+        "sku": "SKU-I15-PLUS-COIL-AM",
+        "proposedPrice": "15.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-15-plus-wireless-charging-coil-oem",
+        "model": "iPhone 15 Plus",
+        "source": "OEM",
+        "sku": "SKU-I15-PLUS-COIL-OEM",
+        "proposedPrice": "22.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-15-pro-wireless-charging-coil-aftermarket",
+        "model": "iPhone 15 Pro",
+        "source": "Aftermarket",
+        "sku": "SKU-I15-PRO-COIL-AM",
+        "proposedPrice": "20.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-15-pro-wireless-charging-coil-oem",
+        "model": "iPhone 15 Pro",
+        "source": "OEM",
+        "sku": "SKU-I15-PRO-COIL-OEM",
+        "proposedPrice": "30.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-15-pro-max-wireless-charging-coil-aftermarket",
+        "model": "iPhone 15 Pro Max",
+        "source": "Aftermarket",
+        "sku": "SKU-I15-PRO-MAX-COIL-AM",
+        "proposedPrice": "20.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-15-pro-max-wireless-charging-coil-oem",
+        "model": "iPhone 15 Pro Max",
+        "source": "OEM",
+        "sku": "SKU-I15-PRO-MAX-COIL-OEM",
+        "proposedPrice": "30.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-16-wireless-charging-coil-aftermarket",
+        "model": "iPhone 16",
+        "source": "Aftermarket",
+        "sku": "SKU-I16-COIL-AM",
+        "proposedPrice": "15.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-16-wireless-charging-coil-oem",
+        "model": "iPhone 16",
+        "source": "OEM",
+        "sku": "SKU-I16-COIL-OEM",
+        "proposedPrice": "22.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-16-plus-wireless-charging-coil-aftermarket",
+        "model": "iPhone 16 Plus",
+        "source": "Aftermarket",
+        "sku": "SKU-I16-PLUS-COIL-AM",
+        "proposedPrice": "15.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-16-plus-wireless-charging-coil-oem",
+        "model": "iPhone 16 Plus",
+        "source": "OEM",
+        "sku": "SKU-I16-PLUS-COIL-OEM",
+        "proposedPrice": "22.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-16-pro-wireless-charging-coil-aftermarket",
+        "model": "iPhone 16 Pro",
+        "source": "Aftermarket",
+        "sku": "SKU-I16-PRO-COIL-AM",
+        "proposedPrice": "20.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-16-pro-wireless-charging-coil-oem",
+        "model": "iPhone 16 Pro",
+        "source": "OEM",
+        "sku": "SKU-I16-PRO-COIL-OEM",
+        "proposedPrice": "30.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-16-pro-max-wireless-charging-coil-aftermarket",
+        "model": "iPhone 16 Pro Max",
+        "source": "Aftermarket",
+        "sku": "SKU-I16-PRO-MAX-COIL-AM",
+        "proposedPrice": "20.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-16-pro-max-wireless-charging-coil-oem",
+        "model": "iPhone 16 Pro Max",
+        "source": "OEM",
+        "sku": "SKU-I16-PRO-MAX-COIL-OEM",
+        "proposedPrice": "30.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-17e-wireless-charging-coil-aftermarket",
+        "model": "iPhone 17e",
+        "source": "Aftermarket",
+        "sku": "SKU-I17E-COIL-AM",
+        "proposedPrice": "15.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-17e-wireless-charging-coil-oem",
+        "model": "iPhone 17e",
+        "source": "OEM",
+        "sku": "SKU-I17E-COIL-OEM",
+        "proposedPrice": "22.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-17-wireless-charging-coil-aftermarket",
+        "model": "iPhone 17",
+        "source": "Aftermarket",
+        "sku": "SKU-I17-COIL-AM",
+        "proposedPrice": "15.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-17-wireless-charging-coil-oem",
+        "model": "iPhone 17",
+        "source": "OEM",
+        "sku": "SKU-I17-COIL-OEM",
+        "proposedPrice": "22.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-17-air-wireless-charging-coil-aftermarket",
+        "model": "iPhone Air",
+        "source": "Aftermarket",
+        "sku": "SKU-I17-AIR-COIL-AM",
+        "proposedPrice": "20.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-17-air-wireless-charging-coil-oem",
+        "model": "iPhone Air",
+        "source": "OEM",
+        "sku": "SKU-I17-AIR-COIL-OEM",
+        "proposedPrice": "30.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-17-pro-wireless-charging-coil-aftermarket",
+        "model": "iPhone 17 Pro",
+        "source": "Aftermarket",
+        "sku": "SKU-I17-PRO-COIL-AM",
+        "proposedPrice": "25.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-17-pro-wireless-charging-coil-oem",
+        "model": "iPhone 17 Pro",
+        "source": "OEM",
+        "sku": "SKU-I17-PRO-COIL-OEM",
+        "proposedPrice": "35.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-17-pro-max-wireless-charging-coil-aftermarket",
+        "model": "iPhone 17 Pro Max",
+        "source": "Aftermarket",
+        "sku": "SKU-I17-PRO-MAX-COIL-AM",
+        "proposedPrice": "25.00",
+        "approvedPrice": null
+      },
+      {
+        "handle": "iphone-17-pro-max-wireless-charging-coil-oem",
+        "model": "iPhone 17 Pro Max",
+        "source": "OEM",
+        "sku": "SKU-I17-PRO-MAX-COIL-OEM",
+        "proposedPrice": "35.00",
+        "approvedPrice": null
+      }
+    ]
+  },
+  "ownerInputsNeeded": [
+    "Michael: approve or edit the coil price table (proposedPrice column).",
+    "Michael: confirm which coils and iPhone 17 colors are physically in stock.",
+    "Michael: A Grade prices for iPhone Air, 17 Pro, 17 Pro Max; confirm $10 Pro/Pro Max Premium and $60 Air Premium.",
+    "Michael: photos for the coils and iPhone 17e (supplier photos stay internal until rights are cleared)."
+  ]
+}
