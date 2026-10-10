@@ -27,8 +27,8 @@ work starts from the dated baseline and approval gates in
 The active migration repository is
 [`01-software/backglass-ecommerce`](01-software/backglass-ecommerce). Shopify is
 still the transaction and operational authority. Cloudflare currently hosts a
-preview, not an approved production replacement, and is frozen until the
-business has 10 paying shops.
+preview, not an approved production replacement, and is frozen until profit
+covers running costs.
 
 ## Safety boundary
 

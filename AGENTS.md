@@ -28,14 +28,17 @@ maintenance lane.
 
 ## Current direction (see `10-knowledge/ROADMAP.md`, 2026-10-10)
 
-1. Sell before building. Shopify had 6 online orders in 24 months; the plan is
-   local DFW repair-shop sales, marketplaces and free Google surfaces first.
-2. One thread per business row (`10-knowledge/ROSTER.md`); three run now, the
-   rest start when Michael's numbers land.
+1. Sell before building. Goal: ~$6,300/month profit after product cost
+   (Jason and Michael $3k each plus running costs) with no new cash. Revenue
+   today is ~$2k/month from Michael's in-person sales; Shopify had 6 online
+   orders in 24 months.
+2. Route: repair-shop email outreach plus a few bulk buyers (chains, resellers,
+   wholesalers), landing on one wholesale page. One thread per business row
+   (`10-knowledge/ROSTER.md`).
 3. Primary metric: **30-day contribution profit from completed B2B orders**
    (net product revenue − landed COGS − discounts − fees − shipping subsidy −
    RMA/refund credits).
-4. Frozen until 10 paying shops: Cloudflare rebuild, Buzz, Herdr/Pi runtime,
+4. Frozen until profit covers running costs: Cloudflare rebuild, Buzz, Herdr/Pi runtime,
    image scripts, SEO/GEO measurement framework.
 
 ## Repository map

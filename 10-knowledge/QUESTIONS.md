@@ -1,28 +1,30 @@
 # Questions that change the plan
 
-One line each is enough. "Don't know" is a valid answer.
+## Answered by Jason (2026-10-10)
 
-## For Jason
+- Profit = $3k/month Jason + $3k/month Michael + Claude Max + costs, within 2 months.
+- No new cash.
+- Nothing tried besides Michael's in-person sales.
+- Make the repo private: yes.
+- Michael's revenue: about $2k/month of back glass.
+- Full Assemblies: no longer offered.
+- Michael's time: 5 hours/week.
+- Same-day local delivery: yes.
 
-1. What does "profit" mean here: cover costs, or pay Michael $X a month? By when?
-2. How much cash can go into the next 30 days (samples, eBay fees, stock)?
-3. The repo is public but `DECISIONS.md` says private. Make it private now? (recommended: yes)
-4. What was tried in 2025-26 to get buyers (ads, calls, groups, eBay)?
-5. Do you want me to push changes? I need push access to `blackglassclawd-oss/back-glass-business`.
+## Still open (Michael)
 
-## For Michael (one 60-minute call)
+1. The Jul 28 price sheet (half assemblies $8-$18, charging flex $7-$25): is that what shops pay us, or what we pay the supplier?
+2. How long does restocking take, and does the supplier give credit or bulk discounts?
+3. Roughly how many parts are on hand now?
+4. Who are his in-person buyers: how many shops, and would any buy more?
+5. Can anyone besides Michael pack orders if volume grows?
 
-1. Shopify shows $580 online sales in two years. Where does your revenue come from today, and roughly how much a month?
-2. Is the July 28 price sheet our cost or our selling price?
-3. How many units are physically on hand, roughly what value, and where?
-4. Do you still have Full Assemblies with coil? They were 62% of online sales.
-5. How many hours a week can you give to calls, packing and questions?
-6. Will you deliver same-day or allow pickup for Dallas-area shops?
+## Still open (Jason)
 
-## Confirm or correct (needed before any public claim)
+1. Which email address should outreach send from? (Recommended: a backglasspros.com address.)
+2. Would you accept a later date for the full $6.3k if bulk buyers take longer than 8 weeks?
 
-- In business since 2015
-- Ships from Dallas, UPS, Mon-Fri
-- Same-day shipping before 5pm CT
-- Free UPS Ground over $150
-- Warranty term and who pays return freight
+## Confirm or correct before any public claim
+
+In business since 2015 · ships from Dallas, UPS, Mon-Fri · same-day before 5pm CT ·
+free UPS Ground over $150 · warranty term and who pays return freight.
