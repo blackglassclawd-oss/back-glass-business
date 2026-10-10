@@ -49,6 +49,17 @@ outreach numbers.
 
 ## 4. The sequence
 
+### Top priorities (Jason, 2026-10-10)
+
+1. **iPhone 17 series products ready to sell and iPhone 18 series drafted.**
+   New models are where repair demand is growing and where large distributors
+   have the thinnest stock, so they are the strongest opener for outreach.
+2. **Charging coils (NFC charging flex) listed.** They complete a half
+   assembly into a full repair and raise the order value per shop.
+
+The "iPhone 17, 18 and coil listings" thread owns this catalog work. Outreach
+emails lead with these products once they are live.
+
 ### Week 1: Ready to sell
 
 - Michael answers: is the Jul 28 sheet what shops pay or what he pays; how long
@@ -79,8 +90,8 @@ outreach numbers.
 
 ## 5. Freeze list (no work until profit covers costs)
 
-Cloudflare storefront rebuild · Buzz · Herdr/Pi runtime · image overlay
-scripts · SEO/GEO measurement framework · eBay (fees and per-order shipping
+Cloudflare storefront rebuild · Buzz · Herdr/Pi runtime · image work beyond
+the iPhone 17/18 and coil listings · SEO/GEO measurement framework · eBay (fees and per-order shipping
 eat most of a $12 part's profit; revisit with bundles).
 
 ## 6. Risks
