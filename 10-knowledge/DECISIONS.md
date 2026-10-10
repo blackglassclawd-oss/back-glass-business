@@ -22,6 +22,12 @@
 | 2026-08-29 | Cloudflare storefront rebuild moves to a low-priority maintenance lane: keep the codebase healthy, fix critical/security issues, preserve tests and deployment knowledge, build only what directly removes a commercial blocker, no speculative parity work while M1-M3 are open. Website development is an on-demand function, not the primary workstream | Active, low-priority maintenance lane |
 | 2026-08-29 | Primary commercial metric (amends Open decision #11): **30-day contribution profit from completed B2B orders** = net product revenue - landed product COGS - discounts - payment/transaction fees - outbound shipping subsidy - directly attributable RMA/refund credits. Companion metrics: active purchasing B2B accounts, contribution profit per active account, repeat-order rate, gross margin %, stock accuracy, order accuracy / fulfillment-error rate. Promote **repeat contribution profit per active account** to primary once customers have had a realistic chance to reorder | Active; #11 partially resolved, repeat-metric promotion pending |
 | 2026-08-29 | The Fable review is recorded as an adversarial model critique, not independent business evidence. Validation comes from real landed COGS, shipped orders, fulfillment errors, customer replies, repeat purchases, and contribution profit | Active |
+| 2026-10-10 | Live Shopify baseline: 6 online orders and $580 gross in 24 months; 18 Google sessions in 6 months. The website is not yet the revenue source | Fact (Shopify analytics) |
+| 2026-10-10 | Profit target set by Jason: ~$6,300/month after product cost ($3k Jason, $3k Michael, Claude Max, running costs) within 2 months; no new cash; Michael has 5 hours/week | Active |
+| 2026-10-10 | `ROADMAP.md` replaced: repair-shop email outreach plus bulk buyers, one wholesale page; rebuild, Buzz, SEO tooling and eBay frozen | Proposed; Jason to approve |
+| 2026-10-10 | Business-row threads: Shop list and email, Bulk buyers, Wholesale page start now; Finance and Ops when Michael's numbers land (see `ROSTER.md`) | Active (Jason asked for agents) |
+| 2026-10-10 | Full Assemblies stay discontinued (Jason), although they were 62% of online sales | Active |
+| 2026-10-10 | Make this repository private (Jason: yes); needs a repo admin in GitHub settings | Pending admin action |
 
 ## Open decision register
 
@@ -34,9 +40,8 @@
 5. Document inventory ownership and the two-location workflow.
 6. Verify shipping, warranty, defect, and RMA policies.
 7. Choose Buzz scope, members, hosting, URL, data boundary, and backup owner.
-8. RESOLVED 2026-08-29 — GitHub remains code authority; private remote
-   `blackglassclawd-oss/back-glass-business` created and adopted as the
-   development source of truth.
+8. RESOLVED 2026-08-29 — GitHub remains code authority. NOTE 2026-10-10: the
+   repository is publicly readable, contrary to this record; make it private.
 9. Decide which one of the five installed Quick Order apps remains during the
    pilot.
 10. Decide when the Cloudflare storefront is allowed to reach production.
@@ -46,3 +51,4 @@
     profit from completed B2B orders, with the companion metric set above.
     Still open: the controlled-experiment standard, and the trigger for
     promoting repeat contribution profit per active account to primary.
+12. Which marketplace accounts (eBay, others) may be used, and under whose name?

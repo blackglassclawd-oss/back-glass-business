@@ -30,6 +30,11 @@ This is a positioning draft, not an approved public claim.
 The public capture and authenticated counts are different populations. Do not
 use one as a substitute for the other.
 
+- Live Shopify analytics checked 2026-10-10: 6 online orders and $580 gross
+  in the last 24 months (Feb 2025: 3, Mar 2025: 1, Jun 2025: 1, Aug 2026: 1).
+  Full Assemblies with coil were $361 (62%). Buyers: OK, TX, ID, CA.
+  397 sessions in 6 months, 369 direct, 18 from Google.
+
 ## Governance
 
 - Michael is the product and catalog authority.

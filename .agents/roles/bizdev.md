@@ -31,3 +31,6 @@ Jason. No supplier identities, costs, or terms in committed artifacts.
 Map suppliers, repair-shop channels, and partnership opportunities ranked by
 expected leverage, each with the economic case, the downside, and what would
 have to be true for it to work. Feed the ranking to the CEO; do not act on it.
+
+> 2026-10-10: priorities now come from `10-knowledge/ROADMAP.md` and
+> `10-knowledge/ROSTER.md`. Where this file disagrees, those win.

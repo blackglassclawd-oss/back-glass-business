@@ -43,3 +43,6 @@ M3: draft the one-paragraph warranty/RMA policy (Michael signs off) and a
 reactivation email to existing/lapsed accounts with SKU-specific buy-again
 links. Draft only — not sent. Log every price/warranty/stock objection verbatim
 once outreach is authorized.
+
+> 2026-10-10: priorities now come from `10-knowledge/ROADMAP.md` and
+> `10-knowledge/ROSTER.md`. Where this file disagrees, those win.
