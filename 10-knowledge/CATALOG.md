@@ -67,3 +67,23 @@ a license grant or publication approval.
 - [`../01-software/backglass-ecommerce/docs/SHORT_TERM_PLAN_2026-07-28.md`](../01-software/backglass-ecommerce/docs/SHORT_TERM_PLAN_2026-07-28.md)
 - [`../03-data/owner-correspondence/2026-08-06/重发网站问题.eml`](../03-data/owner-correspondence/2026-08-06/重发网站问题.eml)
 
+
+## iPhone 17, iPhone 18 and coil launch (2026-10-10)
+
+Jason's priorities: iPhone 17 series ready to sell, iPhone 18 series drafted,
+coils live. Live Shopify state on 2026-10-10:
+
+- iPhone 17, Air, 17 Pro, 17 Pro Max and 17e half assemblies exist as Draft.
+  Their SKUs end in `-FA` (full assembly) and need `-HA`. A Grade Air, 17 Pro
+  and 17 Pro Max are $0; 17 Pro and 17 Pro Max Premium are $10, below the
+  iPhone 16 Premium ($15); Air Premium is $60. 17e has no price or photos.
+- 30 wireless charging coil products (iPhone 14 to 17 Pro Max, OEM and
+  Aftermarket) exist as Draft at $0 with no photos or SKUs.
+- No iPhone 18 products exist. Apple released iPhone 18 Pro and 18 Pro Max
+  on 2026-09-18; base iPhone 18 and 18e are expected in spring 2027.
+
+Change set: [`launch-iphone17-18-coils-2026-10-10.json`](../01-software/backglass-ecommerce/data/catalog/launch-iphone17-18-coils-2026-10-10.json),
+applied by `scripts/shopify-launch-iphone17-18-coils-2026-10-10.ts` (dry run
+unless `--apply`). Proposed coil prices are Claude's, from the store's own old
+Full minus Half Assembly gap; only `approvedPrice` values are written, and
+Full Assemblies stay in Draft.
